@@ -38,6 +38,7 @@ import { CopyObjectCommandTemplate} from './commands/copyObject.command.template
 import { ShowGridDetailsCommandTemplate } from './commands/showGridDetails.command.template';
 import { ConfirmCommandAndChangeSwitchValueCommandTemplate} from './commands/confirmCommandAndChangeSwitchValue.command.template';
 import { CalculateCommandTemplate } from './commands/calculate.command.template';
+import { CustomCommandTemplate} from './commands/custom.command.template';
 
 import { AppComponent } from './app.component';
 import { RuleComponent } from './components/rule/rule.component';
@@ -68,6 +69,7 @@ import { SetWarningInWarningProviderAndNotifyComponent } from './components/comm
 import { AddItemAndShowGridDetailsComponent } from './components/commands/addItemAndShowGridDetails.component';
 import { CopyObjectComponent} from './components/commands/copyObject.component';
 import { ShowGridDetailsComponent} from './components/commands/showGridDetails.component';
+import { CustomCommandComponent} from './components/commands/custom.component';
 
 
 
@@ -109,7 +111,8 @@ import { ShowGridDetailsComponent} from './components/commands/showGridDetails.c
     CopyObjectComponent,
     ShowGridDetailsComponent,
     ConfirmCommandAndChangeSwitchValueComponent,
-    CalculateComponent
+    CalculateComponent,
+    CustomCommandComponent
   ],
 
   providers: [
@@ -144,7 +147,7 @@ import { ShowGridDetailsComponent} from './components/commands/showGridDetails.c
     AddItemAndShowGridDetailsCommandTemplate,
     CopyObjectCommandTemplate,
     ShowGridDetailsCommandTemplate,
-  
+    CustomCommandTemplate
  
   ],
 

@@ -153,4 +153,12 @@ export class NamingService {
         }
         return result;
     }
+
+    lowerCaseFirstLetter(name:string):string {
+        return name.charAt(0).toLowerCase() + name.slice(1);
+    }
+
+    upperCaseFirstLetter(name:string):string {
+        return name.charAt(0).toUpperCase() + name.slice(1);
+    }
 }

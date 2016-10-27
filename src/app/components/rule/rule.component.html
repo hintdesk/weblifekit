@@ -38,6 +38,8 @@
 
 	<copyValueInCurrentItem *ngIf="this.ruleModel.CommandType ==='copyValueInCurrentItemCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></copyValueInCurrentItem>
 
+	<custom *ngIf="this.ruleModel.CommandType ==='customCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></custom>
+
 	<enableGuiElements *ngIf="this.ruleModel.CommandType ==='enableGuiElements'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></enableGuiElements>
 
 	<executeApplication *ngIf="this.ruleModel.CommandType ==='executeApplicationCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></executeApplication>

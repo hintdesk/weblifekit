@@ -38,6 +38,7 @@ export class RuleModel {
     NavigationElement: string = "";
     Page: string = "";
     PageName: string = "";
+    Parameter: string = "";
     ParentUIElement: string = "";
     Resizable: boolean = false;
     SourceElementType: ElementType;

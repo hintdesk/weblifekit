@@ -29,6 +29,7 @@ import { CopyObjectCommandTemplate} from '../commands/copyObject.command.templat
 import { ShowGridDetailsCommandTemplate } from '../commands/showGridDetails.command.template';
 import { ConfirmCommandAndChangeSwitchValueCommandTemplate} from '../commands/confirmCommandAndChangeSwitchValue.command.template';
 import { CalculateCommandTemplate} from '../commands/calculate.command.template';
+import { CustomCommandTemplate} from '../commands/custom.command.template';
 
 
 @Injectable()
@@ -60,7 +61,8 @@ export class CommandService {
         private copyObjectCommandTemplate:CopyObjectCommandTemplate,
         private showGridDetailsCommandTemplate:ShowGridDetailsCommandTemplate,
         private confirmCommandAndChangeSwitchValueCommandTemplate: ConfirmCommandAndChangeSwitchValueCommandTemplate,
-        private calculateCommandTemplate:CalculateCommandTemplate) {
+        private calculateCommandTemplate:CalculateCommandTemplate,
+        private customCommandTemplate: CustomCommandTemplate) {
 
     }
 
@@ -91,7 +93,8 @@ export class CommandService {
             CommandType.CopyObjectCommand,
             CommandType.ShowGridDetailsCommand,
             CommandType.ConfirmCommandAndChangeSwitchValueCommand,
-            CommandType.CalculateCommand
+            CommandType.CalculateCommand,
+            CommandType.CustomCommand,
         ];
         return ruleCommands.sort();
 
@@ -125,7 +128,8 @@ export class CommandService {
                 this.copyObjectCommandTemplate,
                 this.showGridDetailsCommandTemplate,
                 this.confirmCommandAndChangeSwitchValueCommandTemplate,
-                this.calculateCommandTemplate
+                this.calculateCommandTemplate,
+                this.customCommandTemplate
             ];
         return commandTemplates;
     }

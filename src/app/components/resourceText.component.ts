@@ -5,9 +5,11 @@ export class ResourceTextComponent {
     TextPlaceholderArrayFieldNameAdd:string = "A custom name for adding object: WeiterePartner, BerechnungsEingaben.Extension.SteuerDetailsAuslandVersNehmer, GehaltsAngabe, etc.";
     TextPlaceholderCalculator: string = "Name of supported calculator in calculators-x.x.x.js: fondsPercentageDistributedCalculator, fondsPercentageSumCalculator, etc. ";
     TextPlaceholderCalculatorArgument: string = "Name of supported calculator argument in calculators-x.x.x.js: titelFondsauswahl, etc.";
+    TextPlaceholderCommandParameter:string = "Parameter for command: tablePersonList, etc."
     TextPlaceholderErrorTextPlainText: string = "Hardcoded text for error: Bitte wählen Sie die gewünschte Form des Persönlichen Vorschlag / Produktinformationsblatt aus!, etc.";
     TextPlaceholderErrorTextResource: string = "Use DynRes for error: Dyn7272, Dyn7273, Dyn8471, etc.";
     TextPlaceholderColumnIndex: string = "An integer value: 1, 2, 3, etc.";
+    TextPlaceholderCustomCommandName:string = "Name of customCommand: triggerVorgangDataSourceChangeCommand, setVorgangStatusinApplicationCommand, addEventHandlerCommand, etc.";
     TextPlaceholderDialog : string = "Name of dialog (same with section tab in .xml file): AntragDruckPopUp, AntragBrDoKuDruck_InfoBox_2, AntragGwgIsa, etc.";
     TextPlaceholderDisplayNameValueCalculator:string ="Name of stateTable returning new name for page: ZV.Label, etc.";
     TextPlaceholderDisplayNameValuePlainText:string = "New name for page: 1. Versicherungsnehmer, Versicherungsnehmer, Versicherte Person 1, etc.";    

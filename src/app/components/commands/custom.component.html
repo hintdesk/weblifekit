@@ -1,0 +1,30 @@
+<!--Name-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">Name</label>
+	<div class="col-xs-8">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.Name" (ngModelChange)="onNameChanged($event)" type="text" placeholder="{{TextPlaceholderCustomCommandName}}">
+	</div>
+</div>
+
+<!--Parameter-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">Parameter</label>
+	<div class="col-xs-8">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.Parameter" (ngModelChange)="onNameChanged($event)" type="text" placeholder="{{TextPlaceholderCommandParameter}}">
+	</div>
+</div>
+
+<!--Javascript-->
+<div class="row top-buffer">
+	<label class="col-xs-2">Javascript</label>
+	<div class="col-xs-8">
+		<textarea #taResult class="col-xs-12 form-control" rows="10">{{javascriptCode}}</textarea>
+	</div>
+	<div class="col-xs-2">
+
+		<div>
+			<button class="btn btn-primary top-buffer" [ngIIclipboard]="taResult">Copy to clipboard</button>
+		</div>
+
+	</div>
+</div>

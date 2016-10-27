@@ -23,6 +23,7 @@ export class CommandType
     static CopyObjectCommand = "copyObjectCommand";    
     static CopyValueCommand: string ="copyValueCommand";
     static CopyValueInCurrentItemCommand: string = "copyValueInCurrentItemCommand";
+    static CustomCommand:string = "customCommand";
     static DeleteArrayElementsCommand: string = "deleteArrayElementsCommand";
     static DisableGuiElementsCommand: string = "disableGuiElements";
     static EnableGuiElementsCommand: string = "enableGuiElements";
