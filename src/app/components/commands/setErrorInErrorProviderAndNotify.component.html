@@ -1,0 +1,49 @@
+<!--UIField-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">UIField</label>
+	<div class="col-xs-8">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.UIField" (ngModelChange)="onModelDataChanged($event)" type="text"
+			placeholder="{{TextPlaceholderUIField}}">
+	</div>
+</div>
+
+<!--ListProperty-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">ListProperty</label>
+	<div class="col-xs-8">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.ListProperty" (ngModelChange)="onModelDataChanged($event)" type="text"
+			placeholder="{{TextPlaceholderListProperty}}">
+	</div>
+</div>
+
+<!--ColumnIndex-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">ColumnIndex</label>
+	<div class="col-xs-8">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.ColumnIndex" (ngModelChange)="onModelDataChanged($event)" type="text"
+			placeholder="{{TextPlaceholderColumnIndex}}">
+	</div>
+</div>
+
+<!--ErrorText-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">ErrorText</label>
+	<div class="col-xs-2">
+		<select class="col-xs-12 form-control" [(ngModel)]="ruleModel.ErrorTextType" (ngModelChange)="onErrorTextTypeChanged($event)"
+			name="" id="">
+			<option *ngFor="let errorTextType of errorTextTypes" [ngValue]="errorTextType">{{errorTextType}}</option>
+		</select>
+	</div>
+	<div class="col-xs-6">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.ErrorTextValue" (ngModelChange)="onModelDataChanged($event)"
+			type="text" placeholder="{{errorTextValuePlaceholder}}">
+	</div>
+</div>
+
+<!--BadCommand-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">BadCommand</label>
+	<div class="col-xs-8 checkbox hd-checkbox">
+		<input [(ngModel)]="ruleModel.BadCommand" (ngModelChange)="onModelDataChanged($event)" type="checkbox">
+	</div>
+</div>

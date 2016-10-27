@@ -1,0 +1,17 @@
+<!--Calculator-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">Calculator</label>
+	<div class="col-xs-8">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.Calculator" (ngModelChange)="onModelDataChanged($event)" type="text"
+			placeholder="{{TextPlaceholderCalculator}}">
+	</div>
+</div>
+
+<!--CalculatorArgument-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">CalculatorArgument</label>
+	<div class="col-xs-8">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.CalculatorArgumentValue" (ngModelChange)="onModelDataChanged($event)"
+			type="text" placeholder="{{TextPlaceholderCalculatorArgument}}">
+	</div>
+</div>

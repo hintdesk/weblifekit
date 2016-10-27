@@ -1,0 +1,23 @@
+<!--PageName-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">PageName</label>
+	<div class="col-xs-8">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.PageName" (ngModelChange)="onModelDataChanged($event)" type="text" placeholder="{{TextPlaceholderPageName}}">
+	</div>
+</div>
+
+<!--Validate-->
+<div class="row top-buffer">
+    <label class="col-xs-2" for="">Validate</label>
+    <div class="col-xs-8 checkbox hd-checkbox">
+        <input [(ngModel)]="ruleModel.Validate" (ngModelChange)="onModelDataChanged($event)" type="checkbox">
+    </div>
+</div>
+
+<!--BadCommand-->
+<div class="row top-buffer">
+    <label class="col-xs-2" for="">BadCommand</label>
+    <div class="col-xs-8 checkbox hd-checkbox">
+        <input [(ngModel)]="ruleModel.BadCommand" (ngModelChange)="onModelDataChanged($event)" type="checkbox">
+    </div>
+</div>

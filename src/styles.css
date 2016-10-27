@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.top-buffer { margin-top:10px; }
+.left-buffer { margin-left: 10px; }
+.hd-checkbox 
+{
+    margin-left: 20px;
+    margin-top: -1px;
+    margin-bottom: 40px;
+}
+

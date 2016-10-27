@@ -1,0 +1,31 @@
+<!--Page-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">Page</label>
+	<div class="col-xs-8">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.Page" (ngModelChange)="onModelDataChanged($event)" type="text"
+			placeholder="{{TextPlaceholderPageName}}">
+	</div>
+</div>
+
+<!--DisplayName-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">DisplayName</label>
+	<div class="col-xs-2">
+		<select class="col-xs-12 form-control" [(ngModel)]="ruleModel.DisplayNameType" (ngModelChange)="onDisplayNameTypeChanged($event)"
+			name="" id="">
+			<option *ngFor="let displayNameType of displayNameTypes" [ngValue]="displayNameType">{{displayNameType}}</option>
+		</select>
+	</div>
+	<div class="col-xs-6">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.DisplayNameValue" (ngModelChange)="onModelDataChanged($event)"
+			type="text" placeholder="{{displayNameValuePlaceholder}}">
+	</div>
+</div>
+
+<!--BadCommand-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">BadCommand</label>
+	<div class="col-xs-6 checkbox hd-checkbox">
+		<input [(ngModel)]="ruleModel.BadCommand" (ngModelChange)="onModelDataChanged($event)" type="checkbox">
+	</div>
+</div>

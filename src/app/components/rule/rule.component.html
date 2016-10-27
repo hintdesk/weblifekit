@@ -1,0 +1,97 @@
+<div class="container-fluid">
+
+	<div class="row top-buffer">
+		<label class="col-xs-2" for="">Command</label>
+		<div class="col-xs-8">
+			<select class="col-xs-12 form-control" [(ngModel)]="ruleModel.CommandType" (ngModelChange)="onCommandTypeChanged($event)"
+				name="">
+            	<option *ngFor="let ruleCommand of commandTypes" [ngValue]="ruleCommand">{{ruleCommand}}</option>
+			</select>
+		</div>
+	</div>
+
+	<!--Condition-->
+	<div class="row top-buffer">
+		<label class="col-xs-2" for="">Condition</label>
+		<div class="col-xs-8 has-feedback">
+			<input #inputCondition class="col-xs-12 form-control" [(ngModel)]="ruleModel.Condition" (ngModelChange)="onDataChanged($event)"
+				type="text">
+			<!--<span *ngIf="condition !== ''" (click)="condition = ''" class="glyphicon glyphicon-remove form-control-feedback" style="cursor: pointer; pointer-events: all;" uib-tooltip="clear"></span>-->
+		</div>
+	</div>
+
+	<actionCommand *ngIf="this.ruleModel.CommandType ==='actionCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></actionCommand>
+
+	<addArrayElement *ngIf="this.ruleModel.CommandType ==='addArrayElementCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></addArrayElement>
+
+	<addItemAndShowGridDetails *ngIf="this.ruleModel.CommandType ==='addItemAndShowGridDetailsCommand'" [(ruleModel)]="ruleModel"
+		(onDataChanged)="onDataChanged($event)"></addItemAndShowGridDetails>
+
+	<calculate *ngIf="this.ruleModel.CommandType ==='calculateCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></calculate>
+
+	<confirmCommandAndChangeSwitchValue *ngIf="this.ruleModel.CommandType ==='confirmCommandAndChangeSwitchValueCommand'" [(ruleModel)]="ruleModel"
+		(onDataChanged)="onDataChanged($event)"></confirmCommandAndChangeSwitchValue>
+
+	<copyObject *ngIf="this.ruleModel.CommandType ==='copyObjectCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></copyObject>
+
+	<copyValue *ngIf="this.ruleModel.CommandType ==='copyValueCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></copyValue>
+
+	<copyValueInCurrentItem *ngIf="this.ruleModel.CommandType ==='copyValueInCurrentItemCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></copyValueInCurrentItem>
+
+	<enableGuiElements *ngIf="this.ruleModel.CommandType ==='enableGuiElements'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></enableGuiElements>
+
+	<executeApplication *ngIf="this.ruleModel.CommandType ==='executeApplicationCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></executeApplication>
+
+	<goToPage *ngIf="this.ruleModel.CommandType ==='goToPageCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></goToPage>
+
+	<deleteArrayElements *ngIf="this.ruleModel.CommandType ==='deleteArrayElementsCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></deleteArrayElements>
+
+	<fireEvent *ngIf="this.ruleModel.CommandType ==='fireEventCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></fireEvent>
+
+	<hideDetails *ngIf="this.ruleModel.CommandType ==='hideDetailsCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></hideDetails>
+
+	<removeAllArrayElements *ngIf="this.ruleModel.CommandType ==='removeAllArrayElementsCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></removeAllArrayElements>
+
+	<renameNavigationElement *ngIf="this.ruleModel.CommandType ==='renameNavigationElement'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></renameNavigationElement>
+
+	<showDetails *ngIf="this.ruleModel.CommandType ==='showDetailsCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></showDetails>
+
+	<showGridDetails *ngIf="this.ruleModel.CommandType ==='showGridDetailsCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></showGridDetails>
+
+	<showGuiElements *ngIf="this.ruleModel.CommandType ==='showGuiElements'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></showGuiElements>
+
+	<showNavigationElement *ngIf="this.ruleModel.CommandType ==='showNavigationElement'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></showNavigationElement>
+
+	<setErrorInErrorProvider *ngIf="this.ruleModel.CommandType ==='setErrorInErrorProviderCommand'" [(ruleModel)]="ruleModel"
+		(onDataChanged)="onDataChanged($event)"></setErrorInErrorProvider>
+
+	<setErrorInErrorProviderAndNotify *ngIf="this.ruleModel.CommandType ==='setErrorInErrorProviderAndNotifyCommand'" [(ruleModel)]="ruleModel"
+		(onDataChanged)="onDataChanged($event)"></setErrorInErrorProviderAndNotify>
+
+	<setTextForAutoComplete *ngIf="this.ruleModel.CommandType ==='setTextForAutoCompleteCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></setTextForAutoComplete>
+
+	<setToDefault *ngIf="this.ruleModel.CommandType ==='setToDefaultCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></setToDefault>
+
+	<setWarningInWarningProviderAndNotify *ngIf="this.ruleModel.CommandType ==='setWarningInWarningProviderAndNotifyCommand'"
+		[(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></setWarningInWarningProviderAndNotify>
+
+	<validate *ngIf="this.ruleModel.CommandType ==='validateCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></validate>
+
+	<div class="row top-buffer">
+		<label class="col-xs-2">Json</label>
+		<div class="col-xs-8">
+			<textarea #taResult class="col-xs-12 form-control" rows="20">{{result}}</textarea>
+		</div>
+		<div class="col-xs-2">
+			<!--<div>
+				<button class="btn btn-primary" (click)="generate()">Generate</button>
+			</div>-->
+			<!--<div>
+				<button class="btn btn-primary top-buffer" (click)="copyToClipboard()" [ngIIclipboard]="taResult">Copy to clipboard</button>
+			</div>-->
+
+		</div>
+	</div>
+
+
+</div>

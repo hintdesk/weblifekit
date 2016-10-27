@@ -1,0 +1,45 @@
+<!--UIField-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">UIField</label>
+	<div class="col-xs-8">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.UIField" (ngModelChange)="onModelDataChanged($event)" type="text"
+			placeholder="{{TextPlaceholderUIField}}">
+	</div>
+</div>
+
+<!--StateTable-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">StateTable</label>
+	<div class="col-xs-8">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.StateTable" (ngModelChange)="onModelDataChanged($event)" type="text"
+			placeholder="{{TextPlaceholderStateTable}}">
+	</div>
+</div>
+
+<!--TargetProperty-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">TargetProperty</label>
+
+	<div class="col-xs-8">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.TargetProperty" (ngModelChange)="onModelDataChanged($event)"
+			type="text" placeholder="{{TextPlaceholderSpringObjectName}}">
+	</div>
+</div>
+
+<!--ListProperty-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">ListProperty</label>
+	<div class="col-xs-8">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.ListProperty" (ngModelChange)="onModelDataChanged($event)" type="text"
+			placeholder="{{TextPlaceholderListProperty}}">
+	</div>
+</div>
+
+<!--ColumnIndex-->
+<div class="row top-buffer" *ngIf="this.ruleModel.ListProperty && this.ruleModel.ListProperty !==''">
+	<label class="col-xs-2" for="">ColumnIndex</label>
+	<div class="col-xs-8">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.ColumnIndex" (ngModelChange)="onModelDataChanged($event)" type="text"
+			placeholder="{{TextPlaceholderColumnIndex}}">
+	</div>
+</div>

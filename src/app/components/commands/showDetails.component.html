@@ -1,0 +1,57 @@
+<!--Title-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">Title</label>
+	<div class="col-xs-8">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.Title" (ngModelChange)="onModelDataChanged($event)" type="text"
+			placeholder="{{TextPlaceholderTitleDialog}}">
+	</div>
+</div>
+
+<!--Dialog-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">Dialog</label>
+	<div class="col-xs-8">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.Dialog" (ngModelChange)="onModelDataChanged($event)" type="text"
+			placeholder="{{TextPlaceholderDialog}}">
+	</div>
+</div>
+
+<!--Width-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">Width</label>
+	<div class="col-xs-8">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.Width" (ngModelChange)="onModelDataChanged($event)" type="text" placeholder="{{TextPlaceholderWidth}}">
+	</div>
+</div>
+
+<!--Height-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">Height</label>
+	<div class="col-xs-8">
+		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.Height" (ngModelChange)="onModelDataChanged($event)" type="text" placeholder="{{TextPlaceholderHeight}}">
+	</div>
+</div>
+
+<!--Resizable-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">Resizable</label>
+	<div class="col-xs-8 checkbox hd-checkbox">
+		<input [(ngModel)]="ruleModel.Resizable" (ngModelChange)="onModelDataChanged($event)" type="checkbox">
+	</div>
+</div>
+
+<!--HideClose-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">HideClose</label>
+	<div class="col-xs-8 checkbox hd-checkbox">
+		<input [(ngModel)]="ruleModel.HideClose" (ngModelChange)="onModelDataChanged($event)" type="checkbox">
+	</div>
+</div>
+
+<!--Synchronous-->
+<div class="row top-buffer">
+	<label class="col-xs-2" for="">Synchronous</label>
+	<div class="col-xs-8 checkbox hd-checkbox">
+		<input [(ngModel)]="ruleModel.Synchronous" (ngModelChange)="onModelDataChanged($event)" type="checkbox">
+	</div>
+</div>
