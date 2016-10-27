@@ -4,13 +4,13 @@ import { BaseCommandComponent } from './baseCommand.component';
 import { CommandService } from '../../services/command.service';
 import { RuleModel } from '../../models/rule.model';
 
-@Component({   
+@Component({
     selector: 'copyObject',
     templateUrl: 'copyObject.component.html'
 })
 
 export class CopyObjectComponent extends BaseCommandComponent {
-        @Input()
+    @Input()
     ruleModel: RuleModel;
 
     @Output()
