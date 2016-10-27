@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { NamingService } from '../services/naming.service';
 
 import { RuleModel } from '../models/rule.model';
