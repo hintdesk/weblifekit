@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-// import { ClipboardModule } from 'angular2-clipboard';
+import { ClipboardModule } from 'angular2-clipboard';
 //import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 
@@ -76,7 +76,7 @@ import { ShowGridDetailsComponent} from './components/commands/showGridDetails.c
     BrowserModule,
     FormsModule,
     HttpModule,
-    // ClipboardModule,
+    ClipboardModule,
     // Ng2BootstrapModule
   ],
 
