@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { routing } from './app.routing';
+
 import { ClipboardModule } from 'angular2-clipboard';
 import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 
@@ -46,6 +48,7 @@ import { RuleComponent } from './components/rule/rule.component';
 import { ActionCommandComponent} from './components/commands/actionCommand.component';
 import { CalculateComponent} from './components/commands/calculate.component';
 import { CopyValueComponent} from './components/commands/copyValue.component';
+import { ConditionComponent } from './components/condition/condition.component';
 import { ConfirmCommandAndChangeSwitchValueComponent} from './components/commands/confirmCommandAndChangeSwitchValue.component';
 import { ExecuteApplicationComponent} from './components/commands/executeApplication.component';
 import { ShowDetailsComponent } from './components/commands/showDetails.component'
@@ -79,7 +82,8 @@ import { CustomCommandComponent} from './components/commands/custom.component';
     FormsModule,
     HttpModule,
     ClipboardModule,
-    Ng2BootstrapModule
+    Ng2BootstrapModule,
+    routing
   ],
 
   declarations: [
@@ -87,6 +91,7 @@ import { CustomCommandComponent} from './components/commands/custom.component';
     RuleComponent,
 
     ActionCommandComponent,
+    ConditionComponent,
     CopyValueComponent,
     ExecuteApplicationComponent,
     ShowDetailsComponent,

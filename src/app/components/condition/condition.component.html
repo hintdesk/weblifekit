@@ -1,0 +1,19 @@
+<div class="container-fluid">
+	<div class="row top-buffer">
+		<label class="col-xs-2" for="">First</label>
+		<div class="col-xs-4">
+			<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.UIField" (ngModelChange)="onModelDataChanged($event)" type="text"
+				placeholder="{{TextPlaceholderUIField}}">
+		</div>
+		<div class="col-xs-2">
+			<select class="col-xs-12 form-control" [(ngModel)]="ruleModel.CommandType" (ngModelChange)="onCommandTypeChanged($event)"
+				name="">
+            	<option *ngFor="let ruleCommand of commandTypes" [ngValue]="ruleCommand">{{ruleCommand}}</option>
+			</select>
+		</div>
+		<div class="col-xs-4">
+			<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.UIField" (ngModelChange)="onModelDataChanged($event)" type="text"
+				placeholder="{{TextPlaceholderUIField}}">
+		</div>
+	</div>
+</div>

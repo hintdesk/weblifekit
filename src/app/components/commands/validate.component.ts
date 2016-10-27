@@ -6,17 +6,22 @@ import { RuleModel } from '../../models/rule.model';
 
 @Component({
     selector: 'validate',
-    templateUrl:'validate.component.html'
+    templateUrl: 'validate.component.html'
 })
 
 export class ValidateComponent extends BaseCommandComponent {
-        @Input()
+    @Input()
     ruleModel: RuleModel;
 
     @Output()
     onDataChanged = new EventEmitter();
-    
+
     constructor(commandService: CommandService) {
         super(commandService);
+    }
+
+    onUIFieldChanged($event) {
+        this.ruleModel.StateTable = this.ruleModel.UIField + ".Validation";
+        this.onModelDataChanged($event);
     }
 }
