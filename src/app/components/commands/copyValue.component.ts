@@ -24,12 +24,7 @@ export class CopyValueComponent extends BaseCommandComponent {
     }
 
     ngOnInit(): void {
-        super.ngOnInit();
-        if (this.destinationElementTypes.length > 0)
-            this.ruleModel.DestinationElementType = this.destinationElementTypes[0];
-
-        if (this.sourceElementTypes.length > 0)
-            this.ruleModel.SourceElementType = this.sourceElementTypes[0];
+        super.ngOnInit();       
 
         this.sourceElementValuePlaceholder = this.TextPlaceholderSourceElementValuePlainText;
     }

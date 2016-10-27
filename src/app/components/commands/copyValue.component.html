@@ -32,7 +32,7 @@
 	</div>
 	<div class="col-xs-6">
 		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.DestinationElementValue" (ngModelChange)="onModelDataChanged($event)"
-			type="text" placeholder="{{TextPlaceholderSpringObjectName}}">
+			type="text" placeholder="{{TextPlaceholderSpringObjectName}}" [typeahead]="bindingPaths">
 
 	</div>
 </div>

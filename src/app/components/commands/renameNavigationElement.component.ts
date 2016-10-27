@@ -24,9 +24,10 @@ export class RenameNavigationElementComponent extends BaseCommandComponent {
     }
 
     ngOnInit():void 
-    {
-        this.displayNameValuePlaceholder = this.TextPlaceholderDisplayNameValuePlainText;
+    {        
         super.ngOnInit();
+        this.displayNameValuePlaceholder = this.TextPlaceholderDisplayNameValuePlainText;
+        
     }
     
     onDisplayNameTypeChanged($event):void{

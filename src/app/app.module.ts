@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { ClipboardModule } from 'angular2-clipboard';
-//import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 
 import { CommandService } from './services/command.service';
@@ -77,7 +77,7 @@ import { ShowGridDetailsComponent} from './components/commands/showGridDetails.c
     FormsModule,
     HttpModule,
     ClipboardModule,
-    // Ng2BootstrapModule
+    Ng2BootstrapModule
   ],
 
   declarations: [

@@ -13,6 +13,7 @@ export class BaseCommandComponent extends ResourceTextComponent implements OnIni
     @Output()
     onDataChanged = new EventEmitter();
 
+    bindingPaths: string[] = [];
     destinationElementTypes: ElementType[] = [];
     displayNameTypes: ElementType[] = [];
     errorTextTypes: ElementType[] = [];
@@ -38,9 +39,28 @@ export class BaseCommandComponent extends ResourceTextComponent implements OnIni
         }
 
         this.errorTextValuePlaceholder = this.TextPlaceholderErrorTextPlainText;
+
+        if (this.destinationElementTypes.length > 0)
+            this.ruleModel.DestinationElementType = this.destinationElementTypes[0];
+
+        if (this.displayNameTypes.length > 0)
+            this.ruleModel.DisplayNameType = this.displayNameTypes[0];
+
+        if (this.errorTextTypes.length > 0)
+            this.ruleModel.ErrorTextType = this.errorTextTypes[0];
+
+        if (this.eventTypes.length > 0)
+            this.ruleModel.EventType = this.eventTypes[0];
+
+        if (this.sourceElementTypes.length > 0)
+            this.ruleModel.SourceElementType = this.sourceElementTypes[0];
+
+
+        this.bindingPaths.push("BerechnungsEingaben.VersicherungsNehmer.GeschlechtArt");
+        this.bindingPaths.push("BerechnungsEingaben.VersicherungsNehmer.AnredeArt");
     }
 
-    onErrorTextTypeChanged($event) {        
+    onErrorTextTypeChanged($event) {
         switch (this.ruleModel.ErrorTextType) {
             case ElementType.PlainText:
                 this.errorTextValuePlaceholder = this.TextPlaceholderErrorTextPlainText;
