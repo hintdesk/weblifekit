@@ -93,7 +93,7 @@ export class CommandService {
             CommandType.ConfirmCommandAndChangeSwitchValueCommand,
             CommandType.CalculateCommand
         ];
-        return ruleCommands;
+        return ruleCommands.sort();
 
     }
 
