@@ -5,18 +5,18 @@ import { CommandService } from '../../services/command.service';
 import { ElementType } from '../../models/command';
 import { RuleModel } from '../../models/rule.model';
 
-@Component({    
+@Component({
     selector: 'copyValue',
     templateUrl: 'copyValue.component.html'
 })
 
 export class CopyValueComponent extends BaseCommandComponent {
-        @Input()
+    @Input()
     ruleModel: RuleModel;
 
     @Output()
     onDataChanged = new EventEmitter();
-    
+
     sourceElementValuePlaceholder: string;
 
     constructor(commandService: CommandService) {
@@ -45,11 +45,11 @@ export class CopyValueComponent extends BaseCommandComponent {
             case ElementType.SpringObjectName:
                 this.sourceElementValuePlaceholder = this.TextPlaceholderSpringObjectName;
                 break;
-            case ElementType.Json:                
+            case ElementType.Json:
                 this.sourceElementValuePlaceholder = this.TextPlaceholderJsonTypeName;
                 break;
             default:
-                this.sourceElementValuePlaceholder= "";
+                this.sourceElementValuePlaceholder = "";
                 break;
         }
 
