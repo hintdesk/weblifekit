@@ -18,7 +18,7 @@ export class ValidateCommandTemplate extends BaseCommandTemplate {
     }
 
     execute(ruleModel: RuleModel): Rule {
-        ruleModel.Name = this.namingService.getValidate(ruleModel.UIField);
+        ruleModel.Name = this.namingService.getForValidate(ruleModel.UIField);
         ruleModel.CategoryArt = RuleCategoryArt.GuiManipulation;
         var rule = new Rule(ruleModel);        
         

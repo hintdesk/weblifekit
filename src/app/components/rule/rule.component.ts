@@ -4,7 +4,6 @@ import { CommandService } from '../../services/command.service';
 
 import { Rule, RuleCategoryArt } from '../../models/rule';
 import { Command, CommandType, ElementType, EventType, PlainTextType } from '../../models/command';
-import { CommandInitializeParameter, CommandInitializeParameterName } from '../../models/commandInitializeParameter';
 import { RuleModel } from '../../models/rule.model';
 
 

@@ -1,4 +1,5 @@
 import { ElementType } from '../models/command';
+import { OperatorType } from '../models/condition';
 
 export class NamingService {
 
@@ -25,7 +26,7 @@ export class NamingService {
 
     getForDeleteArray(array: string): string {
         array = this.getLastElement(array);
-        return "Delete_Array_" + array;
+        return "Delete_Selected_Item_From_Array_" + array;
     }
     getForGoToPage(page: string): string {
         return "Go_To_Page_" + page;
@@ -103,8 +104,25 @@ export class NamingService {
         return "Apply_" + stateTableName + "_On_" + uiField;
     }
 
-    getValidate(uiField: string): string {
+    getForValidate(uiField: string): string {
         return "Validate_" + uiField;
+    }
+
+    getOperatorName(operatorType: OperatorType) {
+        switch (operatorType) {
+            case OperatorType.And:
+                return "And";
+            case OperatorType.Equals:
+                return "Equals";
+            case OperatorType.GreaterThan:
+                return "GreaterThan";
+            case OperatorType.NotEqual:
+                return "NotEqual";
+            case OperatorType.Or:
+                return "Or";
+            case OperatorType.SmallerThan:
+                return "SmallerThan";
+        }
     }
 
     getSetViewModelPathByApplication(applicationName: string, targetProperty: string, sourceProperty: string): string {
@@ -154,11 +172,11 @@ export class NamingService {
         return result;
     }
 
-    lowerCaseFirstLetter(name:string):string {
+    lowerCaseFirstLetter(name: string): string {
         return name.charAt(0).toLowerCase() + name.slice(1);
     }
 
-    upperCaseFirstLetter(name:string):string {
+    upperCaseFirstLetter(name: string): string {
         return name.charAt(0).toUpperCase() + name.slice(1);
     }
 }

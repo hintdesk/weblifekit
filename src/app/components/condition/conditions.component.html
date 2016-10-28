@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<condition [(conditionModel)]="conditionModelLeft"></condition>
+	<condition [(conditionModel)]="conditionModel" (onDataChanged)="onDataChanged($event)"></condition>
 
 	<div class="row top-buffer">
 		<label class="col-xs-2">Json</label>

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ConditionModel, ConditionType, OperatorType } from '../../models/condition.model';
+import { ConditionModel, ConditionType, OperatorType } from '../../models/condition';
 import { ResourceTextComponent } from '../resourceText.component';
 
 @Component({
@@ -22,7 +22,7 @@ export class ConditionComponent extends ResourceTextComponent implements OnInit 
     ];
     operatorTypes: OperatorType[] = [
         OperatorType.And,
-        OperatorType.Equal,
+        OperatorType.Equals,
         OperatorType.GreaterThan,
         OperatorType.NotEqual,
         OperatorType.SmallerThan,
@@ -40,7 +40,7 @@ export class ConditionComponent extends ResourceTextComponent implements OnInit 
 
     ngOnInit() {
         this.conditionModel.LeftConditionType = ConditionType.LeftPath;
-        this.conditionModel.OperatorType = OperatorType.Equal;
+        this.conditionModel.OperatorType = OperatorType.Equals;
         this.conditionModel.RightConditionType = ConditionType.RightPath;
         this.onConditionTypeChanged(undefined);
     }
