@@ -137,8 +137,7 @@ export class NamingService {
     getSetViewModelPath(elementType: ElementType, viewModelPath: string, value: string): string {
         var path = this.getLastElement(viewModelPath);
 
-        if (!value || value === "")
-            value = "Blank";
+        value = this.renameIfBlank(value);
         value = this.getLastElement(value);
 
         var byDescription = "";
@@ -174,6 +173,16 @@ export class NamingService {
 
     lowerCaseFirstLetter(name: string): string {
         return name.charAt(0).toLowerCase() + name.slice(1);
+    }
+
+    removeUnderscore(text: string): string {
+        return text.replace(new RegExp("_", "g"), "");
+    }
+
+    renameIfBlank(text: string): string {
+        if (!text || text === "")
+            text = "Blank";
+        return text;
     }
 
     upperCaseFirstLetter(name: string): string {

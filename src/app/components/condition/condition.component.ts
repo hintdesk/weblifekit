@@ -16,6 +16,7 @@ export class ConditionComponent extends ResourceTextComponent implements OnInit 
 
 
     leftConditionTypes: ConditionType[] = [
+        ConditionType.LeftCalculator,
         ConditionType.LeftCondition,
         ConditionType.LeftPath,
         ConditionType.LeftValue
@@ -30,8 +31,10 @@ export class ConditionComponent extends ResourceTextComponent implements OnInit 
     ];
 
     rightConditionTypes: ConditionType[] = [
+        ConditionType.RightCalculator,
         ConditionType.RightCondition,
-        ConditionType.RightPath,
+        ConditionType.RightRegExp,
+        ConditionType.RightPath,    
         ConditionType.RightValue,
     ];
 
@@ -45,14 +48,25 @@ export class ConditionComponent extends ResourceTextComponent implements OnInit 
         this.onConditionTypeChanged(undefined);
     }
 
+    
     onConditionTypeChanged($event) {
         this.leftParameterPlaceholder = this.getParameterPlaceholder(this.conditionModel.LeftConditionType);
         this.rightParameterPlaceholder = this.getParameterPlaceholder(this.conditionModel.RightConditionType);
+
+        if (this.conditionModel.LeftConditionType == ConditionType.LeftCondition && this.conditionModel.RightConditionType == ConditionType.RightCondition)
+            this.conditionModel.OperatorType = OperatorType.And;
+
+        if (this.conditionModel.RightConditionType == ConditionType.RightRegExp)
+            this.conditionModel.OperatorType = OperatorType.Equals;
+
         this.onModelDataChanged($event);
     }
 
     getParameterPlaceholder(conditionType:ConditionType){
         switch (conditionType) {
+            case ConditionType.LeftCalculator:
+            case ConditionType.RightCalculator:
+                return this.TextPlaceholderStateTable;
             case ConditionType.LeftCondition:
             case ConditionType.RightCondition:
                 return this.TextPlaceholderConditionName;                

@@ -15,7 +15,7 @@
 <div class="row top-buffer">
 	<label class="col-xs-2" for="">Operator</label>
 	<div class="col-xs-2">
-		<select class="col-xs-12 form-control" [(ngModel)]="conditionModel.OperatorType" (ngModelChange)="onOperatorTypeChanged($event)"
+		<select class="col-xs-12 form-control" [(ngModel)]="conditionModel.OperatorType" (ngModelChange)="onModelDataChanged($event)"
 			name="">
             	<option *ngFor="let operatorType of operatorTypes" [ngValue]="operatorType">{{operatorType}}</option>
 			</select>
