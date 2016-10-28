@@ -44,7 +44,7 @@ export class ConditionComponent extends ResourceTextComponent implements OnInit 
     ngOnInit() {
         this.conditionModel.LeftConditionType = ConditionType.LeftPath;
         this.conditionModel.OperatorType = OperatorType.Equals;
-        this.conditionModel.RightConditionType = ConditionType.RightPath;
+        this.conditionModel.RightConditionType = ConditionType.RightValue;
         this.onConditionTypeChanged(undefined);
     }
 
