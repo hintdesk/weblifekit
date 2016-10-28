@@ -1,11 +1,11 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RuleComponent} from './components/rule/rule.component';
-import { ConditionComponent} from './components/condition/condition.component';
+import { ConditionsComponent} from './components/condition/conditions.component';
 
 const appRoutes: Routes = [
     { path: 'rule', component: RuleComponent },  
-    { path: 'condition', component: ConditionComponent }, 
+    { path: 'condition', component: ConditionsComponent }, 
     { path: '', redirectTo: '/rule', pathMatch: 'full' },
 
 ];

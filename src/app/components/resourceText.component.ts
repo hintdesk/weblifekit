@@ -9,6 +9,8 @@ export class ResourceTextComponent {
     TextPlaceholderErrorTextPlainText: string = "Hardcoded text for error: Bitte wählen Sie die gewünschte Form des Persönlichen Vorschlag / Produktinformationsblatt aus!, etc.";
     TextPlaceholderErrorTextResource: string = "Use DynRes for error: Dyn7272, Dyn7273, Dyn8471, etc.";
     TextPlaceholderColumnIndex: string = "An integer value: 1, 2, 3, etc.";
+    TextPlaceholderConditionName:string ="Name of a condition: MandantIsDHL, MandantIsZlat, HasVP2Condition, etc.";
+    TextPlaceholderConditionValue: string = "Value for comparison: blank, undefined, true, etc.";
     TextPlaceholderCustomCommandName:string = "Name of customCommand: triggerVorgangDataSourceChangeCommand, setVorgangStatusinApplicationCommand, addEventHandlerCommand, etc.";
     TextPlaceholderDialog : string = "Name of dialog (same with section tab in .xml file): AntragDruckPopUp, AntragBrDoKuDruck_InfoBox_2, AntragGwgIsa, etc.";
     TextPlaceholderDisplayNameValueCalculator:string ="Name of stateTable returning new name for page: ZV.Label, etc.";

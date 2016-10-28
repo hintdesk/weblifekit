@@ -48,7 +48,8 @@ import { RuleComponent } from './components/rule/rule.component';
 import { ActionCommandComponent} from './components/commands/actionCommand.component';
 import { CalculateComponent} from './components/commands/calculate.component';
 import { CopyValueComponent} from './components/commands/copyValue.component';
-import { ConditionComponent } from './components/condition/condition.component';
+import { ConditionComponent} from './components/condition/condition.component';
+import { ConditionsComponent } from './components/condition/conditions.component';
 import { ConfirmCommandAndChangeSwitchValueComponent} from './components/commands/confirmCommandAndChangeSwitchValue.component';
 import { ExecuteApplicationComponent} from './components/commands/executeApplication.component';
 import { ShowDetailsComponent } from './components/commands/showDetails.component'
@@ -92,6 +93,7 @@ import { CustomCommandComponent} from './components/commands/custom.component';
 
     ActionCommandComponent,
     ConditionComponent,
+    ConditionsComponent,
     CopyValueComponent,
     ExecuteApplicationComponent,
     ShowDetailsComponent,

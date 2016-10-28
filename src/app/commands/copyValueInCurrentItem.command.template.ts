@@ -4,8 +4,7 @@ import { NamingService }                        from '../services/naming.service
 
 import { CommandTemplate }                      from './command.template';
 import { RuleModel }                            from '../models/rule.model';
-import { Command, CommandType, ElementType, PlainTextType }    from '../models/command';
-import { CommandInitializeParameter, CommandInitializeParameterName }           from '../models/commandInitializeParameter'
+import { Command, CommandExecuteParameter, CommandInitializeParameter, CommandInitializeParameterName, CommandType, ElementType, PlainTextType } from '../models/command';
 import { Rule, RuleCategoryArt }                from '../models/rule';
 import { BaseCommandTemplate } from './base.command.template';
 
