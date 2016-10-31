@@ -1,9 +1,9 @@
 import { Input, Output, EventEmitter, OnInit } from '@angular/core';
-import { RuleModel } from '../../models/rule.model';
+import { RuleModel } from '../../models/rule';
 import { ResourceTextComponent } from '../resourceText.component';
 import { CommandService } from '../../services/command.service';
 
-import { EventType, ElementType } from '../../models/command';
+import { CommandEventType, ElementType } from '../../models/command';
 
 
 export class BaseCommandComponent extends ResourceTextComponent implements OnInit {
@@ -18,7 +18,7 @@ export class BaseCommandComponent extends ResourceTextComponent implements OnIni
     displayNameTypes: ElementType[] = [];
     errorTextTypes: ElementType[] = [];
     errorTextValuePlaceholder: string;
-    eventTypes: EventType[] = [];
+    eventTypes: CommandEventType[] = [];
     sourceElementTypes: ElementType[] = [];
 
     constructor(

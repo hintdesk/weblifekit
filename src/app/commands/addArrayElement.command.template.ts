@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 
 import { NamingService } from '../services/naming.service';
 
-import { RuleModel } from '../models/rule.model';
+
 import { Command, CommandExecuteParameter, CommandInitializeParameter, CommandInitializeParameterName, CommandType, ElementType, PlainTextType } from '../models/command';
-import { Rule, RuleCategoryArt } from '../models/rule';
+import { Rule, RuleCategoryArt ,RuleModel} from '../models/rule';
 import { BaseCommandTemplate } from './base.command.template';
 import { Condition } from '../models/condition';
 

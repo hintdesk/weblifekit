@@ -106,7 +106,7 @@ export class ElementType {
     static SpringObjectName: string = "SpringObjectName";
 }
 
-export class EventType {
+export class CommandEventType {
     static EventDataField: string = "eventDataField";
     static EventDataPath: string = "eventDataPath";
     static EventTriggerField: string = "eventTriggerField";

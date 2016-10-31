@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { CommandService } from '../../services/command.service';
 
-import { Rule, RuleCategoryArt } from '../../models/rule';
-import { Command, CommandType, ElementType, EventType, PlainTextType } from '../../models/command';
-import { RuleModel } from '../../models/rule.model';
+import { Rule, RuleCategoryArt, RuleModel } from '../../models/rule';
+import { Command, CommandType, ElementType, CommandEventType, PlainTextType } from '../../models/command';
 
 
 @Component({
@@ -17,7 +16,7 @@ export class RuleComponent implements OnInit {
     result: string = "";
     commandTypes: CommandType[] = [];
     ruleModel: RuleModel = new RuleModel();
-   
+
     constructor(
         private commandService: CommandService, ) {
 

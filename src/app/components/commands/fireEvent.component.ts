@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { BaseCommandComponent } from './baseCommand.component';
 import { CommandService } from '../../services/command.service';
-import { EventType } from '../../models/command';
+import { CommandEventType } from '../../models/command';
 import { Input, Output, EventEmitter, OnInit } from '@angular/core';
-import { RuleModel } from '../../models/rule.model';
+import { RuleModel } from '../../models/rule';
 
 @Component({
     selector: 'fireEvent',
@@ -28,18 +28,18 @@ export class FireEventComponent extends BaseCommandComponent {
         super.ngOnInit();
     }
     onEventTypeChanged($event){
-        if (this.ruleModel.EventType === EventType.EventDataPath)
+        if (this.ruleModel.EventType === CommandEventType.EventDataPath)
             this.ruleModel.EventTypeValue = "change";
         
         switch(this.ruleModel.EventType)
         {
-            case EventType.EventDataField:
+            case CommandEventType.EventDataField:
             this.eventTypeValueTextPlaceholder = this.TextPlaceholderEventTypeValueDataField;
             break;
-            case EventType.EventDataPath :
+            case CommandEventType.EventDataPath :
             this.eventTypeValueTextPlaceholder = this.TextPlaceholderEventTypeValueDataPath;
             break;
-            case EventType.EventTriggerField:
+            case CommandEventType.EventTriggerField:
             this.eventTypeValueTextPlaceholder = this.TextPlaceholderEventTypeValueTriggerField;
             break;
             default:

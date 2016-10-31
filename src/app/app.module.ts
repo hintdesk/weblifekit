@@ -51,6 +51,7 @@ import { CopyValueComponent} from './components/commands/copyValue.component';
 import { ConditionComponent} from './components/condition/condition.component';
 import { ConditionsComponent } from './components/condition/conditions.component';
 import { ConfirmCommandAndChangeSwitchValueComponent} from './components/commands/confirmCommandAndChangeSwitchValue.component';
+import { EventComponent} from './components/event/event.component';
 import { ExecuteApplicationComponent} from './components/commands/executeApplication.component';
 import { ShowDetailsComponent } from './components/commands/showDetails.component'
 import { SetTextForAutoCompleteComponent } from './components/commands/setTextForAutoComplete.component';
@@ -95,6 +96,7 @@ import { CustomCommandComponent} from './components/commands/custom.component';
     ConditionComponent,
     ConditionsComponent,
     CopyValueComponent,
+    EventComponent,
     ExecuteApplicationComponent,
     ShowDetailsComponent,
     SetTextForAutoCompleteComponent,

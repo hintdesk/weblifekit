@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { BaseCommandComponent } from './baseCommand.component';
 import { CommandService } from '../../services/command.service';
-import { EventType } from '../../models/command';
+import { CommandEventType } from '../../models/command';
 import { Input, Output, EventEmitter, OnInit } from '@angular/core';
-import { RuleModel } from '../../models/rule.model';
+import { RuleModel } from '../../models/rule';
 
 @Component({
     selector: 'executeApplication',
@@ -22,7 +22,7 @@ export class ExecuteApplicationComponent extends BaseCommandComponent {
     }
 
     onEventTypeChanged($event){
-        if (this.ruleModel.EventType === EventType.EventDataPath)
+        if (this.ruleModel.EventType === CommandEventType.EventDataPath)
             this.ruleModel.EventTypeValue = "change";
 
         this.onModelDataChanged($event);

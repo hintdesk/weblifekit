@@ -1,7 +1,6 @@
 import { CommandTemplate } from './command.template';
-import { RuleModel } from '../models/rule.model';
-import { CommandType, EventType, ElementType } from '../models/command';
-import { Rule, } from '../models/rule';
+import { CommandType, CommandEventType, ElementType } from '../models/command';
+import { Rule, RuleModel} from '../models/rule';
 
 
 export class BaseCommandTemplate implements CommandTemplate {
@@ -38,11 +37,11 @@ export class BaseCommandTemplate implements CommandTemplate {
         return result;
     }
 
-    getEventTypes():EventType[]{
-        var result : EventType[]=[
-            EventType.EventDataField,
-            EventType.EventDataPath,
-            EventType.EventTriggerField
+    getEventTypes():CommandEventType[]{
+        var result : CommandEventType[]=[
+            CommandEventType.EventDataField,
+            CommandEventType.EventDataPath,
+            CommandEventType.EventTriggerField
         ];
         return result;
     }

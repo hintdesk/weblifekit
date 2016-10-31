@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { BaseCommandComponent } from './baseCommand.component';
 import { CommandService } from '../../services/command.service';
 import { NamingService } from '../../services/naming.service';
-import { RuleModel } from '../../models/rule.model';
+import { RuleModel } from '../../models/rule';
 
 @Component({
     selector: 'custom',

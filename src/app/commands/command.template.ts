@@ -1,6 +1,5 @@
-import { RuleModel }    from '../models/rule.model';
-import { Rule }         from '../models/rule';
-import { EventType, ElementType }  from '../models/command';
+import { Rule ,RuleModel}         from '../models/rule';
+import { CommandEventType, ElementType }  from '../models/command';
 
 export interface CommandTemplate {
     canHandle(ruleModel: RuleModel): boolean;
@@ -8,7 +7,7 @@ export interface CommandTemplate {
     getDestinationElementTypes():ElementType[];
     getDisplayNameTypes():ElementType[];
     getErrorTextTypes():ElementType[];
-    getEventTypes():EventType[];
+    getEventTypes():CommandEventType[];
     getSourceElementTypes():ElementType[];
     getSourcePropertyTypes():ElementType[];
     getTargetPropertyTypes():ElementType[];
