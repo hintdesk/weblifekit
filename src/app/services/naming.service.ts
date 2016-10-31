@@ -171,6 +171,15 @@ export class NamingService {
         return result;
     }
 
+    getParentPath(path: string): string {
+        if (path) {
+            var paths = path.split(".");
+            if (paths.length > 1)
+                paths.pop();
+        }
+        return paths.join(".");
+    }
+
     lowerCaseFirstLetter(name: string): string {
         return name.charAt(0).toLowerCase() + name.slice(1);
     }

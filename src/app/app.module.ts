@@ -43,15 +43,18 @@ import { CalculateCommandTemplate } from './commands/calculate.command.template'
 import { CustomCommandTemplate} from './commands/custom.command.template';
 
 import { AppComponent } from './app.component';
+import { ConditionsComponent } from './components/condition/conditions.component';
+import { EventComponent} from './components/event/event.component';
 import { RuleComponent } from './components/rule/rule.component';
+import { SnippetsComponent} from './components/snippets/snippets.component';
+
+import { ConditionComponent} from './components/condition/condition.component';
 
 import { ActionCommandComponent} from './components/commands/actionCommand.component';
 import { CalculateComponent} from './components/commands/calculate.component';
 import { CopyValueComponent} from './components/commands/copyValue.component';
-import { ConditionComponent} from './components/condition/condition.component';
-import { ConditionsComponent } from './components/condition/conditions.component';
 import { ConfirmCommandAndChangeSwitchValueComponent} from './components/commands/confirmCommandAndChangeSwitchValue.component';
-import { EventComponent} from './components/event/event.component';
+import { CustomCommandComponent} from './components/commands/custom.component';
 import { ExecuteApplicationComponent} from './components/commands/executeApplication.component';
 import { ShowDetailsComponent } from './components/commands/showDetails.component'
 import { SetTextForAutoCompleteComponent } from './components/commands/setTextForAutoComplete.component';
@@ -74,8 +77,6 @@ import { SetWarningInWarningProviderAndNotifyComponent } from './components/comm
 import { AddItemAndShowGridDetailsComponent } from './components/commands/addItemAndShowGridDetails.component';
 import { CopyObjectComponent} from './components/commands/copyObject.component';
 import { ShowGridDetailsComponent} from './components/commands/showGridDetails.component';
-import { CustomCommandComponent} from './components/commands/custom.component';
-
 
 
 @NgModule({
@@ -90,13 +91,15 @@ import { CustomCommandComponent} from './components/commands/custom.component';
 
   declarations: [
     AppComponent,    
-    RuleComponent,
-
-    ActionCommandComponent,
-    ConditionComponent,
     ConditionsComponent,
-    CopyValueComponent,
     EventComponent,
+    RuleComponent,
+    SnippetsComponent,
+
+    ConditionComponent,
+
+    ActionCommandComponent,   
+    CopyValueComponent,    
     ExecuteApplicationComponent,
     ShowDetailsComponent,
     SetTextForAutoCompleteComponent,
@@ -121,7 +124,8 @@ import { CustomCommandComponent} from './components/commands/custom.component';
     ShowGridDetailsComponent,
     ConfirmCommandAndChangeSwitchValueComponent,
     CalculateComponent,
-    CustomCommandComponent
+    CustomCommandComponent,
+    
   ],
 
   providers: [
