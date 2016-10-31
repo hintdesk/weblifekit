@@ -1,21 +1,21 @@
 <div class="row top-buffer">
-	<label class="col-xs-2" for="">LeftParameter</label>
-	<div class="col-xs-2">
-		<select class="col-xs-12 form-control" [(ngModel)]="conditionModel.LeftConditionType" (ngModelChange)="onConditionTypeChanged($event)"
+	<label class="col-md-2" for="">LeftParameter</label>
+	<div class="col-md-2">
+		<select class="form-control" [(ngModel)]="conditionModel.LeftConditionType" (ngModelChange)="onConditionTypeChanged($event)"
 			name="">
             	<option *ngFor="let conditionType of leftConditionTypes" [ngValue]="conditionType">{{conditionType}}</option>
 			</select>
 	</div>
-	<div class="col-xs-6">
-		<input class="col-xs-12 form-control" [(ngModel)]="conditionModel.LeftParameter" (ngModelChange)="onModelDataChanged($event)"
+	<div class="col-md-6">
+		<input class="form-control" [(ngModel)]="conditionModel.LeftParameter" (ngModelChange)="onModelDataChanged($event)"
 			type="text" placeholder="{{leftParameterPlaceholder}}">
 	</div>
 
 </div>
 <div class="row top-buffer">
-	<label class="col-xs-2" for="">Operator</label>
-	<div class="col-xs-2">
-		<select class="col-xs-12 form-control" [(ngModel)]="conditionModel.OperatorType" (ngModelChange)="onModelDataChanged($event)"
+	<label class="col-md-2" for="">Operator</label>
+	<div class="col-md-2">
+		<select class="form-control" [(ngModel)]="conditionModel.OperatorType" (ngModelChange)="onModelDataChanged($event)"
 			name="">
             	<option *ngFor="let operatorType of operatorTypes" [ngValue]="operatorType">{{operatorType}}</option>
 			</select>
@@ -23,15 +23,15 @@
 </div>
 
 <div class="row top-buffer">
-	<label class="col-xs-2" for="">RightParameter</label>
-	<div class="col-xs-2">
-		<select class="col-xs-12 form-control" [(ngModel)]="conditionModel.RightConditionType" (ngModelChange)="onConditionTypeChanged($event)"
+	<label class="col-md-2" for="">RightParameter</label>
+	<div class="col-md-2">
+		<select class="form-control" [(ngModel)]="conditionModel.RightConditionType" (ngModelChange)="onConditionTypeChanged($event)"
 			name="">
             	<option *ngFor="let conditionType of rightConditionTypes" [ngValue]="conditionType">{{conditionType}}</option>
 			</select>
 	</div>
-	<div class="col-xs-6">
-		<input class="col-xs-12 form-control" [(ngModel)]="conditionModel.RightParameter" (ngModelChange)="onModelDataChanged($event)"
+	<div class="col-md-6">
+		<input class="form-control" [(ngModel)]="conditionModel.RightParameter" (ngModelChange)="onModelDataChanged($event)"
 			type="text" placeholder={{rightParameterPlaceholder}}>
 	</div>
 

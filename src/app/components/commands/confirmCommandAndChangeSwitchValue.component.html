@@ -1,25 +1,25 @@
 <!--Message-->
 <div class="row top-buffer">
-	<label class="col-xs-2" for="">Message</label>
-	<div class="col-xs-8">
-		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.Message" (ngModelChange)="onModelDataChanged($event)" type="text"
+	<label class="col-md-2" for="">Message</label>
+	<div class="col-md-8">
+		<input class="form-control" [(ngModel)]="ruleModel.Message" (ngModelChange)="onModelDataChanged($event)" type="text"
 			placeholder="{{TextPlaceholderMessage}}">
 	</div>
 </div>
 
 <!--UIField-->
 <div class="row top-buffer">
-	<label class="col-xs-2" for="">UIField</label>
-	<div class="col-xs-8">
-		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.UIField" (ngModelChange)="onModelDataChanged($event)" type="text"
+	<label class="col-md-2" for="">UIField</label>
+	<div class="col-md-8">
+		<input class="form-control" [(ngModel)]="ruleModel.UIField" (ngModelChange)="onModelDataChanged($event)" type="text"
 			placeholder="{{TextPlaceholderUIField}}">
 	</div>
 </div>
 
 <!--Value-->
 <div class="row top-buffer">
-	<label class="col-xs-2" for="">Value</label>
-	<div class="col-xs-8 checkbox hd-checkbox">
+	<label class="col-md-2" for="">Value</label>
+	<div class="col-md-8 checkbox hd-checkbox">
 		<input [(ngModel)]="ruleModel.Value" (ngModelChange)="onModelDataChanged($event)" type="checkbox">
 	</div>
 </div>

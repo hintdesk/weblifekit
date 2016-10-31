@@ -1,26 +1,26 @@
 <!--ListProperty-->
 <div class="row top-buffer">
-	<label class="col-xs-2" for="">ListProperty</label>
-	<div class="col-xs-8">
-		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.ListProperty" (ngModelChange)="onModelDataChanged($event)" type="text"
+	<label class="col-md-2" for="">ListProperty</label>
+	<div class="col-md-8">
+		<input class="form-control" [(ngModel)]="ruleModel.ListProperty" (ngModelChange)="onModelDataChanged($event)" type="text"
 			placeholder="{{TextPlaceholderListProperty}}">
 	</div>
 </div>
 
 <!--SourceElement-->
 <div class="row top-buffer">
-	<label class="col-xs-2" for="">SourceElement</label>
-	<div class="col-xs-8">
-		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.SourceElementValue" (ngModelChange)="onModelDataChanged($event)"
+	<label class="col-md-2" for="">SourceElement</label>
+	<div class="col-md-8">
+		<input class="form-control" [(ngModel)]="ruleModel.SourceElementValue" (ngModelChange)="onModelDataChanged($event)"
 			type="text" placeholder="{{TextPlaceholderSourceElementValuePlainText}}">
 	</div>
 </div>
 
 <!--DestinationElement-->
 <div class="row top-buffer">
-	<label class="col-xs-2" for="">DestinationElement</label>
-	<div class="col-xs-8">
-		<input class="col-xs-12 form-control" [(ngModel)]="ruleModel.DestinationElementValue" (ngModelChange)="onModelDataChanged($event)"
+	<label class="col-md-2" for="">DestinationElement</label>
+	<div class="col-md-8">
+		<input class="form-control" [(ngModel)]="ruleModel.DestinationElementValue" (ngModelChange)="onModelDataChanged($event)"
 			type="text" placeholder="{{TextPlaceholderSpringObjectName}}">
 	</div>
 </div>

@@ -1,15 +1,15 @@
 <!--NavigationElement-->
 <div class="row top-buffer">
-    <label class="col-xs-2" for="">NavigationElement</label>
-    <div class="col-xs-6">
-        <input class="col-xs-12 form-control" [(ngModel)]="ruleModel.NavigationElement" (ngModelChange)="onModelDataChanged($event)" placeholder="Seperate the elements by comma for multiple elements" type="text">
+    <label class="col-md-2" for="">NavigationElement</label>
+    <div class="col-md-6">
+        <input class="form-control" [(ngModel)]="ruleModel.NavigationElement" (ngModelChange)="onModelDataChanged($event)" placeholder="Seperate the elements by comma for multiple elements" type="text">
     </div>
 </div>	
 
 <!--BadCommand-->
 <div class="row top-buffer">
-    <label class="col-xs-2" for="">BadCommand</label>
-    <div class="col-xs-6 checkbox hd-checkbox">
+    <label class="col-md-2" for="">BadCommand</label>
+    <div class="col-md-6 checkbox hd-checkbox">
         <input [(ngModel)]="ruleModel.BadCommand" (ngModelChange)="onModelDataChanged($event)" type="checkbox">
     </div>
 </div>
