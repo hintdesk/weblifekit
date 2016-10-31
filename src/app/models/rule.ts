@@ -39,6 +39,8 @@ export class RuleModel {
     CommandType: CommandType;
     CopyMode: boolean = false;
     ColumnIndex: string = "";
+    CommandEventType: CommandEventType;
+    CommandEventTypeValue: string = "";    
     Condition: string = "TrueCondition";
     DestinationElementType: ElementType;
     DestinationElementValue: string = "";
@@ -49,8 +51,6 @@ export class RuleModel {
     ErrorTextType: ElementType;
     ErrorTextValue: string = "";
     EventName: string = "";
-    EventType: CommandEventType;
-    EventTypeValue: string = "";
     GridId: string = "";
     Height:string = "";
     HideClose: boolean = false;

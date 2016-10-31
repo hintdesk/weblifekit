@@ -2,13 +2,13 @@
 <div class="row top-buffer">
 	<label class="col-md-2" for="">EventType</label>
 	<div class="col-md-2">
-		<select class="form-control" [(ngModel)]="ruleModel.EventType" (ngModelChange)="onEventTypeChanged($event)" name=""
+		<select class="form-control" [(ngModel)]="ruleModel.CommandEventType" (ngModelChange)="onEventTypeChanged($event)" name=""
 			id="">
 			<option *ngFor="let eventType of eventTypes" [ngValue]="eventType">{{eventType}}</option>
 		</select>
 	</div>
 	<div class="col-md-6">
-		<input class="form-control" [(ngModel)]="ruleModel.EventTypeValue" (ngModelChange)="onModelDataChanged($event)"
+		<input class="form-control" [(ngModel)]="ruleModel.CommandEventTypeValue" (ngModelChange)="onModelDataChanged($event)"
 			type="text" placeholder="{{eventTypeValueTextPlaceholder}}">
 	</div>
 </div>

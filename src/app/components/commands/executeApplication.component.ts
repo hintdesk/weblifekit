@@ -22,8 +22,8 @@ export class ExecuteApplicationComponent extends BaseCommandComponent {
     }
 
     onEventTypeChanged($event){
-        if (this.ruleModel.EventType === CommandEventType.EventDataPath)
-            this.ruleModel.EventTypeValue = "change";
+        if (this.ruleModel.CommandEventType === CommandEventType.EventDataPath)
+            this.ruleModel.CommandEventTypeValue = "change";
 
         this.onModelDataChanged($event);
     }

@@ -1,5 +1,6 @@
-import { ElementType } from '../models/command';
+import { ElementType, CommandEventType } from '../models/command';
 import { OperatorType } from '../models/condition';
+import { RuleModel } from '../models/rule';
 
 export class NamingService {
 
@@ -47,9 +48,12 @@ export class NamingService {
         return "RequiredFieldInList_" + uiField;
     }
 
-    getForFireEvent(event: string): string {
-        event = event.replace(new RegExp("\\.", "g"), "_");
-        return "Trigger_Event_" + event;
+    getForFireEvent(ruleModel: RuleModel): string {
+        var event = ruleModel.EventName.replace(new RegExp("\\.", "g"), "_");
+        if (ruleModel.CommandEventType === CommandEventType.EventDataPath)
+            return "Trigger_Event_" + this.getLastElement(ruleModel.CommandEventTypeValue) + "_" + event;
+        else
+            return "Trigger_Event_" + event;
     }
 
     getForHideDetails(dialog: string): string {

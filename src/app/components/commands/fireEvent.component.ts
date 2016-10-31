@@ -28,10 +28,10 @@ export class FireEventComponent extends BaseCommandComponent {
         super.ngOnInit();
     }
     onEventTypeChanged($event){
-        if (this.ruleModel.EventType === CommandEventType.EventDataPath)
-            this.ruleModel.EventTypeValue = "change";
+        if (this.ruleModel.CommandEventType === CommandEventType.EventDataPath)
+            this.ruleModel.EventName = "change";
         
-        switch(this.ruleModel.EventType)
+        switch(this.ruleModel.CommandEventType)
         {
             case CommandEventType.EventDataField:
             this.eventTypeValueTextPlaceholder = this.TextPlaceholderEventTypeValueDataField;

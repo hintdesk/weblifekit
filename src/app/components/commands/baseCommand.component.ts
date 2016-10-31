@@ -50,7 +50,7 @@ export class BaseCommandComponent extends ResourceTextComponent implements OnIni
             this.ruleModel.ErrorTextType = this.errorTextTypes[0];
 
         if (this.eventTypes.length > 0)
-            this.ruleModel.EventType = this.eventTypes[0];
+            this.ruleModel.CommandEventType = this.eventTypes[0];
 
         if (this.sourceElementTypes.length > 0)
             this.ruleModel.SourceElementType = this.sourceElementTypes[0];

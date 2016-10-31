@@ -18,15 +18,15 @@ export class FireEventCommandTemplate extends BaseCommandTemplate {
     }
 
     execute(ruleModel: RuleModel): Rule {
-        ruleModel.Name = this.namingService.getForFireEvent(ruleModel.EventName);  
+        ruleModel.Name = this.namingService.getForFireEvent(ruleModel);  
         ruleModel.CategoryArt = undefined;
         var rule = new Rule(ruleModel);
 
         //EventType
         
         var cipEventType = new CommandInitializeParameter();
-        cipEventType.Name = String(ruleModel.EventType);
-        cipEventType.PlainText = ruleModel.EventTypeValue;
+        cipEventType.Name = String(ruleModel.CommandEventType);
+        cipEventType.PlainText = ruleModel.CommandEventTypeValue;
         cipEventType.ValueTypeArt = ElementType.PlainText;
         rule.Command.CommandInitializeParameters.push(cipEventType);
 
