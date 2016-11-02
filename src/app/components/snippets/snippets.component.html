@@ -4,7 +4,7 @@
 		<label class="col-md-2" for="">Full path for debugging</label>
 		<div class="col-md-8">
 			<input class="form-control" [(ngModel)]="snippetsModel.PathForFull" (ngModelChange)="onPathForFullChanged($event)" type="text"
-				placeholder="{{TextPlaceholderSpringObjectName}}">
+				placeholder="{{TextPlaceholderSpringObjectName}}" (click)="onTextBoxClickSelectAll($event)">
 		</div>
 		<div class="col-md-2">
 			<div>
@@ -21,7 +21,7 @@
 		<label class="col-md-2" for="">JS code for pausing on set</label>
 		<div class="col-md-8">
 			<input class="form-control" [(ngModel)]="snippetsModel.PathForJS" (ngModelChange)="onPathForJSChanged($event)" type="text"
-				placeholder="{{TextPlaceholderSpringObjectName}}">
+				placeholder="{{TextPlaceholderSpringObjectName}}" (click)="onTextBoxClickSelectAll($event)">
 		</div>
 		<div class="col-md-2">
 			<div>

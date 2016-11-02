@@ -19,9 +19,10 @@
 <!--ColumnIndex-->
 <div class="row top-buffer">
 	<label class="col-md-2" for="">ColumnIndex</label>
-	<div class="col-md-8">
+	<div class="col-md-8" [class.has-error]="columnIndex.errors?.number" >
 		<input class="form-control" [(ngModel)]="ruleModel.ColumnIndex" (ngModelChange)="onModelDataChanged($event)" type="text"
-			placeholder="{{TextPlaceholderColumnIndex}}">
+			placeholder="{{TextPlaceholderColumnIndex}}" name="columnIndex" #columnIndex="ngModel" number>
+		<div *ngIf="columnIndex.errors?.number" class="alert alert-danger">ColumnIndex must be a number</div>
 	</div>
 </div>
 

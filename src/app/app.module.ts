@@ -7,6 +7,7 @@ import { routing } from './app.routing';
 
 import { ClipboardModule } from 'angular2-clipboard';
 import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { CustomFormsModule} from 'ng2-validation';
 
 
 import { CommandService } from './services/command.service';
@@ -86,6 +87,7 @@ import { ShowGridDetailsComponent} from './components/commands/showGridDetails.c
     HttpModule,
     ClipboardModule,
     Ng2BootstrapModule,
+    CustomFormsModule,
     routing
   ],
 
