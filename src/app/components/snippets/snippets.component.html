@@ -1,6 +1,6 @@
 <div class="container-fluid">
 	<!--FullPathForDebugging-->
-	<div class="row top-buffer" >
+	<div class="row top-buffer">
 		<label class="col-md-2" for="">Full path for debugging</label>
 		<div class="col-md-8">
 			<input class="form-control" [(ngModel)]="snippetsModel.PathForFull" (ngModelChange)="onPathForFullChanged($event)" type="text"
@@ -11,13 +11,12 @@
 				<button class="btn btn-primary" [ngIIclipboard]="pFullPath">Copy to clipboard</button>
 			</div>
 		</div>
-	</div>
-	<div class="row" >
-		<p #pFullPath class="col-md-8 col-xs-offset-2 text-muted"><small>{{fullPathForDebugging}}</small></p>
+		<small #pFullPath class="col-md-8 col-xs-offset-2 text-muted">{{fullPathForDebugging}}</small>
 	</div>
 
+
 	<!--JSCodeForPausingOnSet-->
-	<div class="row top-buffer" >
+	<div class="row top-buffer">
 		<label class="col-md-2" for="">JS code for pausing on set</label>
 		<div class="col-md-8">
 			<input class="form-control" [(ngModel)]="snippetsModel.PathForJS" (ngModelChange)="onPathForJSChanged($event)" type="text"
@@ -28,10 +27,9 @@
 				<button class="btn btn-primary" [ngIIclipboard]="pJSCode">Copy to clipboard</button>
 			</div>
 		</div>
+		<small #pJSCode class="col-md-8 col-xs-offset-2 text-muted">{{jsCodeForPausingOnSet}}</small>
 	</div>
-	<div class="row" >
-		<p #pJSCode class="col-md-8 col-xs-offset-2 text-muted"><small>{{jsCodeForPausingOnSet}}</small></p>
-	</div>
+
 
 	<!--Result-->
 	<div class="row top-buffer">

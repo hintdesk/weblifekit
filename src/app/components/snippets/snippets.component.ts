@@ -26,17 +26,16 @@ export class SnippetsComponent extends ResourceTextComponent implements OnInit{
     onPathForJSChanged($event){
         var parent = this.namingService.getParentPath(this.snippetsModel.PathForJS);
         var property = this.namingService.getLastElement(this.snippetsModel.PathForJS);       
-        this.jsCodeForPausingOnSet += `impeo.zurich.weblife.application.data.currentVorgang.DataAsObject.${parent}.bind(\"set\",function(arg){ if (arg.field === \"${property}\") debugger;})`;
+        this.jsCodeForPausingOnSet = `impeo.zurich.weblife.application.data.currentVorgang.DataAsObject.${parent}.bind(\"set\",function(arg){ if (arg.field === \"${property}\") debugger;})`;
     }
 
     onPathForFullChanged($event){
-        this.fullPathForDebugging = "var m = impeo.zurich.weblife.application.data.currentVorgang.DataAsObject;\n"; 
+        this.fullPathForDebugging = "var m = impeo.zurich.weblife.application.data.currentVorgang.DataAsObject; "; 
         this.fullPathForDebugging += "m." + this.snippetsModel.PathForFull;
     }
 
     onTextBoxClickSelectAll($event)
     {
-        console.log("hihi");
         $event.target.select();
     }
 }
