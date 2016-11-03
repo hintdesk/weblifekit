@@ -17,11 +17,11 @@ export class CustomCommandTemplate extends BaseCommandTemplate {
         return ruleModel.CommandType === CommandType.CustomCommand;
     }
 
-    execute(ruleModel: RuleModel): Rule {
+    execute(ruleModel: RuleModel): Rule {        
         ruleModel.CategoryArt = undefined; 
 
         var rule = new Rule(ruleModel);
-        rule.Command.Name = ruleModel.Name;    
+        rule.Command.Name = this.namingService.lowerCaseFirstLetter(this.namingService.removeUnderscore(ruleModel.Name));    
         rule.Command.CommandInitializeParameters = undefined;
 
         if (ruleModel.Parameter)

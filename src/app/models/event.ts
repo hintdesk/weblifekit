@@ -14,6 +14,7 @@ export class EventElement
 {
     EventName:string;
     UiFieldId:string;
+    ViewModelFieldPath:string;
 }
 export class EventModel {
     EventName: string;

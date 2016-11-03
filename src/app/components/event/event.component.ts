@@ -51,7 +51,10 @@ export class EventComponent extends ResourceTextComponent implements OnInit{
         var eventWL: EventWL = new EventWL();
     
         var eventElement = new EventElement();
-        eventElement.UiFieldId = this.eventModel.UIField;
+        if (this.eventModel.EventType === EventType.Change)
+            eventElement.ViewModelFieldPath = this.eventModel.UIField;
+        else
+            eventElement.UiFieldId = this.eventModel.UIField;
         if (this.eventModel.EventType === EventType.CustomEvent)
             eventElement.EventName = this.eventModel.EventName;
         else 
