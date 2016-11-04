@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { NamingService } from '../services/naming.service';
+import { NamingProvider } from '../services/naming.provider';
 
 import { Command, CommandExecuteParameter, CommandInitializeParameter, CommandInitializeParameterName, CommandType, ElementType, PlainTextType } from '../models/command';
 import { Rule, RuleCategoryArt,RuleModel } from '../models/rule';
@@ -9,7 +9,7 @@ import { BaseCommandTemplate } from './base.command.template';
 @Injectable()
 export class DeleteArrayElementsCommandTemplate extends BaseCommandTemplate {
 
-    constructor(private namingService: NamingService) {
+    constructor(private namingProvider: NamingProvider) {
         super();
         this.Description = this.TextCommandDescriptionDeleteArrayElements;
     }
@@ -19,7 +19,7 @@ export class DeleteArrayElementsCommandTemplate extends BaseCommandTemplate {
 
     execute(ruleModel: RuleModel): Rule {
         
-        ruleModel.Name = this.namingService.getForDeleteArray(ruleModel.ArrayField);  
+        ruleModel.Name = this.namingProvider.getForDeleteArray(ruleModel.ArrayField);  
         ruleModel.CategoryArt = undefined;
         var rule = new Rule(ruleModel);
           

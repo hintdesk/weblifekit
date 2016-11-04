@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { NamingService } from '../services/naming.service';
+import { NamingProvider } from '../services/naming.provider';
 
 import { Command, CommandExecuteParameter, CommandInitializeParameter, CommandInitializeParameterName, CommandType, ElementType, PlainTextType } from '../models/command';
 import { Rule, RuleCategoryArt,RuleModel } from '../models/rule';
@@ -9,7 +9,7 @@ import { BaseCommandTemplate } from './base.command.template';
 @Injectable()
 export class ExecuteApplicationCommandTemplate extends BaseCommandTemplate {
 
-    constructor(private namingService: NamingService) {
+    constructor(private namingProvider: NamingProvider) {
         super();
     }
     canHandle(ruleModel: RuleModel): boolean {
@@ -17,7 +17,7 @@ export class ExecuteApplicationCommandTemplate extends BaseCommandTemplate {
     }
 
     execute(ruleModel: RuleModel): Rule {
-        ruleModel.Name = this.namingService.getSetViewModelPathByApplication(ruleModel.ApplicationName, ruleModel.TargetProperty, ruleModel.SourceProperty);
+        ruleModel.Name = this.namingProvider.getSetViewModelPathByApplication(ruleModel.ApplicationName, ruleModel.TargetProperty, ruleModel.SourceProperty);
         ruleModel.CategoryArt = undefined;  
         var rule = new Rule(ruleModel);
              

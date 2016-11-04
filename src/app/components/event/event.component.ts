@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NamingService } from '../../services/naming.service';
+import { NamingProvider } from '../../services/naming.provider';
 import { EventElement, EventModel, EventType, EventWL } from '../../models/event';
 import { ResourceTextService } from '../../services/resourceText.service';
 
@@ -41,7 +41,7 @@ export class EventComponent extends ResourceTextService implements OnInit{
         EventType.ValidatePage
     ];
 
-    constructor(private namingService: NamingService) {
+    constructor(private namingProvider: NamingProvider) {
         super();
     }
 

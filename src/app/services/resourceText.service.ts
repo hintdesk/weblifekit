@@ -34,7 +34,7 @@ export class ResourceTextService {
     TextPlaceholderParentUIElement:string = "Name of parent ui element: ";
     TextPlaceholderSourceElementValueBindingPath: string = "BindingPath of UIField: BerechnungsEingaben.VersicherungsNehmer.PersonAdressen[0].Ort, etc.";    
     TextPlaceholderSourceElementValuePlainText: string = "A string value:blank, ZVB_VERWEND_ZWECK_JUNIOR, ZVB_VERWEND_ZWECK_VORSORGE, etc.";
-    TextPlaceholderSourceProperty: string = "Argument sent to application, can be a path of viewModels's property. If nothing is given, the current viewModel will be sent to server: BerechnungsEingaben.Extension.BezugsrechtErlebensfall.BezugsBerechtigtePerson.PersonKonten[0], etc.";
+    TextPlaceholderSourceProperty: string = "Argument sent to application, is a path of viewModels's property. If nothing is given, the current viewModel will be sent to server: BerechnungsEingaben.Extension.BezugsrechtErlebensfall.BezugsBerechtigtePerson.PersonKonten[0], etc.";
     TextPlaceholderSpringObjectName: string = "Path of viewModel's property: BerechnungsEingaben.Vermittler.Vermittler[0].PersonVermittler.PersonAdressen[0].Ort, etc.";
     TextPlaceholderStateTable: string = "Name of stateTable: Show_ERKL_AUSLAND_VN, Show_AUFZGWG, Set_Beratungsprotokoll, etc.";
     TextPlaceholderStateTableErrorText:string = "Name of stateTable returning error text: IBAN_Fehlermeldung_Bezugrecht, BezTod_GeburtsdatumMin, BezRechtTodEintrittsalterMax, etc.";

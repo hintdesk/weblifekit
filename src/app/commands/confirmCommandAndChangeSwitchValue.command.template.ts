@@ -1,6 +1,6 @@
 import { Injectable }                           from '@angular/core';
 
-import { NamingService }                        from '../services/naming.service';
+import { NamingProvider }                        from '../services/naming.provider';
 
 import { CommandTemplate }                      from './command.template';
 import { Command, CommandExecuteParameter, CommandInitializeParameter, CommandInitializeParameterName, CommandType, ElementType, PlainTextType } from '../models/command';
@@ -10,7 +10,7 @@ import { BaseCommandTemplate } from './base.command.template';
 @Injectable()
 export class ConfirmCommandAndChangeSwitchValueCommandTemplate extends BaseCommandTemplate {
 
-    constructor(private namingService: NamingService) {
+    constructor(private namingProvider: NamingProvider) {
         super();
     }
     
@@ -19,7 +19,7 @@ export class ConfirmCommandAndChangeSwitchValueCommandTemplate extends BaseComma
     }
 
     execute (ruleModel: RuleModel) : Rule {
-        ruleModel.Name = this.namingService.getForConfirmCommandAndChangeSwitchValue(ruleModel.UIField,ruleModel.Value);
+        ruleModel.Name = this.namingProvider.getForConfirmCommandAndChangeSwitchValue(ruleModel.UIField,ruleModel.Value);
         ruleModel.CategoryArt = undefined;
              
         var rule = new Rule(ruleModel);

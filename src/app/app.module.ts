@@ -9,10 +9,13 @@ import { ClipboardModule } from 'angular2-clipboard';
 import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { CustomFormsModule} from 'ng2-validation';
 
-
-import { CommandService } from './services/command.service';
+import { AppContext } from './services/app.context';
+import { BindingPathRepository } from './services/bindingPath.repository';
+import { CommandApi } from './services/command.api';
 import { JsonService } from './services/json.service';
-import { NamingService } from './services/naming.service';
+import { NamingProvider } from './services/naming.provider';
+
+
 
 import { BaseCommandTemplate } from './commands/base.command.template';
 import { CopyValueCommandTemplate } from './commands/copyValue.command.template';
@@ -131,9 +134,12 @@ import { ShowGridDetailsComponent} from './components/commands/showGridDetails.c
   ],
 
   providers: [
-    CommandService,
+  
+    BindingPathRepository,
+    CommandApi,
     JsonService,
-    NamingService,
+    NamingProvider,
+    AppContext,
 
     BaseCommandTemplate,
     CalculateCommandTemplate,

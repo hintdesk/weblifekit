@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CommandService } from '../../services/command.service';
+import { CommandApi } from '../../services/command.api';
 
 import { Rule, RuleCategoryArt, RuleModel } from '../../models/rule';
 import { Command, CommandType, ElementType, CommandEventType, PlainTextType } from '../../models/command';
@@ -22,9 +22,9 @@ export class RuleComponent implements OnInit {
 
 
     constructor(
-        private commandService: CommandService, ) {
-        this.commandTemplates = this.commandService.getCommandTemplates();        
-        this.commandTypes = this.commandService.getCommandTypes();
+        private commandApi: CommandApi, ) {
+        this.commandTemplates = this.commandApi.getCommandTemplates();        
+        this.commandTypes = this.commandApi.getCommandTypes();
 
     }
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NamingService } from '../services/naming.service';
+import { NamingProvider } from '../services/naming.provider';
 
 import { Command, CommandExecuteParameter, CommandInitializeParameter, CommandInitializeParameterName, CommandType, ElementType, PlainTextType } from '../models/command';
 import { Rule, RuleCategoryArt,RuleModel } from '../models/rule';
@@ -8,7 +8,7 @@ import { BaseCommandTemplate } from './base.command.template';
 @Injectable()
 export class ActionCommandTemplate extends BaseCommandTemplate {
 
-    constructor(private namingService: NamingService) {
+    constructor(private namingProvider: NamingProvider) {
         super();
     }
     canHandle(ruleModel: RuleModel): boolean {
@@ -16,7 +16,7 @@ export class ActionCommandTemplate extends BaseCommandTemplate {
     }
 
     execute(ruleModel: RuleModel): Rule {
-        ruleModel.Name = this.namingService.getForActionCommand(ruleModel.UIField, ruleModel.StateTable);
+        ruleModel.Name = this.namingProvider.getForActionCommand(ruleModel.UIField, ruleModel.StateTable);
         ruleModel.CategoryArt = RuleCategoryArt.DataManipulation;
 
         var rule = new Rule(ruleModel);

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { NamingService } from '../services/naming.service';
+import { NamingProvider } from '../services/naming.provider';
 
 import { Command, CommandExecuteParameter, CommandInitializeParameter, CommandInitializeParameterName, CommandType, ElementType, PlainTextType } from '../models/command';
 import { Rule, RuleCategoryArt,RuleModel } from '../models/rule';
@@ -10,7 +10,7 @@ import { Condition } from '../models/condition';
 @Injectable()
 export class CalculateCommandTemplate extends BaseCommandTemplate {
 
-    constructor(private namingService: NamingService) {
+    constructor(private namingProvider: NamingProvider) {
         super();
     }
     canHandle(ruleModel: RuleModel): boolean {
@@ -18,7 +18,7 @@ export class CalculateCommandTemplate extends BaseCommandTemplate {
     }
 
     execute(ruleModel: RuleModel): Rule {
-        ruleModel.Name = this.namingService.getForCalculate(ruleModel.Calculator, ruleModel.CalculatorArgumentValue);  
+        ruleModel.Name = this.namingProvider.getForCalculate(ruleModel.Calculator, ruleModel.CalculatorArgumentValue);  
         var rule = new Rule(ruleModel);              
 
         //Calculator

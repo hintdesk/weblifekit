@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CalculatorType, Condition, ConditionModel, ConditionType } from '../../models/condition';
-import { NamingService } from '../../services/naming.service';
+import { NamingProvider } from '../../services/naming.provider';
 
 @Component({
     selector: 'conditions',
@@ -11,7 +11,7 @@ export class ConditionsComponent {
     conditionModel: ConditionModel = new ConditionModel();
     result: string;
 
-    constructor(private namingService: NamingService) {
+    constructor(private namingProvider: NamingProvider) {
     }
 
     generate() {
@@ -82,7 +82,7 @@ export class ConditionsComponent {
     getNameIfLeftCalculator(): string {
         switch (this.conditionModel.RightConditionType) {
             case ConditionType.RightValue:
-                return "Is_" + this.namingService.removeUnderscore(this.conditionModel.LeftParameter) + "_" + this.namingService.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingService.renameIfBlank(this.conditionModel.RightParameter);
+                return "Is_" + this.namingProvider.removeUnderscore(this.conditionModel.LeftParameter) + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingProvider.renameIfBlank(this.conditionModel.RightParameter);
             default:
                 return "";
         }
@@ -91,7 +91,7 @@ export class ConditionsComponent {
     getNameIfLeftCondition(): string {
         switch (this.conditionModel.RightConditionType) {
             case ConditionType.RightCondition:
-                return "Is_" + this.namingService.removeUnderscore(this.conditionModel.LeftParameter) + "_" + this.namingService.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingService.removeUnderscore(this.conditionModel.RightParameter);
+                return "Is_" + this.namingProvider.removeUnderscore(this.conditionModel.LeftParameter) + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingProvider.removeUnderscore(this.conditionModel.RightParameter);
             default:
                 return "";
         }
@@ -100,9 +100,9 @@ export class ConditionsComponent {
     getNameIfLeftPath(): string {
         switch (this.conditionModel.RightConditionType) {
             case ConditionType.RightValue:
-                return "Is_" + this.namingService.getLastElement(this.conditionModel.LeftParameter) + "_" + this.namingService.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingService.renameIfBlank(this.conditionModel.RightParameter);
+                return "Is_" + this.namingProvider.getLastElement(this.conditionModel.LeftParameter) + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingProvider.renameIfBlank(this.conditionModel.RightParameter);
             case ConditionType.RightRegExp:
-                return "Is_" + this.namingService.getLastElement(this.conditionModel.LeftParameter) + "_Matches_RegEx";
+                return "Is_" + this.namingProvider.getLastElement(this.conditionModel.LeftParameter) + "_Matches_RegEx";
             default:
                 return "";
         }
@@ -111,9 +111,9 @@ export class ConditionsComponent {
     getNameIfLeftValue(): string {
         switch (this.conditionModel.RightConditionType) {
             case ConditionType.RightCalculator:
-                return "Is_" + this.namingService.removeUnderscore(this.conditionModel.RightParameter) + "_" + this.namingService.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingService.renameIfBlank(this.conditionModel.LeftParameter);
+                return "Is_" + this.namingProvider.removeUnderscore(this.conditionModel.RightParameter) + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingProvider.renameIfBlank(this.conditionModel.LeftParameter);
             case ConditionType.RightPath:
-                return "Is_" + this.namingService.removeUnderscore(this.conditionModel.RightParameter) + "_" + this.namingService.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingService.renameIfBlank(this.conditionModel.LeftParameter);
+                return "Is_" + this.namingProvider.removeUnderscore(this.conditionModel.RightParameter) + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingProvider.renameIfBlank(this.conditionModel.LeftParameter);
             default:
                 return "";
         }

@@ -1,7 +1,7 @@
 import { Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { RuleModel } from '../../models/rule';
 import { ResourceTextService } from '../../services/resourceText.service';
-import { CommandService } from '../../services/command.service';
+import { AppContext } from '../../services/app.context';
 
 import { CommandEventType, ElementType } from '../../models/command';
 
@@ -22,12 +22,14 @@ export class BaseCommandComponent extends ResourceTextService implements OnInit 
     sourceElementTypes: ElementType[] = [];
 
     constructor(
-        private commandService: CommandService) {
+        protected appContext : AppContext
+      ) {
         super();
+                this.bindingPaths = appContext.BindingPath.getBindingPaths();
     }
 
     ngOnInit(): void {
-        var commandTemplates = this.commandService.getCommandTemplates();
+        var commandTemplates = this.appContext.Command.getCommandTemplates();
         for (let commandTemplate of commandTemplates) {
             if (commandTemplate.canHandle(this.ruleModel)) {
                 this.destinationElementTypes = commandTemplate.getDestinationElementTypes();
@@ -56,8 +58,7 @@ export class BaseCommandComponent extends ResourceTextService implements OnInit 
             this.ruleModel.SourceElementType = this.sourceElementTypes[0];
 
 
-        this.bindingPaths.push("BerechnungsEingaben.VersicherungsNehmer.GeschlechtArt");
-        this.bindingPaths.push("BerechnungsEingaben.VersicherungsNehmer.AnredeArt");
+
     }
 
     onErrorTextTypeChanged($event) {

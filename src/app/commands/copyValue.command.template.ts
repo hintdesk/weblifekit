@@ -1,6 +1,6 @@
 import { Injectable }                           from '@angular/core';
 
-import { NamingService }                        from '../services/naming.service';
+import { NamingProvider }                        from '../services/naming.provider';
 
 import { CommandTemplate }                      from './command.template';
 import { Command, CommandExecuteParameter, CommandInitializeParameter, CommandInitializeParameterName, CommandType, ElementType, PlainTextType } from '../models/command';
@@ -10,7 +10,7 @@ import { BaseCommandTemplate } from './base.command.template';
 @Injectable()
 export class CopyValueCommandTemplate extends BaseCommandTemplate {
 
-    constructor(private namingService: NamingService) {
+    constructor(private namingProvider: NamingProvider) {
         super();
     }
     
@@ -19,7 +19,7 @@ export class CopyValueCommandTemplate extends BaseCommandTemplate {
     }
 
     execute (ruleModel: RuleModel) : Rule {
-        ruleModel.Name = this.namingService.getSetViewModelPath(ruleModel.SourceElementType, ruleModel.DestinationElementValue,ruleModel.SourceElementValue);
+        ruleModel.Name = this.namingProvider.getSetViewModelPath(ruleModel.SourceElementType, ruleModel.DestinationElementValue,ruleModel.SourceElementValue);
         ruleModel.CategoryArt = RuleCategoryArt.DataManipulation;
              
         var rule = new Rule(ruleModel);

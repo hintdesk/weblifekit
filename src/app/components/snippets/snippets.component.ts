@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NamingService } from '../../services/naming.service';
+import { NamingProvider } from '../../services/naming.provider';
 import { ResourceTextService } from '../../services/resourceText.service';
 import { SnippetsModel} from '../../models/snippets';
 
@@ -15,7 +15,7 @@ export class SnippetsComponent extends ResourceTextService implements OnInit{
     jsCodeForPausingOnSet:string;
     
 
-    constructor(private namingService: NamingService) {
+    constructor(private namingProvider: NamingProvider) {
         super();
     }
 
@@ -24,8 +24,8 @@ export class SnippetsComponent extends ResourceTextService implements OnInit{
     }
 
     onPathForJSChanged($event){
-        var parent = this.namingService.getParentPath(this.snippetsModel.PathForJS);
-        var property = this.namingService.getLastElement(this.snippetsModel.PathForJS);       
+        var parent = this.namingProvider.getParentPath(this.snippetsModel.PathForJS);
+        var property = this.namingProvider.getLastElement(this.snippetsModel.PathForJS);       
         this.jsCodeForPausingOnSet = `impeo.zurich.weblife.application.data.currentVorgang.DataAsObject.${parent}.bind(\"set\",function(arg){ if (arg.field === \"${property}\") debugger;})`;
     }
 

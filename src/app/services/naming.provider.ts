@@ -1,8 +1,10 @@
+import { Injectable } from '@angular/core';
 import { ElementType, CommandEventType } from '../models/command';
 import { OperatorType } from '../models/condition';
 import { RuleModel } from '../models/rule';
 
-export class NamingService {
+@Injectable()
+export class NamingProvider {
 
     getForAddArrayElement(fieldName: string, array: string): string {
         return "Add_" + fieldName + "_To_Array_" + array;

@@ -33,7 +33,7 @@ import { CustomCommandTemplate} from '../commands/custom.command.template';
 
 
 @Injectable()
-export class CommandService {
+export class CommandApi {
 
     constructor(
         private actionCommand: ActionCommandTemplate,

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { NamingService } from '../services/naming.service';
+import { NamingProvider } from '../services/naming.provider';
 
 import { Command, CommandExecuteParameter, CommandInitializeParameter, CommandInitializeParameterName, CommandType, ElementType, PlainTextType } from '../models/command';
 import { Rule, RuleCategoryArt,RuleModel } from '../models/rule';
@@ -9,7 +9,7 @@ import { BaseCommandTemplate } from './base.command.template';
 @Injectable()
 export class ShowNavigationElementCommandTemplate extends BaseCommandTemplate {
 
-    constructor(private namingService: NamingService) {
+    constructor(private namingProvider: NamingProvider) {
         super();
     }
     canHandle(ruleModel: RuleModel): boolean {
@@ -17,7 +17,7 @@ export class ShowNavigationElementCommandTemplate extends BaseCommandTemplate {
     }
 
     execute(ruleModel: RuleModel): Rule {
-        ruleModel.Name = this.namingService.getForShowNavigationElement(ruleModel.NavigationElement);
+        ruleModel.Name = this.namingProvider.getForShowNavigationElement(ruleModel.NavigationElement);
         ruleModel.CategoryArt = RuleCategoryArt.GuiManipulation;      
         var rule = new Rule(ruleModel);        
 

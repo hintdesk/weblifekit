@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { NamingService } from '../services/naming.service';
+import { NamingProvider } from '../services/naming.provider';
 
 
 import { Command, CommandExecuteParameter, CommandInitializeParameter, CommandInitializeParameterName, CommandType, ElementType, PlainTextType } from '../models/command';
@@ -11,7 +11,7 @@ import { Condition } from '../models/condition';
 @Injectable()
 export class AddArrayElementCommandTemplate extends BaseCommandTemplate {
 
-    constructor(private namingService: NamingService) {
+    constructor(private namingProvider: NamingProvider) {
         super();
     }
     canHandle(ruleModel: RuleModel): boolean {
@@ -19,7 +19,7 @@ export class AddArrayElementCommandTemplate extends BaseCommandTemplate {
     }
 
     execute(ruleModel: RuleModel): Rule {
-        ruleModel.Name = this.namingService.getForAddArrayElement(this.namingService.getLastElement(ruleModel.JsonTypeName), ruleModel.ArrayField);  
+        ruleModel.Name = this.namingProvider.getForAddArrayElement(this.namingProvider.getLastElement(ruleModel.JsonTypeName), ruleModel.ArrayField);  
         ruleModel.CategoryArt = undefined;
         var rule = new Rule(ruleModel);
               
@@ -33,7 +33,7 @@ export class AddArrayElementCommandTemplate extends BaseCommandTemplate {
 
          //Json
         var cepJson = new CommandExecuteParameter();
-        cepJson.Name = this.namingService.getLastElement(ruleModel.JsonTypeName);
+        cepJson.Name = this.namingProvider.getLastElement(ruleModel.JsonTypeName);
         cepJson.ValueTypeArt = ElementType.Json;
         cepJson.JsonTypeAssemblyName = ruleModel.JsonTypeAssemblyName;
         cepJson.JsonTypeName = ruleModel.JsonTypeName;

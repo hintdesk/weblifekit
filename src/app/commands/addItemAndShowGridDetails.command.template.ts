@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { NamingService } from '../services/naming.service';
+import { NamingProvider } from '../services/naming.provider';
 
 import { Command, CommandExecuteParameter, CommandInitializeParameter, CommandInitializeParameterName, CommandType, ElementType, PlainTextType } from '../models/command';
 import { Rule, RuleCategoryArt ,RuleModel} from '../models/rule';
@@ -10,7 +10,7 @@ import { Condition } from '../models/condition';
 @Injectable()
 export class AddItemAndShowGridDetailsCommandTemplate extends BaseCommandTemplate {
 
-    constructor(private namingService: NamingService) {
+    constructor(private namingProvider: NamingProvider) {
         super();
     }
     canHandle(ruleModel: RuleModel): boolean {
@@ -18,7 +18,7 @@ export class AddItemAndShowGridDetailsCommandTemplate extends BaseCommandTemplat
     }
 
     execute(ruleModel: RuleModel): Rule {
-        ruleModel.Name = this.namingService.getForAddItemAndShowGridDetails(this.namingService.getLastElement(ruleModel.JsonTypeName), ruleModel.ArrayField,ruleModel.GridId);  
+        ruleModel.Name = this.namingProvider.getForAddItemAndShowGridDetails(this.namingProvider.getLastElement(ruleModel.JsonTypeName), ruleModel.ArrayField,ruleModel.GridId);  
         var rule = new Rule(ruleModel);
               
 
@@ -53,7 +53,7 @@ export class AddItemAndShowGridDetailsCommandTemplate extends BaseCommandTemplat
 
          //Json
         var cepJson = new CommandExecuteParameter();
-        cepJson.Name = this.namingService.getLastElement(ruleModel.JsonTypeName);
+        cepJson.Name = this.namingProvider.getLastElement(ruleModel.JsonTypeName);
         cepJson.ValueTypeArt = ElementType.Json;        
         cepJson.JsonTypeName = ruleModel.JsonTypeName;
         cepJson.JsonTypeAssemblyName = ruleModel.JsonTypeAssemblyName;

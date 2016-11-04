@@ -1,8 +1,8 @@
 import { Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { BaseCommandComponent } from './baseCommand.component';
-import { CommandService } from '../../services/command.service';
-import { NamingService } from '../../services/naming.service';
+import { AppContext } from '../../services/app.context';
+import { NamingProvider } from '../../services/naming.provider';
 import { RuleModel } from '../../models/rule';
 
 @Component({
@@ -19,9 +19,8 @@ export class CustomCommandComponent extends BaseCommandComponent {
 
     javascriptCode: string;
 
-    constructor(commandService: CommandService,
-        private namingService: NamingService) {
-        super(commandService);
+     constructor(appContext: AppContext) {
+        super(appContext);
     }
 
     ngOnInit(): void {
@@ -30,9 +29,9 @@ export class CustomCommandComponent extends BaseCommandComponent {
     }
 
     onNameChanged($event): void {
-        var name = this.namingService.removeUnderscore(this.ruleModel.Name);
-        var nameOfFunction = this.namingService.lowerCaseFirstLetter(name) + "Command";
-        var nameOfClass = this.namingService.upperCaseFirstLetter(name)+ "Command";
+        var name = this.appContext.Naming.removeUnderscore(this.ruleModel.Name);
+        var nameOfFunction = this.appContext.Naming.lowerCaseFirstLetter(name) + "Command";
+        var nameOfClass = this.appContext.Naming.upperCaseFirstLetter(name)+ "Command";
 
         this.javascriptCode = "self." + nameOfFunction + " = function (viewModel, configData, application) { return new " + nameOfClass + "(configData, application); };\n\n";
         this.javascriptCode +=

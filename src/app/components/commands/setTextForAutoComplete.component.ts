@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseCommandComponent } from './baseCommand.component';
-import { CommandService } from '../../services/command.service';
+import { AppContext } from '../../services/app.context';
 import { Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { RuleModel } from '../../models/rule';
 
@@ -15,7 +15,7 @@ export class SetTextForAutoCompleteComponent extends BaseCommandComponent {
 
     @Output()
     onDataChanged = new EventEmitter();
-constructor(commandService: CommandService) {
-        super(commandService);
+ constructor(appContext: AppContext) {
+        super(appContext);
     }
 }

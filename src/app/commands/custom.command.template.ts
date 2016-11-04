@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { NamingService } from '../services/naming.service';
+import { NamingProvider } from '../services/naming.provider';
 
 import { Command, CommandExecuteParameter, CommandInitializeParameter, CommandInitializeParameterName, CommandType, ElementType, PlainTextType } from '../models/command';
 import { Rule, RuleCategoryArt,RuleModel } from '../models/rule';
@@ -10,7 +10,7 @@ import { Condition } from '../models/condition';
 @Injectable()
 export class CustomCommandTemplate extends BaseCommandTemplate {
 
-    constructor(private namingService: NamingService) {
+    constructor(private namingProvider: NamingProvider) {
         super();
     }
     canHandle(ruleModel: RuleModel): boolean {
@@ -21,7 +21,7 @@ export class CustomCommandTemplate extends BaseCommandTemplate {
         ruleModel.CategoryArt = undefined; 
 
         var rule = new Rule(ruleModel);
-        rule.Command.Name = this.namingService.lowerCaseFirstLetter(this.namingService.removeUnderscore(ruleModel.Name)) + "Command";    
+        rule.Command.Name = this.namingProvider.lowerCaseFirstLetter(this.namingProvider.removeUnderscore(ruleModel.Name)) + "Command";    
         rule.Command.CommandInitializeParameters = undefined;
 
         if (ruleModel.Parameter)
