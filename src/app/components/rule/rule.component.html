@@ -8,6 +8,9 @@
             	<option *ngFor="let ruleCommand of commandTypes" [ngValue]="ruleCommand">{{ruleCommand}}</option>
 			</select>
 		</div>
+		<div class="col-md-2" *ngIf="description">
+			<span class="glyphicon glyphicon-info-sign" [tooltip]="description"></span>
+		</div>
 	</div>
 
 	<!--Condition-->
@@ -94,7 +97,7 @@
 		</div>
 	</div>
 	<div class="row" >
-		<p class="col-md-8 col-xs-offset-2 text-muted text-warning"><small>*Please check if the same rule exists before creating a new one.</small></p>
+		<p class="col-md-8 col-md-offset-2 text-muted text-warning"><small>*Please check if the same rule exists before creating a new one.</small></p>
 	</div>
 
 

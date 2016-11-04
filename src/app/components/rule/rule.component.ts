@@ -4,6 +4,7 @@ import { CommandService } from '../../services/command.service';
 
 import { Rule, RuleCategoryArt, RuleModel } from '../../models/rule';
 import { Command, CommandType, ElementType, CommandEventType, PlainTextType } from '../../models/command';
+import { CommandTemplate} from '../../commands/command.template';
 
 
 @Component({
@@ -14,19 +15,24 @@ import { Command, CommandType, ElementType, CommandEventType, PlainTextType } fr
 export class RuleComponent implements OnInit {
 
     result: string = "";
+    commandTemplates: CommandTemplate[];
     commandTypes: CommandType[] = [];
+    description:string;
     ruleModel: RuleModel = new RuleModel();
+
 
     constructor(
         private commandService: CommandService, ) {
+        this.commandTemplates = this.commandService.getCommandTemplates();        
+        this.commandTypes = this.commandService.getCommandTypes();
 
     }
 
     generate(): void {
         var rule: Rule;
-        var commandTemplates = this.commandService.getCommandTemplates();
-        for (let commandTemplate of commandTemplates) {
+        for (let commandTemplate of this.commandTemplates) {
             if (commandTemplate.canHandle(this.ruleModel)) {
+                this.description = commandTemplate.Description;
                 rule = commandTemplate.execute(this.ruleModel);
                 break;
             }
@@ -37,7 +43,7 @@ export class RuleComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.commandTypes = this.commandService.getCommandTypes();
+        
         if (this.commandTypes.length > 0) {
             this.ruleModel.CommandType = this.commandTypes[0];
             this.onCommandTypeChanged(undefined);
@@ -46,6 +52,7 @@ export class RuleComponent implements OnInit {
     }
 
     onCommandTypeChanged($event): void {
+        
         this.generate();
     }
 
@@ -53,10 +60,7 @@ export class RuleComponent implements OnInit {
         this.generate();
     }
 
-    // onModelDataChanged($event):void {
-    //     // this.ruleModel =$event;
-    //     this.generate();
-    // }
+    
 
 
 }

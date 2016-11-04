@@ -41,7 +41,7 @@ export class RuleModel {
     ColumnIndex: string = "";
     CommandEventType: CommandEventType;
     CommandEventTypeValue: string = "";    
-    Condition: string = "TrueCondition";
+    Condition: string = "TrueCondition";    
     DestinationElementType: ElementType;
     DestinationElementValue: string = "";
     Dialog: string = "";

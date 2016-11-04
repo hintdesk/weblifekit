@@ -11,12 +11,14 @@ export class DeleteArrayElementsCommandTemplate extends BaseCommandTemplate {
 
     constructor(private namingService: NamingService) {
         super();
+        this.Description = this.TextCommandDescriptionDeleteArrayElements;
     }
     canHandle(ruleModel: RuleModel): boolean {
         return ruleModel.CommandType === CommandType.DeleteArrayElementsCommand;
     }
 
     execute(ruleModel: RuleModel): Rule {
+        
         ruleModel.Name = this.namingService.getForDeleteArray(ruleModel.ArrayField);  
         ruleModel.CategoryArt = undefined;
         var rule = new Rule(ruleModel);

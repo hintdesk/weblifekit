@@ -2,18 +2,20 @@
 <div class="row top-buffer">
 	<label class="col-md-2" for="">ApplicationName</label>
 	<div class="col-md-8">
-		<input class="form-control" [(ngModel)]="ruleModel.ApplicationName" (ngModelChange)="onModelDataChanged($event)"
-			type="text" placeholder="{{TextPlaceholderApplicationName}}">
+		<input class="form-control" [(ngModel)]="ruleModel.ApplicationName" (ngModelChange)="onModelDataChanged($event)" type="text"
+			placeholder="{{TextPlaceholderApplicationName}}">
 	</div>
 </div>
 
 <!--SourceProperty-->
 <div class="row top-buffer">
-	<label class="col-md-2" for="">SourceProperty</label>
-
+	<label class="col-md-2" for="">SourceProperty (optional)</label>
 	<div class="col-md-8">
-		<input class="form-control" [(ngModel)]="ruleModel.SourceProperty" (ngModelChange)="onModelDataChanged($event)"
-			type="text" placeholder="{{TextPlaceholderSourceProperty}}">
+		<input class="form-control" [(ngModel)]="ruleModel.SourceProperty" (ngModelChange)="onModelDataChanged($event)" type="text"
+			placeholder="{{TextPlaceholderSourceProperty}}">
+	</div>
+	<div class="col-md-2">
+		<span class="glyphicon glyphicon-info-sign" [tooltip]="TextPlaceholderSourceProperty"></span>
 	</div>
 </div>
 
@@ -22,8 +24,12 @@
 	<label class="col-md-2" for="">TargetProperty</label>
 
 	<div class="col-md-8">
-		<input class="form-control" [(ngModel)]="ruleModel.TargetProperty" (ngModelChange)="onModelDataChanged($event)"
-			type="text" placeholder="{{TextPlaceholderTargetProperty}}">
+		<input class="form-control" [(ngModel)]="ruleModel.TargetProperty" (ngModelChange)="onModelDataChanged($event)" type="text"
+			placeholder="{{TextPlaceholderTargetProperty}}">
+	</div>
+
+	<div class="col-md-2">
+		<span class="glyphicon glyphicon-info-sign" [tooltip]="TextPlaceholderTargetProperty"></span>
 	</div>
 </div>
 
@@ -47,8 +53,8 @@
 <div class="row top-buffer">
 	<label class="col-md-2" for="">ErrorEventName</label>
 	<div class="col-md-8">
-		<input class="form-control" [(ngModel)]="ruleModel.ErrorEventName" (ngModelChange)="onModelDataChanged($event)"
-			type="text" placeholder="{{TextPlaceholderErrorEventName}}">
+		<input class="form-control" [(ngModel)]="ruleModel.ErrorEventName" (ngModelChange)="onModelDataChanged($event)" type="text"
+			placeholder="{{TextPlaceholderErrorEventName}}">
 	</div>
 </div>
 

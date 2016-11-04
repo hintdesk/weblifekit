@@ -1,4 +1,6 @@
-export class ResourceTextComponent {
+export class ResourceTextService {
+
+    TextCommandDescriptionDeleteArrayElements:string = "Delete element with flag Deleted = true from given array";
 
     TextPlaceholderApplicationName: string = "Name of C# application class: TariffServiceGetOrderApplication, TariffServiceGetOrderForESignatureApplication, ESignatureApplication, etc.";
     TextPlaceholderArrayField:string = "Path of viewModel's list: BerechnungsEingaben.Extension.SteuerDetailsAuslandVersNehmer, FirmenDaten.PersonKonten, AnsprechPartner, etc.";
@@ -32,11 +34,11 @@ export class ResourceTextComponent {
     TextPlaceholderParentUIElement:string = "Name of parent ui element: ";
     TextPlaceholderSourceElementValueBindingPath: string = "BindingPath of UIField: BerechnungsEingaben.VersicherungsNehmer.PersonAdressen[0].Ort, etc.";    
     TextPlaceholderSourceElementValuePlainText: string = "A string value:blank, ZVB_VERWEND_ZWECK_JUNIOR, ZVB_VERWEND_ZWECK_VORSORGE, etc.";
-    TextPlaceholderSourceProperty: string = "Argument sent to application, is a path of viewModels's property: BerechnungsEingaben.Extension.BezugsrechtErlebensfall.BezugsBerechtigtePerson.PersonKonten[0], etc.";
+    TextPlaceholderSourceProperty: string = "Argument sent to application, can be a path of viewModels's property. If nothing is given, the current viewModel will be sent to server: BerechnungsEingaben.Extension.BezugsrechtErlebensfall.BezugsBerechtigtePerson.PersonKonten[0], etc.";
     TextPlaceholderSpringObjectName: string = "Path of viewModel's property: BerechnungsEingaben.Vermittler.Vermittler[0].PersonVermittler.PersonAdressen[0].Ort, etc.";
     TextPlaceholderStateTable: string = "Name of stateTable: Show_ERKL_AUSLAND_VN, Show_AUFZGWG, Set_Beratungsprotokoll, etc.";
     TextPlaceholderStateTableErrorText:string = "Name of stateTable returning error text: IBAN_Fehlermeldung_Bezugrecht, BezTod_GeburtsdatumMin, BezRechtTodEintrittsalterMax, etc.";
-    TextPlaceholderTargetProperty: string = "Argument to be updated with value returned by application, is a path of viewModels's property: BerechnungsEingaben.Extension.BezugsrechtErlebensfall.BezugsBerechtigtePerson.PersonKonten[0], etc.";
+    TextPlaceholderTargetProperty: string = "Argument to be updated with value returned by application, is a path of viewModels's property: this, BerechnungsEingaben.Extension.BezugsrechtErlebensfall.BezugsBerechtigtePerson.PersonKonten[0], etc.";
     TextPlaceholderTemplateId: string = "Template id of grid: ansprechPartnerGridEditTemplate, beraterGridEditTemplate, mitarbeiterDataGridEditTemplate, etc.";
     TextPlaceholderTitleDialog:string = "Title of dialog: Meldung, blank, Info";
     TextPlaceholderUIField: string = "Name of ui field: A_DR_PERS_VORSCHLAG, A_DR_PRODUKTINFO, A_DR_ZUSTIMM_SONST_DATEN, etc."

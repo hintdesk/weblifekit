@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { NamingService } from '../../services/naming.service';
 import { EventElement, EventModel, EventType, EventWL } from '../../models/event';
-import { ResourceTextComponent } from '../resourceText.component';
+import { ResourceTextService } from '../../services/resourceText.service';
 
 @Component({
     selector: 'event',
     templateUrl: 'event.component.html'
 })
 
-export class EventComponent extends ResourceTextComponent implements OnInit{
+export class EventComponent extends ResourceTextService implements OnInit{
 
     eventModel: EventModel = new EventModel();
     result: string;

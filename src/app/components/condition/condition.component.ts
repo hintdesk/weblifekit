@@ -1,13 +1,13 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ConditionModel, ConditionType, OperatorType } from '../../models/condition';
-import { ResourceTextComponent } from '../resourceText.component';
+import { ResourceTextService } from '../../services/resourceText.service';
 
 @Component({
     selector: 'condition',
     templateUrl: 'condition.component.html'
 })
 
-export class ConditionComponent extends ResourceTextComponent implements OnInit {
+export class ConditionComponent extends ResourceTextService implements OnInit {
     @Input()
     conditionModel: ConditionModel;
 

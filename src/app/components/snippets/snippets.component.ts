@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NamingService } from '../../services/naming.service';
-import { ResourceTextComponent } from '../resourceText.component';
+import { ResourceTextService } from '../../services/resourceText.service';
 import { SnippetsModel} from '../../models/snippets';
 
 @Component({
@@ -8,7 +8,7 @@ import { SnippetsModel} from '../../models/snippets';
     templateUrl: 'snippets.component.html'
 })
 
-export class SnippetsComponent extends ResourceTextComponent implements OnInit{
+export class SnippetsComponent extends ResourceTextService implements OnInit{
 
     snippetsModel: SnippetsModel = new SnippetsModel();
     fullPathForDebugging:string;
@@ -30,8 +30,7 @@ export class SnippetsComponent extends ResourceTextComponent implements OnInit{
     }
 
     onPathForFullChanged($event){
-        this.fullPathForDebugging = "var m = impeo.zurich.weblife.application.data.currentVorgang.DataAsObject; "; 
-        this.fullPathForDebugging += "m." + this.snippetsModel.PathForFull;
+        this.fullPathForDebugging = "impeo.zurich.weblife.application.data.currentVorgang.DataAsObject."+this.snippetsModel.PathForFull;
     }
 
     onTextBoxClickSelectAll($event)

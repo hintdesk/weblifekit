@@ -43,7 +43,7 @@ export class ExecuteApplicationCommandTemplate extends BaseCommandTemplate {
             var cipTargetProperty = new CommandInitializeParameter();
             cipTargetProperty.Name = CommandInitializeParameterName.TargetProperty;
             cipTargetProperty.PlainText = ruleModel.TargetProperty;
-            cipTargetProperty.ValueTypeArt = ElementType.SpringObjectName;
+            //cipTargetProperty.ValueTypeArt = ElementType.SpringObjectName;
             rule.Command.CommandInitializeParameters.push(cipTargetProperty);
         }
 

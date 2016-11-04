@@ -31,8 +31,8 @@ export class CustomCommandComponent extends BaseCommandComponent {
 
     onNameChanged($event): void {
         var name = this.namingService.removeUnderscore(this.ruleModel.Name);
-        var nameOfFunction = this.namingService.lowerCaseFirstLetter(name);
-        var nameOfClass = this.namingService.upperCaseFirstLetter(name);
+        var nameOfFunction = this.namingService.lowerCaseFirstLetter(name) + "Command";
+        var nameOfClass = this.namingService.upperCaseFirstLetter(name)+ "Command";
 
         this.javascriptCode = "self." + nameOfFunction + " = function (viewModel, configData, application) { return new " + nameOfClass + "(configData, application); };\n\n";
         this.javascriptCode +=

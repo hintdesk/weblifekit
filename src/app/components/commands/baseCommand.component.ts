@@ -1,12 +1,12 @@
 import { Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { RuleModel } from '../../models/rule';
-import { ResourceTextComponent } from '../resourceText.component';
+import { ResourceTextService } from '../../services/resourceText.service';
 import { CommandService } from '../../services/command.service';
 
 import { CommandEventType, ElementType } from '../../models/command';
 
 
-export class BaseCommandComponent extends ResourceTextComponent implements OnInit {
+export class BaseCommandComponent extends ResourceTextService implements OnInit {
     @Input()
     ruleModel: RuleModel;
 

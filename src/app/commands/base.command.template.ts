@@ -1,9 +1,11 @@
 import { CommandTemplate } from './command.template';
 import { CommandType, CommandEventType, ElementType } from '../models/command';
 import { Rule, RuleModel} from '../models/rule';
+import { ResourceTextService} from '../services/resourceText.service';
 
 
-export class BaseCommandTemplate implements CommandTemplate {
+export class BaseCommandTemplate extends ResourceTextService implements CommandTemplate {
+    Description:string;
 
     canHandle(ruleModel: RuleModel): boolean {
         return false;

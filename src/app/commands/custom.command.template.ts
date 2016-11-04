@@ -21,7 +21,7 @@ export class CustomCommandTemplate extends BaseCommandTemplate {
         ruleModel.CategoryArt = undefined; 
 
         var rule = new Rule(ruleModel);
-        rule.Command.Name = this.namingService.lowerCaseFirstLetter(this.namingService.removeUnderscore(ruleModel.Name));    
+        rule.Command.Name = this.namingService.lowerCaseFirstLetter(this.namingService.removeUnderscore(ruleModel.Name)) + "Command";    
         rule.Command.CommandInitializeParameters = undefined;
 
         if (ruleModel.Parameter)
