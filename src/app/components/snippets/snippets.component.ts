@@ -1,40 +1,85 @@
 import { Component, OnInit } from '@angular/core';
 import { NamingProvider } from '../../services/naming.provider';
 import { ResourceTextService } from '../../services/resourceText.service';
-import { SnippetsModel} from '../../models/snippets';
+import { SnippetsModel } from '../../models/snippets';
+import { ConstantValues } from '../../models/constantValues';
 
 @Component({
     selector: 'snippets',
     templateUrl: 'snippets.component.html'
 })
 
-export class SnippetsComponent extends ResourceTextService implements OnInit{
+export class SnippetsComponent extends ResourceTextService implements OnInit {
 
     snippetsModel: SnippetsModel = new SnippetsModel();
-    fullPathForDebugging:string;
-    jsCodeForPausingOnSet:string;
-    
+    fullPathForDebugging: string;
+    jsCodeForPausingOnSet: string;
+    pathsInHistory: string[] = [];
+    indexInHistory: number;
+
 
     constructor(private namingProvider: NamingProvider) {
         super();
     }
 
-    ngOnInit(){
-        
+    ngOnInit() {
+        this.pathsInHistory = JSON.parse(localStorage.getItem(ConstantValues.WLLast10BindingPaths));
+        if (!this.pathsInHistory) {
+            this.pathsInHistory = [];
+        }
+
+        if (this.pathsInHistory.length > 0)
+            this.indexInHistory = this.pathsInHistory.length;
+        else
+            this.indexInHistory = -1;
     }
 
-    onPathForJSChanged($event){
+    onPathForJSChanged($event) {
         var parent = this.namingProvider.getParentPath(this.snippetsModel.PathForJS);
-        var property = this.namingProvider.getLastElement(this.snippetsModel.PathForJS);       
-        this.jsCodeForPausingOnSet = `impeo.zurich.weblife.application.data.currentVorgang.DataAsObject.${parent}.bind(\"set\",function(arg){ if (arg.field === \"${property}\") debugger;})`;
+        var property = this.namingProvider.getLastElement(this.snippetsModel.PathForJS);
+        if (parent != property)
+            this.jsCodeForPausingOnSet = `impeo.zurich.weblife.application.data.currentVorgang.DataAsObject.${parent}.bind(\"set\",function(arg){ if (arg.field === \"${property}\") debugger;})`;
+        else
+            this.jsCodeForPausingOnSet = `impeo.zurich.weblife.application.data.currentVorgang.DataAsObject.bind(\"set\",function(arg){ if (arg.field === \"${property}\") debugger;})`; 
     }
 
-    onPathForFullChanged($event){
-        this.fullPathForDebugging = "impeo.zurich.weblife.application.data.currentVorgang.DataAsObject."+this.snippetsModel.PathForFull;
+    onPathForFullChanged($event) {
+        this.fullPathForDebugging = "impeo.zurich.weblife.application.data.currentVorgang.DataAsObject." + this.snippetsModel.PathForFull;
     }
 
-    onTextBoxClickSelectAll($event)
-    {
+    onTextBoxClickSelectAll($event) {
         $event.target.select();
+    }
+
+    showNextPath() {
+        if (this.pathsInHistory.length > 0) {
+            if (this.indexInHistory < this.pathsInHistory.length - 1) {
+                this.indexInHistory++;
+                this.snippetsModel.PathForFull = this.pathsInHistory[this.indexInHistory];
+                this.onPathForFullChanged(undefined);
+            }
+        }
+    }
+
+    showPreviousPath() {
+        if (this.pathsInHistory.length > 0) {
+            if (this.indexInHistory === -1)
+                this.indexInHistory = this.pathsInHistory.length;
+
+            if (this.indexInHistory > 0) {
+                this.indexInHistory--;
+                this.snippetsModel.PathForFull = this.pathsInHistory[this.indexInHistory];
+                this.onPathForFullChanged(undefined);
+            }
+        }
+    }
+
+    updateHistorie() {
+        if (this.pathsInHistory.indexOf(this.snippetsModel.PathForFull) < 0) {
+            if (this.pathsInHistory.length > 10)
+                this.pathsInHistory.shift();
+            this.pathsInHistory.push(this.snippetsModel.PathForFull);
+            localStorage.setItem(ConstantValues.WLLast10BindingPaths, JSON.stringify(this.pathsInHistory));
+        }
     }
 }

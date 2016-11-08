@@ -4,11 +4,12 @@
 		<label class="col-md-2" for="">Full path for debugging</label>
 		<div class="col-md-8">
 			<input class="form-control" [(ngModel)]="snippetsModel.PathForFull" (ngModelChange)="onPathForFullChanged($event)" type="text"
-				placeholder="{{TextPlaceholderSpringObjectName}}" (click)="onTextBoxClickSelectAll($event)">
+				placeholder="{{TextPlaceholderSpringObjectName}}" (click)="onTextBoxClickSelectAll($event)" (keydown.arrowup)="showPreviousPath()"
+				(keydown.arrowdown)="showNextPath()">
 		</div>
 		<div class="col-md-2">
 			<div>
-				<button class="btn btn-primary" [ngIIclipboard]="pFullPath">Copy to clipboard</button>
+				<button class="btn btn-primary" [ngIIclipboard]="pFullPath" (click)="updateHistorie()">Copy to clipboard</button>
 			</div>
 		</div>
 		<small #pFullPath class="col-md-8 col-xs-offset-2 text-muted">{{fullPathForDebugging}}</small>
