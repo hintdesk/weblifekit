@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NamingProvider } from '../../services/naming.provider';
-import { ResourceTextService } from '../../services/resourceText.service';
+import { AppContext} from '../../infrastructure/app.context';
+import { ResourceTextService } from '../../infrastructure/resourceText.service';
 import { SnippetsModel } from '../../models/snippets';
 import { ConstantValues } from '../../models/constantValues';
+import { Tariff} from '../../models/tariff';
 
 @Component({
     selector: 'snippets',
@@ -12,13 +13,14 @@ import { ConstantValues } from '../../models/constantValues';
 export class SnippetsComponent extends ResourceTextService implements OnInit {
 
     snippetsModel: SnippetsModel = new SnippetsModel();
+    foundTariffs:Tariff[]=undefined;
     fullPathForDebugging: string;
     jsCodeForPausingOnSet: string;
     pathsInHistory: string[] = [];
     indexInHistory: number;
 
 
-    constructor(private namingProvider: NamingProvider) {
+    constructor(private appContext: AppContext) {
         super();
     }
 
@@ -35,8 +37,8 @@ export class SnippetsComponent extends ResourceTextService implements OnInit {
     }
 
     onPathForJSChanged($event) {
-        var parent = this.namingProvider.getParentPath(this.snippetsModel.PathForJS);
-        var property = this.namingProvider.getLastElement(this.snippetsModel.PathForJS);
+        var parent = this.appContext.Naming.getParentPath(this.snippetsModel.PathForJS);
+        var property = this.appContext.Naming.getLastElement(this.snippetsModel.PathForJS);
         if (parent != property)
             this.jsCodeForPausingOnSet = `impeo.zurich.weblife.application.data.currentVorgang.DataAsObject.${parent}.bind(\"set\",function(arg){ if (arg.field === \"${property}\") debugger;})`;
         else
@@ -49,6 +51,18 @@ export class SnippetsComponent extends ResourceTextService implements OnInit {
 
     onTextBoxClickSelectAll($event) {
         $event.target.select();
+    }
+
+    searchForTariff(){
+        var tariffs : Tariff[] = this.appContext.Repository.Tariff.getAll();
+        this.foundTariffs = [];        
+        for (let tariff of tariffs)
+        {
+            if (tariff.toString().toLowerCase().indexOf(this.snippetsModel.Tariff.toLowerCase()) >=0)
+                this.foundTariffs.push(tariff);   
+        }
+
+ 
     }
 
     showNextPath() {
@@ -83,3 +97,4 @@ export class SnippetsComponent extends ResourceTextService implements OnInit {
         }
     }
 }
+

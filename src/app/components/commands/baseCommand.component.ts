@@ -1,7 +1,7 @@
 import { Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { RuleModel } from '../../models/rule';
-import { ResourceTextService } from '../../services/resourceText.service';
-import { AppContext } from '../../services/app.context';
+import { ResourceTextService } from '../../infrastructure/resourceText.service';
+import { AppContext } from '../../infrastructure/app.context';
 
 import { CommandEventType, ElementType } from '../../models/command';
 
@@ -25,7 +25,7 @@ export class BaseCommandComponent extends ResourceTextService implements OnInit 
         protected appContext : AppContext
       ) {
         super();
-                this.bindingPaths = appContext.BindingPath.getBindingPaths();
+                this.bindingPaths = appContext.Repository.BindingPath.getAll();
     }
 
     ngOnInit(): void {

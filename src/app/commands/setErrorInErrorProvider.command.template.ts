@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { NamingProvider } from '../services/naming.provider';
+import { NamingProvider } from '../infrastructure/naming.provider';
 
 import { Command, CommandExecuteParameter, CommandInitializeParameter, CommandInitializeParameterName, CommandType, ElementType, PlainTextType } from '../models/command';
 import { Rule, RuleCategoryArt,RuleModel } from '../models/rule';

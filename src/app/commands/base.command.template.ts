@@ -1,7 +1,7 @@
 import { CommandTemplate } from './command.template';
 import { CommandType, CommandEventType, ElementType } from '../models/command';
 import { Rule, RuleModel} from '../models/rule';
-import { ResourceTextService} from '../services/resourceText.service';
+import { ResourceTextService} from '../infrastructure/resourceText.service';
 
 
 export class BaseCommandTemplate extends ResourceTextService implements CommandTemplate {

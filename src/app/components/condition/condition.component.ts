@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ConditionModel, ConditionType, OperatorType } from '../../models/condition';
-import { ResourceTextService } from '../../services/resourceText.service';
+import { ResourceTextService } from '../../infrastructure/resourceText.service';
 
 @Component({
     selector: 'condition',

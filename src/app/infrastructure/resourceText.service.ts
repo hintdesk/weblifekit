@@ -32,6 +32,7 @@ export class ResourceTextService {
     TextPlaceholderMessage:string = "Hardcode text for warning message: Aufgrund Ihrer Eingabe wurde die bereits erfassten Daten für die einmalige Zuzahlungen gelöscht, etc.";
     TextPlaceholderPageName: string = "Name of page: ESignature, AntragVN, Risikocheck-ErgebnisRisiko, etc.";
     TextPlaceholderParentUIElement:string = "Name of parent ui element: ";
+    TextPlaceholderSearchForTariff:string = "Search for tariff. Press Enter to start search";
     TextPlaceholderSourceElementValueBindingPath: string = "BindingPath of UIField: BerechnungsEingaben.VersicherungsNehmer.PersonAdressen[0].Ort, etc.";    
     TextPlaceholderSourceElementValuePlainText: string = "A string value:blank, ZVB_VERWEND_ZWECK_JUNIOR, ZVB_VERWEND_ZWECK_VORSORGE, etc.";
     TextPlaceholderSourceProperty: string = "Argument sent to application, is a path of viewModels's property. If nothing is given, the current viewModel will be sent to server: BerechnungsEingaben.Extension.BezugsrechtErlebensfall.BezugsBerechtigtePerson.PersonKonten[0], etc.";
@@ -41,6 +42,7 @@ export class ResourceTextService {
     TextPlaceholderTargetProperty: string = "Argument to be updated with value returned by application, is a path of viewModels's property: this, BerechnungsEingaben.Extension.BezugsrechtErlebensfall.BezugsBerechtigtePerson.PersonKonten[0], etc.";
     TextPlaceholderTemplateId: string = "Template id of grid: ansprechPartnerGridEditTemplate, beraterGridEditTemplate, mitarbeiterDataGridEditTemplate, etc.";
     TextPlaceholderTitleDialog:string = "Title of dialog: Meldung, blank, Info";
-    TextPlaceholderUIField: string = "Name of ui field: A_DR_PERS_VORSCHLAG, A_DR_PRODUKTINFO, A_DR_ZUSTIMM_SONST_DATEN, etc."
-    TextPlaceholderWidth:string = "An integer value for dialog's width: 550, 300, 500, etc."
+    TextPlaceholderUIField: string = "Name of ui field: A_DR_PERS_VORSCHLAG, A_DR_PRODUKTINFO, A_DR_ZUSTIMM_SONST_DATEN, etc.";
+    TextPlaceholderWidth:string = "An integer value for dialog's width: 550, 300, 500, etc.";
+    TextNoTariffFound:string ="No tariff found. If you're sure that the tariff exists, please ask QAs for help.";
 }

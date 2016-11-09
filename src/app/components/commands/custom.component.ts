@@ -1,8 +1,8 @@
 import { Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { BaseCommandComponent } from './baseCommand.component';
-import { AppContext } from '../../services/app.context';
-import { NamingProvider } from '../../services/naming.provider';
+import { AppContext } from '../../infrastructure/app.context';
+import { NamingProvider } from '../../infrastructure/naming.provider';
 import { RuleModel } from '../../models/rule';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NamingProvider } from '../../services/naming.provider';
+import { NamingProvider } from '../../infrastructure/naming.provider';
 import { EventElement, EventModel, EventType, EventWL } from '../../models/event';
-import { ResourceTextService } from '../../services/resourceText.service';
+import { ResourceTextService } from '../../infrastructure/resourceText.service';
 
 @Component({
     selector: 'event',

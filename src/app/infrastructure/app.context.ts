@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
-import { BindingPathRepository } from './bindingPath.repository';
 import { CommandApi } from './command.api';
 import { NamingProvider } from './naming.provider';
+import { Repository } from '../dal/repository';
 
 @Injectable()
 export class AppContext {
-    BindingPath: BindingPathRepository;
     Command: CommandApi;
     Naming:NamingProvider;
-
+    Repository:Repository;
     constructor(
-        private bindingPathRepository : BindingPathRepository,
+        
         private commandApi: CommandApi,
-        private namingProvider: NamingProvider) {
-            this.BindingPath = bindingPathRepository;
+        private namingProvider: NamingProvider,
+        private repository:Repository) {            
             this.Command = commandApi;
             this.Naming = namingProvider;
+            this.Repository = repository; 
     }
 }

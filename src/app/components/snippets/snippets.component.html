@@ -1,4 +1,5 @@
 <div class="container-fluid">
+	<legend>For development</legend>
 	<!--FullPathForDebugging-->
 	<div class="row top-buffer">
 		<label class="col-md-2" for="">Full path for debugging</label>
@@ -32,7 +33,7 @@
 	</div>
 
 
-	<!--Result-->
+	<!--OpenStateTableWindow-->
 	<div class="row top-buffer">
 		<label class="col-md-2">Open StateTable window</label>
 		<div #divST class="col-md-8">
@@ -44,5 +45,31 @@
 			</div>
 
 		</div>
+	</div>
+
+	<legend class="top-buffer-50">For testing</legend>
+	<!--DE-IBAN-->
+	<div class="row top-buffer">
+		<label class="col-md-2">DE-IBAN</label>
+		<div #divIBAN class="col-md-8">
+			DE77320603621022152030
+		</div>
+	</div>
+
+	<!--Tariff-->
+	<div class="row top-buffer">
+		<label class="col-md-2" for="">Tariff</label>
+		<div class="col-md-8">
+			<input class="form-control" [(ngModel)]="snippetsModel.Tariff" type="text" placeholder="{{TextPlaceholderSearchForTariff}}"
+				(keydown.enter)="searchForTariff()">
+		</div>
+		<div *ngIf="foundTariffs" class="col-md-8 col-xs-offset-2">
+			<ul>
+				<li *ngFor="let tariff of foundTariffs">
+					{{tariff.toString()}}
+				</li>
+			</ul>
+		</div>
+		<small *ngIf="foundTariffs && foundTariffs.length ===0" class="col-md-8 col-xs-offset-2 text-danger">{{TextNoTariffFound}}</small>
 	</div>
 </div>

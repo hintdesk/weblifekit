@@ -9,11 +9,15 @@ import { ClipboardModule } from 'angular2-clipboard';
 import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { CustomFormsModule} from 'ng2-validation';
 
-import { AppContext } from './services/app.context';
-import { BindingPathRepository } from './services/bindingPath.repository';
-import { CommandApi } from './services/command.api';
-import { JsonService } from './services/json.service';
-import { NamingProvider } from './services/naming.provider';
+import { AppContext } from './infrastructure/app.context';
+
+import { BindingPathRepository } from './dal/bindingPath.repository';
+import { TariffRepository} from './dal/tariff.repository';
+import { Repository} from './dal/repository';
+
+import { CommandApi } from './infrastructure/command.api';
+import { JsonService } from './infrastructure/json.service';
+import { NamingProvider } from './infrastructure/naming.provider';
 
 
 
@@ -135,10 +139,15 @@ import { ShowGridDetailsComponent} from './components/commands/showGridDetails.c
 
   providers: [
   
-    BindingPathRepository,
-    CommandApi,
-    JsonService,
     NamingProvider,
+
+    BindingPathRepository,
+    TariffRepository,
+    Repository,
+
+    CommandApi,
+
+    JsonService,
     AppContext,
 
     BaseCommandTemplate,

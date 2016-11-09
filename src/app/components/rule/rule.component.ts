@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CommandApi } from '../../services/command.api';
+import { CommandApi } from '../../infrastructure/command.api';
 
 import { Rule, RuleCategoryArt, RuleModel } from '../../models/rule';
 import { Command, CommandType, ElementType, CommandEventType, PlainTextType } from '../../models/command';

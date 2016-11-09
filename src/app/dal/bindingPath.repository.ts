@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 @Injectable()
 export class BindingPathRepository {
-    getBindingPaths() : string[] {
+    getAll() : string[] {
          const paths : string[] =[
              "BerechnungsErgebnis"
          ];

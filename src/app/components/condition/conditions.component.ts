@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CalculatorType, Condition, ConditionModel, ConditionType } from '../../models/condition';
-import { NamingProvider } from '../../services/naming.provider';
+import { NamingProvider } from '../../infrastructure/naming.provider';
 
 @Component({
     selector: 'conditions',
