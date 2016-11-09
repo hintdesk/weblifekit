@@ -21,6 +21,9 @@
 	<label class="col-md-2" for="">DestinationElement</label>
 	<div class="col-md-8">
 		<input class="form-control" [(ngModel)]="ruleModel.DestinationElementValue" (ngModelChange)="onModelDataChanged($event)"
-			type="text" placeholder="{{TextPlaceholderSpringObjectName}}">
+			type="text" placeholder="{{ResourceText1}}">
+	</div>
+	<div class="col-md-2">
+		<span class="glyphicon glyphicon-info-sign" [tooltip]="ResourceText1"></span>
 	</div>
 </div>

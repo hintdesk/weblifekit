@@ -6,7 +6,7 @@
 		<div class="col-md-8">
 			<input class="form-control" [(ngModel)]="snippetsModel.PathForFull" (ngModelChange)="onPathForFullChanged($event)" type="text"
 				placeholder="{{TextPlaceholderSpringObjectName}}" (click)="onTextBoxClickSelectAll($event)" (keydown.arrowup)="showPreviousPath()"
-				(keydown.arrowdown)="showNextPath()">
+				(keydown.arrowdown)="showNextPath()" [typeahead]="bindingPaths">
 		</div>
 		<div class="col-md-2">
 			<div>
@@ -45,6 +45,12 @@
 			</div>
 
 		</div>
+	</div>
+
+		<!--JSONDeserializationError-->
+	<div class="row top-buffer">
+		<label class="col-md-2">JSON deserialization error</label>
+		<div class="col-md-8">{{TextJsonDeserializationError}}</div>		
 	</div>
 
 	<legend class="top-buffer-50">For testing</legend>

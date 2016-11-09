@@ -3,7 +3,11 @@ import { Injectable } from '@angular/core';
 export class BindingPathRepository {
     getAll() : string[] {
          const paths : string[] =[
-             "BerechnungsErgebnis"
+             "BerechnungsEingaben",
+             "BerechnungsErgebnis",
+             "BerechnungsEingaben.VersicherungsNehmer",
+             "BerechnungsEingaben.WirtschaftlichBerechtigter",
+             "BerechnungsEingaben.HauptTarif.Hochrechnungszins1",             
          ];
          return paths;
     }

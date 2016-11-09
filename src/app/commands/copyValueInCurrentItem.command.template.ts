@@ -12,6 +12,7 @@ export class CopyValueInCurrentItemCommandTemplate extends BaseCommandTemplate {
 
     constructor(private namingProvider: NamingProvider) {
         super();
+        this.Description = this.ResourceText2;
     }
     
     canHandle(ruleModel:RuleModel) : boolean {

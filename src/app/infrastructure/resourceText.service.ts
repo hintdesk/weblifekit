@@ -1,6 +1,9 @@
 export class ResourceTextService {
+    ResourceText1 :string = "The property of new inserting item which should be set by SourceElement";
+    ResourceText2 :string = "This command is used for setting default value to property of item when inserting new item into list. Normally it's called on change-event of list object";
 
     TextCommandDescriptionDeleteArrayElements:string = "Delete element with flag Deleted = true from given array";
+    TextJsonDeserializationError :string = "JsonSerializerSettings settings = new JsonSerializerSettings() { Error = delegate(object sender, ErrorEventArgs args) {} };";
 
     TextPlaceholderApplicationName: string = "Name of C# application class: TariffServiceGetOrderApplication, TariffServiceGetOrderForESignatureApplication, ESignatureApplication, etc.";
     TextPlaceholderArrayField:string = "Path of viewModel's list: BerechnungsEingaben.Extension.SteuerDetailsAuslandVersNehmer, FirmenDaten.PersonKonten, AnsprechPartner, etc.";
@@ -44,5 +47,7 @@ export class ResourceTextService {
     TextPlaceholderTitleDialog:string = "Title of dialog: Meldung, blank, Info";
     TextPlaceholderUIField: string = "Name of ui field: A_DR_PERS_VORSCHLAG, A_DR_PRODUKTINFO, A_DR_ZUSTIMM_SONST_DATEN, etc.";
     TextPlaceholderWidth:string = "An integer value for dialog's width: 550, 300, 500, etc.";
+
     TextNoTariffFound:string ="No tariff found. If you're sure that the tariff exists, please ask QAs for help.";
+    
 }

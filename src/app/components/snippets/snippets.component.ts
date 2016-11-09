@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AppContext} from '../../infrastructure/app.context';
+import { AppContext } from '../../infrastructure/app.context';
 import { ResourceTextService } from '../../infrastructure/resourceText.service';
 import { SnippetsModel } from '../../models/snippets';
 import { ConstantValues } from '../../models/constantValues';
-import { Tariff} from '../../models/tariff';
+import { Tariff } from '../../models/tariff';
 
 @Component({
     selector: 'snippets',
@@ -11,13 +11,13 @@ import { Tariff} from '../../models/tariff';
 })
 
 export class SnippetsComponent extends ResourceTextService implements OnInit {
-
-    snippetsModel: SnippetsModel = new SnippetsModel();
-    foundTariffs:Tariff[]=undefined;
+    bindingPaths: string[] = [];
+    foundTariffs: Tariff[] = undefined;
     fullPathForDebugging: string;
+    indexInHistory: number;
     jsCodeForPausingOnSet: string;
     pathsInHistory: string[] = [];
-    indexInHistory: number;
+    snippetsModel: SnippetsModel = new SnippetsModel();
 
 
     constructor(private appContext: AppContext) {
@@ -34,6 +34,8 @@ export class SnippetsComponent extends ResourceTextService implements OnInit {
             this.indexInHistory = this.pathsInHistory.length;
         else
             this.indexInHistory = -1;
+
+        this.bindingPaths = this.appContext.Repository.BindingPath.getAll();
     }
 
     onPathForJSChanged($event) {
@@ -42,7 +44,7 @@ export class SnippetsComponent extends ResourceTextService implements OnInit {
         if (parent != property)
             this.jsCodeForPausingOnSet = `impeo.zurich.weblife.application.data.currentVorgang.DataAsObject.${parent}.bind(\"set\",function(arg){ if (arg.field === \"${property}\") debugger;})`;
         else
-            this.jsCodeForPausingOnSet = `impeo.zurich.weblife.application.data.currentVorgang.DataAsObject.bind(\"set\",function(arg){ if (arg.field === \"${property}\") debugger;})`; 
+            this.jsCodeForPausingOnSet = `impeo.zurich.weblife.application.data.currentVorgang.DataAsObject.bind(\"set\",function(arg){ if (arg.field === \"${property}\") debugger;})`;
     }
 
     onPathForFullChanged($event) {
@@ -53,16 +55,15 @@ export class SnippetsComponent extends ResourceTextService implements OnInit {
         $event.target.select();
     }
 
-    searchForTariff(){
-        var tariffs : Tariff[] = this.appContext.Repository.Tariff.getAll();
-        this.foundTariffs = [];        
-        for (let tariff of tariffs)
-        {
-            if (tariff.toString().toLowerCase().indexOf(this.snippetsModel.Tariff.toLowerCase()) >=0)
-                this.foundTariffs.push(tariff);   
+    searchForTariff() {
+        var tariffs: Tariff[] = this.appContext.Repository.Tariff.getAll();
+        this.foundTariffs = [];
+        for (let tariff of tariffs) {
+            if (tariff.toString().toLowerCase().indexOf(this.snippetsModel.Tariff.toLowerCase()) >= 0)
+                this.foundTariffs.push(tariff);
         }
 
- 
+
     }
 
     showNextPath() {
