@@ -47,10 +47,10 @@
 		</div>
 	</div>
 
-		<!--JSONDeserializationError-->
+	<!--JSONDeserializationError-->
 	<div class="row top-buffer">
 		<label class="col-md-2">JSON deserialization error</label>
-		<div class="col-md-8">{{TextJsonDeserializationError}}</div>		
+		<div class="col-md-8">{{TextJsonDeserializationError}}</div>
 	</div>
 
 	<legend class="top-buffer-50">For testing</legend>
@@ -66,17 +66,16 @@
 	<div class="row top-buffer">
 		<label class="col-md-2" for="">Tariff</label>
 		<div class="col-md-8">
-			<input class="form-control" [(ngModel)]="snippetsModel.Tariff" type="text" placeholder="{{TextPlaceholderSearchForTariff}}"
-				(ngModelChange)="onTariffChanged($event)">
+			<input class="form-control" type="text" placeholder="{{TextPlaceholderSearchForTariff}}" #searchTariffBox (keyup)="searchTariff(searchTariffBox.value)">
 		</div>
 		<small *ngIf="foundTariffs && foundTariffs.length ===0" class="col-md-8 col-xs-offset-2 text-danger">{{TextNoTariffFound}}</small>
 		<div *ngIf="foundTariffs" class="col-md-8 col-xs-offset-2 top-buffer">
 			<ul>
-				<li *ngFor="let tariff of foundTariffs">
+				<li *ngFor="let tariff of foundTariffs | async">
 					{{tariff.toString()}}
 				</li>
 			</ul>
 		</div>
-		
+
 	</div>
 </div>

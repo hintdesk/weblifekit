@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import './rxjs-extensions';
 import { routing } from './app.routing';
 
 import { ClipboardModule } from 'angular2-clipboard';
@@ -92,6 +93,7 @@ import { ShowGridDetailsComponent} from './components/commands/showGridDetails.c
     BrowserModule,
     FormsModule,
     HttpModule,
+
     ClipboardModule,
     Ng2BootstrapModule,
     CustomFormsModule,

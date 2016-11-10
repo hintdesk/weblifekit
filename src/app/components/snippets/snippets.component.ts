@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject'
+
 import { AppContext } from '../../infrastructure/app.context';
 import { ResourceTextService } from '../../infrastructure/resourceText.service';
 import { SnippetsModel } from '../../models/snippets';
@@ -12,7 +16,8 @@ import { Tariff } from '../../models/tariff';
 
 export class SnippetsComponent extends ResourceTextService implements OnInit {
     bindingPaths: string[] = [];
-    foundTariffs: Tariff[] = undefined;
+    searchTerms = new Subject<string>();
+    foundTariffs: Observable<Tariff[]> = undefined;
     fullPathForDebugging: string;
     indexInHistory: number;
     jsCodeForPausingOnSet: string;
@@ -36,6 +41,15 @@ export class SnippetsComponent extends ResourceTextService implements OnInit {
             this.indexInHistory = -1;
 
         this.bindingPaths = this.appContext.Repository.BindingPath.getAll();
+
+        this.foundTariffs = this.searchTerms
+            .debounceTime(200)
+            .distinctUntilChanged()
+            .switchMap(term => (term && term !== "") ? this.appContext.Repository.Tariff.search(term) : Observable.of<Tariff[]>([]))
+            .catch(error => {
+                console.log(error);
+                return Observable.of<Tariff[]>([])
+            });
     }
 
     onPathForJSChanged($event) {
@@ -51,28 +65,25 @@ export class SnippetsComponent extends ResourceTextService implements OnInit {
         this.fullPathForDebugging = "impeo.zurich.weblife.application.data.currentVorgang.DataAsObject." + this.snippetsModel.PathForFull;
     }
 
-    onTariffChanged($event) {
-        if (this.snippetsModel.Tariff && this.snippetsModel.Tariff !== "") {
-            this.searchForTariff().then(tariffs => this.foundTariffs = tariffs);
-        }
-        else {
-            this.foundTariffs = undefined;
-        }
-    }
+    // onTariffChanged($event) {
+    //     if (this.snippetsModel.Tariff && this.snippetsModel.Tariff !== "") {
+    //         this.searchForTariff().then(tariffs => this.foundTariffs = tariffs);
+    //     }
+    //     else {
+    //         this.foundTariffs = undefined;
+    //     }
+    // }
+    // onTariffChanged(tariff:string):
+    // {
+    //     this.searchForTariff().then(tariffs => this.foundTariffs = tariffs);        
+    // }
 
     onTextBoxClickSelectAll($event) {
         $event.target.select();
     }
 
-    searchForTariff(): Promise<Tariff[]> {
-        var tariffs: Tariff[] = this.appContext.Repository.Tariff.getAll();
-        var foundTariffs = [];
-        for (let tariff of tariffs) {
-            if (tariff.toString().toLowerCase().indexOf(this.snippetsModel.Tariff.toLowerCase()) >= 0)
-                foundTariffs.push(tariff);
-        }
-        return Promise.resolve(foundTariffs);
-
+    searchTariff(term:string):void {
+        this.searchTerms.next(term);
     }
 
     showNextPath() {

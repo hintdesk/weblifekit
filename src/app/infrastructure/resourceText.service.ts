@@ -35,7 +35,7 @@ export class ResourceTextService {
     TextPlaceholderMessage:string = "Hardcode text for warning message: Aufgrund Ihrer Eingabe wurde die bereits erfassten Daten für die einmalige Zuzahlungen gelöscht, etc.";
     TextPlaceholderPageName: string = "Name of page: ESignature, AntragVN, Risikocheck-ErgebnisRisiko, etc.";
     TextPlaceholderParentUIElement:string = "Name of parent ui element: ";
-    TextPlaceholderSearchForTariff:string = "Search for tariff. Press Enter to start search";
+    TextPlaceholderSearchForTariff:string = "Search for tariff...";
     TextPlaceholderSourceElementValueBindingPath: string = "BindingPath of UIField: BerechnungsEingaben.VersicherungsNehmer.PersonAdressen[0].Ort, etc.";    
     TextPlaceholderSourceElementValuePlainText: string = "A string value:blank, ZVB_VERWEND_ZWECK_JUNIOR, ZVB_VERWEND_ZWECK_VORSORGE, etc.";
     TextPlaceholderSourceProperty: string = "Argument sent to application, is a path of viewModels's property. If nothing is given, the current viewModel will be sent to server: BerechnungsEingaben.Extension.BezugsrechtErlebensfall.BezugsBerechtigtePerson.PersonKonten[0], etc.";

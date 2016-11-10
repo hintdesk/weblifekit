@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Tariff} from '../models/tariff';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class TariffRepository {
-    getAll(): Tariff[] {
+    private getAll(): Tariff[] {
         var tariffs: Tariff[] =
             [
                 new Tariff(["Schicht 1/Private Vorsorge", "Basisrente", "Basis Renteclassic select (ARB11)"]),
@@ -70,5 +71,15 @@ export class TariffRepository {
                 
             ];
         return tariffs;
+    }
+
+    search(term:string) : Observable<Tariff[]> {
+        var tariffs: Tariff[] = this.getAll();
+        var foundTariffs = [];
+        for (let tariff of tariffs) {
+            if (tariff.toString().toLowerCase().indexOf(term.toLowerCase()) >= 0)
+                foundTariffs.push(tariff);
+        }
+        return Observable.of(foundTariffs);
     }
 }
