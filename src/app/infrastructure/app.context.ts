@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { CommandApi } from './command.api';
+import { CommandApi } from './api/command/command.api';
 import { NamingProvider } from './naming.provider';
-import { Repository } from '../dal/repository';
+import { Repository } from './dal/repository';
 
 @Injectable()
 export class AppContext {

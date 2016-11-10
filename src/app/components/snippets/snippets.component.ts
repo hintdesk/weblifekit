@@ -65,19 +65,6 @@ export class SnippetsComponent extends ResourceTextService implements OnInit {
         this.fullPathForDebugging = "impeo.zurich.weblife.application.data.currentVorgang.DataAsObject." + this.snippetsModel.PathForFull;
     }
 
-    // onTariffChanged($event) {
-    //     if (this.snippetsModel.Tariff && this.snippetsModel.Tariff !== "") {
-    //         this.searchForTariff().then(tariffs => this.foundTariffs = tariffs);
-    //     }
-    //     else {
-    //         this.foundTariffs = undefined;
-    //     }
-    // }
-    // onTariffChanged(tariff:string):
-    // {
-    //     this.searchForTariff().then(tariffs => this.foundTariffs = tariffs);        
-    // }
-
     onTextBoxClickSelectAll($event) {
         $event.target.select();
     }

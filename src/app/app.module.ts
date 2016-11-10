@@ -12,44 +12,44 @@ import { CustomFormsModule} from 'ng2-validation';
 
 import { AppContext } from './infrastructure/app.context';
 
-import { BindingPathRepository } from './dal/bindingPath.repository';
-import { TariffRepository} from './dal/tariff.repository';
-import { Repository} from './dal/repository';
+import { BindingPathRepository } from './infrastructure/dal/bindingPath.repository';
+import { TariffRepository} from './infrastructure/dal/tariff.repository';
+import { Repository} from './infrastructure/dal/repository';
 
-import { CommandApi } from './infrastructure/command.api';
+import { CommandApi } from './infrastructure/api/command/command.api';
 import { JsonService } from './infrastructure/json.service';
 import { NamingProvider } from './infrastructure/naming.provider';
 
 
 
-import { BaseCommandTemplate } from './commands/base.command.template';
-import { CopyValueCommandTemplate } from './commands/copyValue.command.template';
-import { ExecuteApplicationCommandTemplate } from './commands/executeApplication.command.template';
-import { ActionCommandTemplate } from './commands/action.command.template';
-import { SetErrorInErrorProviderCommandTemplate } from './commands/setErrorInErrorProvider.command.template';
-import { ShowDetailsCommandTemplate } from './commands/showDetails.command.template';
-import { SetTextForAutoCompleteCommandTemplate } from './commands/setTextForAutoComplete.command.template';
-import { ShowNavigationElementCommandTemplate } from './commands/showNavigationElement.command.template';
-import { ValidateCommandTemplate } from './commands/validate.command.template';
-import { SetToDefaultCommandTemplate } from './commands/setToDefault.command.template';
-import { DeleteArrayElementsCommandTemplate } from './commands/deleteArrayElements.command.template';
-import { ShowGuiElementsCommandTemplate } from './commands/showGuiElements.command.template';
-import { AddArrayElementCommandTemplate } from './commands/addArrayElement.command.template';
-import { GoToPageCommandTemplate } from './commands/goToPage.command.template';
-import { SetErrorInErrorProviderAndNotifyCommandTemplate } from './commands/setErrorInErrorProviderAndNotify.command.template';
-import { CopyValueInCurrentItemCommandTemplate } from './commands/copyValueInCurrentItem.command.template';
-import { HideDetailsCommandTemplate } from './commands/hideDetails.command.template';
-import { RemoveAllArrayElementsCommandTemplate } from './commands/removeAllArrayElements.command.template';
-import { FireEventCommandTemplate } from './commands/fireEvent.command.template';
-import { EnableGuiElementsCommandTemplate } from './commands/enableGuiElements.command.template';
-import { RenameNavigationElementCommandTemplate } from './commands/renameNavigationElement.command.template';
-import { SetWarningInWarningProviderAndNotifyCommandTemplate } from './commands/setWarningInWarningProviderAndNotify.command.template';
-import { AddItemAndShowGridDetailsCommandTemplate } from './commands/addItemAndShowGridDetails.command.template';
-import { CopyObjectCommandTemplate} from './commands/copyObject.command.template';
-import { ShowGridDetailsCommandTemplate } from './commands/showGridDetails.command.template';
-import { ConfirmCommandAndChangeSwitchValueCommandTemplate} from './commands/confirmCommandAndChangeSwitchValue.command.template';
-import { CalculateCommandTemplate } from './commands/calculate.command.template';
-import { CustomCommandTemplate} from './commands/custom.command.template';
+import { BaseCommandTemplate } from './infrastructure/api/command/commands/base.command.template';
+import { CopyValueCommandTemplate } from './infrastructure/api/command/commands/copyValue.command.template';
+import { ExecuteApplicationCommandTemplate } from './infrastructure/api/command/commands/executeApplication.command.template';
+import { ActionCommandTemplate } from './infrastructure/api/command/commands/action.command.template';
+import { SetErrorInErrorProviderCommandTemplate } from './infrastructure/api/command/commands/setErrorInErrorProvider.command.template';
+import { ShowDetailsCommandTemplate } from './infrastructure/api/command/commands/showDetails.command.template';
+import { SetTextForAutoCompleteCommandTemplate } from './infrastructure/api/command/commands/setTextForAutoComplete.command.template';
+import { ShowNavigationElementCommandTemplate } from './infrastructure/api/command/commands/showNavigationElement.command.template';
+import { ValidateCommandTemplate } from './infrastructure/api/command/commands/validate.command.template';
+import { SetToDefaultCommandTemplate } from './infrastructure/api/command/commands/setToDefault.command.template';
+import { DeleteArrayElementsCommandTemplate } from './infrastructure/api/command/commands/deleteArrayElements.command.template';
+import { ShowGuiElementsCommandTemplate } from './infrastructure/api/command/commands/showGuiElements.command.template';
+import { AddArrayElementCommandTemplate } from './infrastructure/api/command/commands/addArrayElement.command.template';
+import { GoToPageCommandTemplate } from './infrastructure/api/command/commands/goToPage.command.template';
+import { SetErrorInErrorProviderAndNotifyCommandTemplate } from './infrastructure/api/command/commands/setErrorInErrorProviderAndNotify.command.template';
+import { CopyValueInCurrentItemCommandTemplate } from './infrastructure/api/command/commands/copyValueInCurrentItem.command.template';
+import { HideDetailsCommandTemplate } from './infrastructure/api/command/commands/hideDetails.command.template';
+import { RemoveAllArrayElementsCommandTemplate } from './infrastructure/api/command/commands/removeAllArrayElements.command.template';
+import { FireEventCommandTemplate } from './infrastructure/api/command/commands/fireEvent.command.template';
+import { EnableGuiElementsCommandTemplate } from './infrastructure/api/command/commands/enableGuiElements.command.template';
+import { RenameNavigationElementCommandTemplate } from './infrastructure/api/command/commands/renameNavigationElement.command.template';
+import { SetWarningInWarningProviderAndNotifyCommandTemplate } from './infrastructure/api/command/commands/setWarningInWarningProviderAndNotify.command.template';
+import { AddItemAndShowGridDetailsCommandTemplate } from './infrastructure/api/command/commands/addItemAndShowGridDetails.command.template';
+import { CopyObjectCommandTemplate} from './infrastructure/api/command/commands/copyObject.command.template';
+import { ShowGridDetailsCommandTemplate } from './infrastructure/api/command/commands/showGridDetails.command.template';
+import { ConfirmCommandAndChangeSwitchValueCommandTemplate} from './infrastructure/api/command/commands/confirmCommandAndChangeSwitchValue.command.template';
+import { CalculateCommandTemplate } from './infrastructure/api/command/commands/calculate.command.template';
+import { CustomCommandTemplate} from './infrastructure/api/command/commands/custom.command.template';
 
 import { AppComponent } from './app.component';
 import { ConditionsComponent } from './components/condition/conditions.component';

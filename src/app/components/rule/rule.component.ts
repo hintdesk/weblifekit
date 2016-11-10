@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CommandApi } from '../../infrastructure/command.api';
+import { CommandApi } from '../../infrastructure/api/command/command.api';
 
 import { Rule, RuleCategoryArt, RuleModel } from '../../models/rule';
 import { Command, CommandType, ElementType, CommandEventType, PlainTextType } from '../../models/command';
-import { CommandTemplate} from '../../commands/command.template';
+import { CommandTemplate} from '../../infrastructure/api/command/commands/command.template';
 
 
 @Component({
