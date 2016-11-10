@@ -67,15 +67,16 @@
 		<label class="col-md-2" for="">Tariff</label>
 		<div class="col-md-8">
 			<input class="form-control" [(ngModel)]="snippetsModel.Tariff" type="text" placeholder="{{TextPlaceholderSearchForTariff}}"
-				(keydown.enter)="searchForTariff()">
+				(ngModelChange)="onTariffChanged($event)">
 		</div>
-		<div *ngIf="foundTariffs" class="col-md-8 col-xs-offset-2">
+		<small *ngIf="foundTariffs && foundTariffs.length ===0" class="col-md-8 col-xs-offset-2 text-danger">{{TextNoTariffFound}}</small>
+		<div *ngIf="foundTariffs" class="col-md-8 col-xs-offset-2 top-buffer">
 			<ul>
 				<li *ngFor="let tariff of foundTariffs">
 					{{tariff.toString()}}
 				</li>
 			</ul>
 		</div>
-		<small *ngIf="foundTariffs && foundTariffs.length ===0" class="col-md-8 col-xs-offset-2 text-danger">{{TextNoTariffFound}}</small>
+		
 	</div>
 </div>
