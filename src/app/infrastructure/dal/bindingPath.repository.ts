@@ -7,6 +7,7 @@ export class BindingPathRepository {
              "BerechnungsErgebnis",
              "BerechnungsEingaben.VersicherungsNehmer",
              "BerechnungsEingaben.WirtschaftlichBerechtigter",
+             "SelectedTariff.MetaData['TarifKlasse']",
              "BerechnungsEingaben.HauptTarif.Hochrechnungszins1",             
          ];
          return paths;
