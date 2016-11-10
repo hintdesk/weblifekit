@@ -4,13 +4,23 @@ import { TariffRepository } from './tariff.repository';
 
 @Injectable()
 export class Repository {
-    BindingPath: BindingPathRepository;
-    Tariff: TariffRepository;
+    private bindingPath: BindingPathRepository;
+    private tariff: TariffRepository;
+
+
     constructor(
         private bindingPathRepository: BindingPathRepository,
         private tariffRepository: TariffRepository
     ) {
-        this.BindingPath = bindingPathRepository;
-        this.Tariff = tariffRepository;
+        this.bindingPath = bindingPathRepository;
+        this.tariff = tariffRepository;
+    }
+
+    get BindingPath() {
+        return this.bindingPath;
+    }
+
+    get Tariff() {
+        return this.tariff;
     }
 }
