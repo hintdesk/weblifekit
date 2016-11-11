@@ -18,7 +18,7 @@ export class TariffRepository {
 
                 new Tariff(["Schicht 3/Private Vorsorge", "Privatrente", "Renteclassic select (AR14)"]),
                 new Tariff(["Schicht 3/Private Vorsorge", "Privatrente", "Depot Renteclassic (AR9)"]),
-                new Tariff(["Schicht 3/Private Vorsorge", "Privatrente", "Sofort Renteclassic select (SR12)"]),
+                new Tariff(["Schicht 3/Private Vorsorge", "Privatrente", "Anlegerklasse 3","Einmalbeitrag","0 Jahre", "Sofort Renteclassic select (SR12)"]),
                 new Tariff(["Schicht 3/Private Vorsorge", "Privatrente", "Juniorinvest (FV10)"]),
                 new Tariff(["Schicht 3/Private Vorsorge", "Privatrente", "Juniorinvest gegen Einmalbeitrag (FVE0)"]),
                 new Tariff(["Schicht 3/Private Vorsorge", "Privatrente", "VarioInvest Rente (FS10)"]),
