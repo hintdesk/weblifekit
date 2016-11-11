@@ -1,10 +1,10 @@
-import { Injectable }                           from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import { NamingProvider }                        from '../../../../infrastructure/naming.provider';
+import { NamingProvider } from '../../../../infrastructure/naming.provider';
 
-import { CommandTemplate }                      from './command.template';
+import { CommandTemplate } from './command.template';
 import { Command, CommandExecuteParameter, CommandInitializeParameter, CommandInitializeParameterName, CommandType, ElementType, PlainTextType } from '../../../../models/command';
-import { Rule, RuleCategoryArt,RuleModel }                from '../../../../models/rule';
+import { Rule, RuleCategoryArt,RuleModel } from '../../../../models/rule';
 import { BaseCommandTemplate } from './base.command.template';
 
 @Injectable()
