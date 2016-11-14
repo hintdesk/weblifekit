@@ -1,6 +1,7 @@
 export class ResourceTextService {
     ResourceText1 :string = "The property of new inserting item which should be set by SourceElement";
     ResourceText2 :string = "This command is used for setting default value to property of item when inserting new item into list. Normally it's called on change-event of list object";
+    ResourceText3:string = "This command is used for setting default value of a dropdown. Dropdown needs to be bound by statetableContent attribute. In the statetable the default entries must be marked with 'isDefault:true'";
 
     TextCommandDescriptionDeleteArrayElements:string = "Delete element with flag Deleted = true from given array";
     TextJsonDeserializationError :string = "JsonSerializerSettings settings = new JsonSerializerSettings() { Error = delegate(object sender, ErrorEventArgs args) {} };";

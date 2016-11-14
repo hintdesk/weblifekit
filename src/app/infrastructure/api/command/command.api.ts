@@ -30,6 +30,7 @@ import { ShowGridDetailsCommandTemplate } from './commands/showGridDetails.comma
 import { ConfirmCommandAndChangeSwitchValueCommandTemplate} from './commands/confirmCommandAndChangeSwitchValue.command.template';
 import { CalculateCommandTemplate} from './commands/calculate.command.template';
 import { CustomCommandTemplate} from './commands/custom.command.template';
+import { SetOfRulesCommandTemplate} from './commands/setOfRules.command.template';
 
 
 @Injectable()
@@ -62,7 +63,8 @@ export class CommandApi {
         private showGridDetailsCommandTemplate:ShowGridDetailsCommandTemplate,
         private confirmCommandAndChangeSwitchValueCommandTemplate: ConfirmCommandAndChangeSwitchValueCommandTemplate,
         private calculateCommandTemplate:CalculateCommandTemplate,
-        private customCommandTemplate: CustomCommandTemplate) {
+        private customCommandTemplate: CustomCommandTemplate,
+        private setOfRulesCommandTemplate:SetOfRulesCommandTemplate) {
 
     }
 
@@ -95,6 +97,7 @@ export class CommandApi {
             CommandType.ConfirmCommandAndChangeSwitchValueCommand,
             CommandType.CalculateCommand,
             CommandType.CustomCommand,
+            CommandType.SetOfRules
         ];
         return ruleCommands.sort();
 
@@ -129,7 +132,8 @@ export class CommandApi {
                 this.showGridDetailsCommandTemplate,
                 this.confirmCommandAndChangeSwitchValueCommandTemplate,
                 this.calculateCommandTemplate,
-                this.customCommandTemplate
+                this.customCommandTemplate,
+                this.setOfRulesCommandTemplate
             ];
         return commandTemplates;
     }

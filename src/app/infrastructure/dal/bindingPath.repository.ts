@@ -8,7 +8,8 @@ export class BindingPathRepository {
              "BerechnungsEingaben.VersicherungsNehmer",
              "BerechnungsEingaben.WirtschaftlichBerechtigter",
              "SelectedTariff.MetaData['TarifKlasse']",
-             "BerechnungsEingaben.HauptTarif.Hochrechnungszins1",             
+             "BerechnungsEingaben.HauptTarif.Hochrechnungszins1",
+             "BerechnungsEingaben.VersicherungsNehmer.AnredeArt"             
          ];
          return paths;
     }

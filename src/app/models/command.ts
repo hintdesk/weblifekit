@@ -86,6 +86,7 @@ export class CommandType {
     static RenameNavigationElementCommand: string = "renameNavigationElement";
     static SetErrorInErrorProviderCommand: string = "setErrorInErrorProviderCommand";
     static SetErrorInErrorProviderAndNotifyCommand: string = "setErrorInErrorProviderAndNotifyCommand";
+    static SetOfRules :string ="setOfRules";
     static SetWarningInWarningProviderAndNotifyCommand: string = "setWarningInWarningProviderAndNotifyCommand";
     static SetTextForAutoCompleteCommand: string = "setTextForAutoCompleteCommand";
     static SetToDefaultCommand: string = "setToDefaultCommand";

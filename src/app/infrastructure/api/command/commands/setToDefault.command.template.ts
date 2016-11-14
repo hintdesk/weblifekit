@@ -11,6 +11,7 @@ export class SetToDefaultCommandTemplate extends BaseCommandTemplate {
 
     constructor(private namingProvider: NamingProvider) {
         super();
+        this.Description = this.ResourceText3;
     }
     canHandle(ruleModel: RuleModel): boolean {
         return ruleModel.CommandType === CommandType.SetToDefaultCommand;

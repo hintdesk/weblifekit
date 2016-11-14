@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Tariff} from '../../models/tariff';
+import { Tariff } from '../../models/tariff';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
@@ -12,13 +12,13 @@ export class TariffRepository {
                 new Tariff(["Schicht 1/Private Vorsorge", "Basisrente", "Basis Renteinvest (FVB1)"]),
                 new Tariff(["Schicht 1/Private Vorsorge", "Basisrente", "Basis Renteinvest gegen Einmalbeitrag (FVB1E)"]),
                 new Tariff(["Schicht 1/Private Vorsorge", "Basisrente", "Basis Renteinvest Spezial (FVB4)"]),
-                new Tariff(["Schicht 1/Private Vorsorge", "Basisrente", "Basis Renteinvest Spezial gegen Einmalbeitrag (FVB4E)"]),                
-                
+                new Tariff(["Schicht 1/Private Vorsorge", "Basisrente", "Basis Renteinvest Spezial gegen Einmalbeitrag (FVB4E)"]),
+
                 new Tariff(["Schicht 1/Private Vorsorge", "Förder-Rentenversicherung", "VarioInvest FörderRente (FR12)"]),
 
                 new Tariff(["Schicht 3/Private Vorsorge", "Privatrente", "Renteclassic select (AR14)"]),
                 new Tariff(["Schicht 3/Private Vorsorge", "Privatrente", "Depot Renteclassic (AR9)"]),
-                new Tariff(["Schicht 3/Private Vorsorge", "Privatrente", "Anlegerklasse 3","Einmalbeitrag","0 Jahre", "Sofort Renteclassic select (SR12)"]),
+                new Tariff(["Schicht 3/Private Vorsorge", "Privatrente", "Einmalbeitrag", "0 Jahre", "Sofort Renteclassic select (SR12)"]),
                 new Tariff(["Schicht 3/Private Vorsorge", "Privatrente", "Juniorinvest (FV10)"]),
                 new Tariff(["Schicht 3/Private Vorsorge", "Privatrente", "Juniorinvest gegen Einmalbeitrag (FVE0)"]),
                 new Tariff(["Schicht 3/Private Vorsorge", "Privatrente", "VarioInvest Rente (FS10)"]),
@@ -42,9 +42,9 @@ export class TariffRepository {
                 new Tariff(["Schicht 3/Private Vorsorge", "Risiko Leben", "Risikoleben Basis (RIS17)"]),
                 new Tariff(["Schicht 3/Private Vorsorge", "Risiko Leben", "Risikoleben Top (RIS18)"]),
 
-                new Tariff(["Eagle Star Produktfamilie", "Eagle Star RisikoLeben-top (EAGLE1)"]),                
-                new Tariff(["Eagle Star Produktfamilie", "Eagle Star RisikoLeben-basic (EAGLE2)"]),                
-                new Tariff(["Eagle Star Produktfamilie", "Eagle Star Erweiterter Krankheits-Schutzbrief (EAGLE3)"]),                
+                new Tariff(["Eagle Star Produktfamilie", "Eagle Star RisikoLeben-top (EAGLE1)"]),
+                new Tariff(["Eagle Star Produktfamilie", "Eagle Star RisikoLeben-basic (EAGLE2)"]),
+                new Tariff(["Eagle Star Produktfamilie", "Eagle Star Erweiterter Krankheits-Schutzbrief (EAGLE3)"]),
                 new Tariff(["Eagle Star Produktfamilie", "Eagle Star Krankheits-Schutzbrief (EAGLE4)"]),
 
                 new Tariff(["Schicht 2/Betriebliche Altersversorgung", "Direktversicherung - Entgeltumwandlung", "Renteclassic select (AR14)"]),
@@ -68,12 +68,12 @@ export class TariffRepository {
                 new Tariff(["Schicht 2/Betriebliche Altersversorgung", "U-Kasse", "VarioInvest Rente (FS10)"]),
                 new Tariff(["Schicht 2/Betriebliche Altersversorgung", "U-Kasse", "Vorsorgeinvest (FV1)"]),
                 new Tariff(["Schicht 2/Betriebliche Altersversorgung", "U-Kasse", "Vorsorgeinvest Spezial (FV16)"]),
-                
+
             ];
         return tariffs;
     }
 
-    search(term:string) : Observable<Tariff[]> {
+    search(term: string): Observable<Tariff[]> {
         var tariffs: Tariff[] = this.getAll();
         var foundTariffs = [];
         for (let tariff of tariffs) {

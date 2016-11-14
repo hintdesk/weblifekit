@@ -7,8 +7,11 @@ export class Rule {
     CategoryArt : string; 
     Condition : Condition;
     Command : Command;
+    IsReference: boolean;
     ListProperty: string;
     Name: string;
+    Rules: Rule[];
+
 
     constructor(ruleModel:RuleModel)
     {

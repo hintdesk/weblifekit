@@ -50,6 +50,7 @@ import { ShowGridDetailsCommandTemplate } from './infrastructure/api/command/com
 import { ConfirmCommandAndChangeSwitchValueCommandTemplate} from './infrastructure/api/command/commands/confirmCommandAndChangeSwitchValue.command.template';
 import { CalculateCommandTemplate } from './infrastructure/api/command/commands/calculate.command.template';
 import { CustomCommandTemplate} from './infrastructure/api/command/commands/custom.command.template';
+import { SetOfRulesCommandTemplate} from './infrastructure/api/command/commands/setOfRules.command.template';
 
 import { AppComponent } from './app.component';
 import { ConditionsComponent } from './components/condition/conditions.component';
@@ -179,8 +180,8 @@ import { ShowGridDetailsComponent} from './components/commands/showGridDetails.c
     AddItemAndShowGridDetailsCommandTemplate,
     CopyObjectCommandTemplate,
     ShowGridDetailsCommandTemplate,
-    CustomCommandTemplate
- 
+    CustomCommandTemplate,
+    SetOfRulesCommandTemplate
   ],
 
   bootstrap: [
