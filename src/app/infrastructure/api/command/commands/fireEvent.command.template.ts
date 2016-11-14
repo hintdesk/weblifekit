@@ -26,9 +26,7 @@ export class FireEventCommandTemplate extends BaseCommandTemplate {
         
         var cipEventType = new CommandInitializeParameter();
         cipEventType.Name = String(ruleModel.CommandEventType);
-        cipEventType.PlainText = ruleModel.CommandEventTypeValue;
-        if (ruleModel.CommandEventType !== CommandEventType.EventDataPath)
-            cipEventType.ValueTypeArt = ElementType.PlainText;
+        cipEventType.PlainText = ruleModel.CommandEventTypeValue;        
         rule.Command.CommandInitializeParameters.push(cipEventType);
 
         //EventName
