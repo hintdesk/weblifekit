@@ -3,8 +3,7 @@
 	<div class="row top-buffer">
 		<label class="col-md-2" for="">Command</label>
 		<div class="col-md-8">
-			<select class="form-control" [(ngModel)]="ruleModel.CommandType" (ngModelChange)="onCommandTypeChanged($event)"
-				name="">
+			<select class="form-control" [(ngModel)]="ruleModel.CommandType" (ngModelChange)="onCommandTypeChanged($event)" name="">
             	<option *ngFor="let ruleCommand of commandTypes" [ngValue]="ruleCommand">{{ruleCommand}}</option>
 			</select>
 		</div>
@@ -17,9 +16,10 @@
 	<div class="row top-buffer">
 		<label class="col-md-2" for="">Condition</label>
 		<div class="col-md-8 has-feedback">
-			<input #inputCondition class="form-control" [(ngModel)]="ruleModel.Condition" (ngModelChange)="onDataChanged($event)"
-				type="text">
-			<!--<span *ngIf="condition !== ''" (click)="condition = ''" class="glyphicon glyphicon-remove form-control-feedback" style="cursor: pointer; pointer-events: all;" uib-tooltip="clear"></span>-->
+			<input #inputCondition class="form-control" [(ngModel)]="ruleModel.Condition" (ngModelChange)="onDataChanged($event)" type="text">
+		</div>
+		<div class="col-md-2" *ngIf="conditionDescription">
+			<span class="glyphicon glyphicon-info-sign" [tooltip]="conditionDescription" tooltipPlacement="bottom"></span>
 		</div>
 	</div>
 
@@ -96,7 +96,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row" >
+	<div class="row">
 		<p class="col-md-8 col-md-offset-2 text-muted text-warning"><small>*Please check if the same rule exists before creating a new one.</small></p>
 	</div>
 

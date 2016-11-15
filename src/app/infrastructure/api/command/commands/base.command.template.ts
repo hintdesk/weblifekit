@@ -5,6 +5,7 @@ import { ResourceTextService} from '../../../../infrastructure/resourceText.serv
 
 
 export class BaseCommandTemplate extends ResourceTextService implements CommandTemplate {
+    ConditionDescription:string;
     Description:string;
 
     canHandle(ruleModel: RuleModel): boolean {

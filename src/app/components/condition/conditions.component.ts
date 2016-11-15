@@ -91,7 +91,7 @@ export class ConditionsComponent {
     getNameIfLeftCondition(): string {
         switch (this.conditionModel.RightConditionType) {
             case ConditionType.RightCondition:
-                return "Is_" + this.namingProvider.removeUnderscore(this.conditionModel.LeftParameter) + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingProvider.removeUnderscore(this.conditionModel.RightParameter);
+                return "Is_" + this.namingProvider.removeUnderscore(this.conditionModel.LeftParameter.replace("Is_", "")) + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingProvider.removeUnderscore(this.conditionModel.RightParameter.replace("Is_", ""));
             default:
                 return "";
         }

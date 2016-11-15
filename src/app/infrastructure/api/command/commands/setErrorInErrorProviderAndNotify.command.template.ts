@@ -11,6 +11,8 @@ export class SetErrorInErrorProviderAndNotifyCommandTemplate extends BaseCommand
 
     constructor(private namingProvider: NamingProvider) {
         super();
+        this.ConditionDescription = this.ResourceText5;
+        this.Description = this.ResourceText4;
     }
     canHandle(ruleModel: RuleModel): boolean {
         return ruleModel.CommandType === CommandType.SetErrorInErrorProviderAndNotifyCommand;
