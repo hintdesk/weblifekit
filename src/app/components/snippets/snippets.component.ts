@@ -30,6 +30,7 @@ export class SnippetsComponent extends ResourceTextService implements OnInit {
     }
 
     ngOnInit() {
+        this.appContext.Repository.Tariff.init();
         this.pathsInHistory = JSON.parse(localStorage.getItem(ConstantValues.WLLast10BindingPaths));
         if (!this.pathsInHistory) {
             this.pathsInHistory = [];
