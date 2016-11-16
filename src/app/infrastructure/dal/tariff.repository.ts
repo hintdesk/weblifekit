@@ -98,7 +98,12 @@ export class TariffRepository {
     }
 
     init() {
-        return this.http.get("/assets/products.json")
+        var url = "";
+        if (window.location.href.indexOf("github") > 0)
+            url = "/weblifekit/assets/products.json";
+        else
+            url = "/assets/products.json";
+        return this.http.get(url)
             .toPromise()
             .then(response => {
                 var tariffs: Tariff[] = [];
@@ -121,7 +126,7 @@ export class TariffRepository {
                 var tarifExternLookUp = {};
                 for (let workSheet of excel.Worksheets) {
                     if (workSheet.Name === "Tarife-Extern") {
-                        for (let row of workSheet.Rows) {                            
+                        for (let row of workSheet.Rows) {
                             if (schichtProduktgruppe[row.Produktgruppe])
                                 tarifExternLookUp[row.NeueImpeoID] = { Prefix: [schichtProduktgruppe[row.Produktgruppe] + "/" + row.Kachel, row.Produktgruppe], Suffix: row.Werbename + " (" + row.PURKey + ")" }
                             else
@@ -145,7 +150,7 @@ export class TariffRepository {
                                     paths.push(row.LaufzeitinJahren);
                                 paths.push(tarifExternLookUp[row.NeueImpeoID].Suffix)
                                 this.allTariffs.push(new Tariff(paths));
-                            }                           
+                            }
                         }
                     }
                 }
