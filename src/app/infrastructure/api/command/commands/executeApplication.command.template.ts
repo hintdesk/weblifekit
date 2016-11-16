@@ -26,7 +26,7 @@ export class ExecuteApplicationCommandTemplate extends BaseCommandTemplate {
         var cipApplicationName = new CommandInitializeParameter();
         cipApplicationName.Name = CommandInitializeParameterName.ApplicationName;
         cipApplicationName.PlainText = ruleModel.ApplicationName;
-        cipApplicationName.ValueTypeArt = ElementType.PlainText;       
+        // cipApplicationName.ValueTypeArt = ElementType.PlainText;       
         rule.Command.CommandInitializeParameters.push(cipApplicationName);
 
         //SourceProperty
@@ -81,7 +81,7 @@ export class ExecuteApplicationCommandTemplate extends BaseCommandTemplate {
             var cipCopyMode = new CommandInitializeParameter();
             cipCopyMode.Name = CommandInitializeParameterName.CopyMode;
             cipCopyMode.PlainText = PlainTextType.Properties;
-            cipCopyMode.ValueTypeArt = ElementType.PlainText;
+            // cipCopyMode.ValueTypeArt = ElementType.PlainText;
             rule.Command.CommandInitializeParameters.push(cipCopyMode);
         }
 

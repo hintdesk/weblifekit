@@ -1,6 +1,6 @@
 <!--UIField-->
 <div class="row top-buffer">
-	<label class="col-md-2" for="">UIField</label>
+	<label class="col-md-2" for="">UIField (required)</label>
 	<div class="col-md-8">
 		<input class="form-control" [(ngModel)]="ruleModel.UIField" (ngModelChange)="onModelDataChanged($event)" type="text"
 			placeholder="{{TextPlaceholderUIField}}">
@@ -9,7 +9,7 @@
 
 <!--ListProperty-->
 <div class="row top-buffer">
-	<label class="col-md-2" for="">ListProperty</label>
+	<label class="col-md-2" for="">ListProperty (required)</label>
 	<div class="col-md-8">
 		<input class="form-control" [(ngModel)]="ruleModel.ListProperty" (ngModelChange)="onModelDataChanged($event)" type="text"
 			placeholder="{{TextPlaceholderListProperty}}">
@@ -18,7 +18,7 @@
 
 <!--ColumnIndex-->
 <div class="row top-buffer">
-	<label class="col-md-2" for="">ColumnIndex</label>
+	<label class="col-md-2" for="">ColumnIndex (required)</label>
 	<div class="col-md-8" [class.has-error]="columnIndex.errors?.number" >
 		<input class="form-control" [(ngModel)]="ruleModel.ColumnIndex" (ngModelChange)="onModelDataChanged($event)" type="text"
 			placeholder="{{TextPlaceholderColumnIndex}}" name="columnIndex" #columnIndex="ngModel" number>
@@ -28,7 +28,7 @@
 
 <!--ErrorText-->
 <div class="row top-buffer">
-	<label class="col-md-2" for="">ErrorText</label>
+	<label class="col-md-2" for="">ErrorText (required)</label>
 	<div class="col-md-2">
 		<select class="form-control" [(ngModel)]="ruleModel.ErrorTextType" (ngModelChange)="onErrorTextTypeChanged($event)"
 			name="" id="">
