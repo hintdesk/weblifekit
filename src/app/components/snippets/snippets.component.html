@@ -36,9 +36,7 @@
 	<!--OpenStateTableWindow-->
 	<div class="row top-buffer">
 		<label class="col-md-2">Open StateTable window</label>
-		<div #divST class="col-md-8">
-			$("#productPages").trigger("process.debugger")
-		</div>
+		<div #divST class="col-md-8">$("#productPages").trigger("process.debugger")</div>
 		<div class="col-md-2">
 			<div>
 				<button class="btn btn-primary" [ngIIclipboard]="divST">Copy to clipboard</button>
