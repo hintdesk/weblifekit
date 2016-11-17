@@ -27,7 +27,7 @@ export class SetToDefaultCommandTemplate extends BaseCommandTemplate {
         var cipUIField = new CommandInitializeParameter();
         cipUIField.Name = CommandInitializeParameterName.uiField;
         cipUIField.PlainText = ruleModel.UIField;
-        cipUIField.ValueTypeArt = ElementType.PlainText;
+        // cipUIField.ValueTypeArt = ElementType.PlainText;
         rule.Command.CommandInitializeParameters.push(cipUIField);
 
         return rule;
