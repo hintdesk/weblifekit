@@ -142,6 +142,8 @@ export class TariffRepository {
                             if (tarifExternLookUp[row.NeueImpeoID]) {
                                 for (let element of tarifExternLookUp[row.NeueImpeoID].Prefix)
                                     paths.push(element);
+                                if (row.ChancenRisikoKlasse)
+                                    paths.push(row.ChancenRisikoKlasse)
                                 if (row.GesamtRisikoInd)
                                     paths.push(row.GesamtRisikoInd);
                                 if (row.Beitragszahlungsweise)
