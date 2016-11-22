@@ -41,6 +41,7 @@ export class CommandInitializeParameterName {
     static Height: string = "height";
     static HideClose: string = "hideClose";
     static Id: string = "Id";
+    static IgnoreNullsForCopy: string = "ignoreNullsForCopy";
     static InfoText: string = "infoText";
     static Message: string = "message";
     static Page: string = "page";
@@ -86,7 +87,7 @@ export class CommandType {
     static RenameNavigationElementCommand: string = "renameNavigationElement";
     static SetErrorInErrorProviderCommand: string = "setErrorInErrorProviderCommand";
     static SetErrorInErrorProviderAndNotifyCommand: string = "setErrorInErrorProviderAndNotifyCommand";
-    static SetOfRules :string ="setOfRules";
+    static SetOfRules: string = "setOfRules";
     static SetWarningInWarningProviderAndNotifyCommand: string = "setWarningInWarningProviderAndNotifyCommand";
     static SetTextForAutoCompleteCommand: string = "setTextForAutoCompleteCommand";
     static SetToDefaultCommand: string = "setToDefaultCommand";
@@ -107,6 +108,10 @@ export class ElementType {
     static SpringObjectName: string = "SpringObjectName";
 }
 
+export class CommandCopyMode {
+    static Properties: string = "Properties";
+    static Object: string = "Object";
+}
 export class CommandEventType {
     static EventDataField: string = "eventDataField";
     static EventDataPath: string = "eventDataPath";

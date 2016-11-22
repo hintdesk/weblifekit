@@ -1,11 +1,12 @@
 import { Rule, RuleModel } from '../../../../models/rule';
-import { CommandEventType, ElementType } from '../../../../models/command';
+import { CommandCopyMode, CommandEventType, ElementType } from '../../../../models/command';
 
 export interface CommandTemplate {
     ConditionDescription: string;
     Description: string;
     canHandle(ruleModel: RuleModel): boolean;
     execute(ruleModel: RuleModel): Rule;
+    getCopyModes():CommandCopyMode[];
     getDestinationElementTypes(): ElementType[];
     getDisplayNameTypes(): ElementType[];
     getErrorTextTypes(): ElementType[];

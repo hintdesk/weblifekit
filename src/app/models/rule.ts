@@ -1,4 +1,4 @@
-import { Command, CommandType, ElementType, CommandEventType }  from './command';
+import { Command, CommandCopyMode, CommandType, ElementType, CommandEventType }  from './command';
 import { Condition } from './condition';
 
 
@@ -40,7 +40,7 @@ export class RuleModel {
     CategoryArt: string = "";
     BadCommand: boolean = false;
     CommandType: CommandType;
-    CopyMode: boolean = false;
+    CopyMode: CommandCopyMode;
     ColumnIndex: string = "";
     CommandEventType: CommandEventType;
     CommandEventTypeValue: string = "";    
@@ -58,6 +58,7 @@ export class RuleModel {
     Height:string = "";
     HideClose: boolean = false;
     Id: string = "";
+    IgnoreNullsForCopy:boolean=false;
     InfoText: string = "";
     JsonTypeAssemblyName: string = "";
     JsonTypeName: string = "";

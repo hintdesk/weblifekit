@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { BaseCommandComponent } from './baseCommand.component';
 import { AppContext } from '../../infrastructure/app.context';
-import { CommandEventType } from '../../models/command';
+import { CommandCopyMode, CommandEventType } from '../../models/command';
 import { Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { RuleModel } from '../../models/rule';
 
@@ -13,6 +13,8 @@ import { RuleModel } from '../../models/rule';
 export class ExecuteApplicationComponent extends BaseCommandComponent {
         @Input()
     ruleModel: RuleModel;
+    eventNameWarning:string;
+    synchronousWarning:string;
 
     @Output()
     onDataChanged = new EventEmitter();
@@ -21,10 +23,31 @@ export class ExecuteApplicationComponent extends BaseCommandComponent {
         super(appContext);
     }
 
+    isEventAndSynchronous() : boolean
+    {
+        this.eventNameWarning = "";
+        this.synchronousWarning = "";
+        return this.ruleModel.Synchronous && this.ruleModel.EventName && this.ruleModel.EventName!== "";
+    }
+
+    onEventNameChanged($event){        
+        if (this.isEventAndSynchronous())
+            this.eventNameWarning = this.ResourceText6;
+        this.onModelDataChanged($event);
+    }
+
+    onSynchronousChanged($event){        
+        if (this.isEventAndSynchronous())
+            this.synchronousWarning = this.ResourceText6;
+        this.onModelDataChanged($event);
+    }
+
     onTargetPropertyChanged($event){
         if (this.ruleModel.TargetProperty === "this")
-            this.ruleModel.CopyMode = true;
+            this.ruleModel.CopyMode = CommandCopyMode.Properties;
 
         this.onModelDataChanged($event);
     }
+
+
 }

@@ -4,6 +4,7 @@ export class ResourceTextService {
     ResourceText3:string = "This command is used for setting default value of a dropdown. Dropdown needs to be bound by statetableContent attribute. In the statetable the default entries must be marked with 'isDefault:true'.";
     ResourceText4:string = "This command is used for validating value of a column in a grid. Warning: The condition is built on the context of ListProperty. Don't use path of viewModel in condition of the rule.";
     ResourceText5:string = "Warning: The condition must be built on the context of ListProperty. Don't use path of viewModel.";
+    ResourceText6:string = "Warning: Don't use eventName with synchronous mode. The rules of event will be executed before the rest rules on the stack";
 
     TextCommandDescriptionDeleteArrayElements:string = "Delete element with flag Deleted = true from given array";
     TextJsonDeserializationError :string = "JsonSerializerSettings settings = new JsonSerializerSettings() { Error = delegate(object sender, ErrorEventArgs args) {} };";

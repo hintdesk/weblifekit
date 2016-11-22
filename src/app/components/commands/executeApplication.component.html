@@ -34,24 +34,26 @@
 </div>
 
 <!--InfoText-->
-<div class="row top-buffer">
-	<label class="col-md-2" for="">InfoText</label>
+<!--<div class="row top-buffer">
+	<label class="col-md-2" for="">InfoText (optional)</label>
 	<div class="col-md-8">
 		<input class="form-control" [(ngModel)]="ruleModel.InfoText" (ngModelChange)="onModelDataChanged($event)" type="text" placeholder="{{TextPlaceholderInfoText}}">
 	</div>
-</div>
+</div>-->
 
 <!--EventName-->
 <div class="row top-buffer">
-	<label class="col-md-2" for="">EventName</label>
+	<label class="col-md-2" for="">EventName (optional)</label>
 	<div class="col-md-8">
-		<input class="form-control" [(ngModel)]="ruleModel.EventName" (ngModelChange)="onModelDataChanged($event)" type="text" placeholder="{{TextPlaceholderEventName}}">
+		<input class="form-control" [(ngModel)]="ruleModel.EventName" (ngModelChange)="onEventNameChanged($event)" type="text" placeholder="{{TextPlaceholderEventName}}">
+		<div *ngIf="eventNameWarning" class="alert alert-warning">{{eventNameWarning}}</div>
 	</div>
 </div>
 
+
 <!--ErrorEventName-->
 <div class="row top-buffer">
-	<label class="col-md-2" for="">ErrorEventName</label>
+	<label class="col-md-2" for="">ErrorEventName (optional)</label>
 	<div class="col-md-8">
 		<input class="form-control" [(ngModel)]="ruleModel.ErrorEventName" (ngModelChange)="onModelDataChanged($event)" type="text"
 			placeholder="{{TextPlaceholderErrorEventName}}">
@@ -60,16 +62,36 @@
 
 <!--CopyMode-->
 <div class="row top-buffer">
-	<label class="col-md-2" for="">CopyMode</label>
-	<div class="col-md-8 checkbox hd-checkbox">
+	<label class="col-md-2" for="">CopyMode (optional)</label>
+	<div class="col-md-8">
+		<select class="form-control" [(ngModel)]="ruleModel.CopyMode" (ngModelChange)="onModelDataChanged($event)" name="" id="">
+		<option *ngFor="let copyMode of copyModes" [ngValue]="copyMode">{{copyMode}}</option>
+	</select>
+	</div>
+
+	<!--<div class="col-md-8 checkbox hd-checkbox">
 		<input [(ngModel)]="ruleModel.CopyMode" (ngModelChange)="onModelDataChanged($event)" type="checkbox">
+	</div>-->
+</div>
+
+<!--IgnoreNullsForCopy-->
+<div class="row top-buffer">
+	<label class="col-md-2" for="">IgnoreNullsForCopy (optional)</label>
+	<div class="col-md-8 checkbox hd-checkbox">
+		<input [(ngModel)]="ruleModel.IgnoreNullsForCopy" (ngModelChange)="onModelDataChanged($event)" type="checkbox">
 	</div>
 </div>
 
 <!--Synchronous-->
 <div class="row top-buffer">
-	<label class="col-md-2" for="">Synchronous</label>
+	<label class="col-md-2" for="">Synchronous (optional)</label>
 	<div class="col-md-8 checkbox hd-checkbox">
-		<input [(ngModel)]="ruleModel.Synchronous" (ngModelChange)="onModelDataChanged($event)" type="checkbox">
+		<input [(ngModel)]="ruleModel.Synchronous" (ngModelChange)="onSynchronousChanged($event)" type="checkbox">
+	</div>
+
+</div>
+<div class="row">
+	<div class="col-md-offset-2 col-md-8">
+	<div *ngIf="synchronousWarning" class="alert alert-warning">{{synchronousWarning}}</div>
 	</div>
 </div>

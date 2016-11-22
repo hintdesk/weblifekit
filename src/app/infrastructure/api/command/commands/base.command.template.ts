@@ -1,12 +1,12 @@
 import { CommandTemplate } from './command.template';
-import { CommandType, CommandEventType, ElementType } from '../../../../models/command';
-import { Rule, RuleModel} from '../../../../models/rule';
-import { ResourceTextService} from '../../../../infrastructure/resourceText.service';
+import { CommandCopyMode, CommandType, CommandEventType, ElementType } from '../../../../models/command';
+import { Rule, RuleModel } from '../../../../models/rule';
+import { ResourceTextService } from '../../../../infrastructure/resourceText.service';
 
 
 export class BaseCommandTemplate extends ResourceTextService implements CommandTemplate {
-    ConditionDescription:string;
-    Description:string;
+    ConditionDescription: string;
+    Description: string;
 
     canHandle(ruleModel: RuleModel): boolean {
         return false;
@@ -16,23 +16,26 @@ export class BaseCommandTemplate extends ResourceTextService implements CommandT
         return undefined;
     }
 
-    getDestinationElementTypes():ElementType[]{
-        var result : ElementType[] = [
+    getCopyModes(): CommandCopyMode[] {
+        return [CommandCopyMode.Object, CommandCopyMode.Properties];
+    }
+    getDestinationElementTypes(): ElementType[] {
+        var result: ElementType[] = [
             ElementType.SpringObjectName
         ];
         return result;
     }
 
-    getDisplayNameTypes():ElementType[]{
-        var result : ElementType[] = [
+    getDisplayNameTypes(): ElementType[] {
+        var result: ElementType[] = [
             ElementType.PlainText,
             ElementType.Calculator
         ];
         return result;
     }
 
-    getErrorTextTypes():ElementType[]{
-        var result : ElementType[] = [
+    getErrorTextTypes(): ElementType[] {
+        var result: ElementType[] = [
             ElementType.PlainText,
             ElementType.Resource
 
@@ -40,8 +43,8 @@ export class BaseCommandTemplate extends ResourceTextService implements CommandT
         return result;
     }
 
-    getEventTypes():CommandEventType[]{
-        var result : CommandEventType[]=[
+    getEventTypes(): CommandEventType[] {
+        var result: CommandEventType[] = [
             CommandEventType.EventDataField,
             CommandEventType.EventDataPath,
             CommandEventType.EventTriggerField
@@ -50,7 +53,7 @@ export class BaseCommandTemplate extends ResourceTextService implements CommandT
     }
 
     getSourceElementTypes(): ElementType[] {
-        var result : ElementType[] = [
+        var result: ElementType[] = [
             ElementType.PlainText,
             ElementType.Calculator,
             ElementType.SpringObjectName,
@@ -59,20 +62,20 @@ export class BaseCommandTemplate extends ResourceTextService implements CommandT
         return result;
     }
 
-    getSourcePropertyTypes(): ElementType[]{
-        var result : ElementType[] = [
+    getSourcePropertyTypes(): ElementType[] {
+        var result: ElementType[] = [
             ElementType.PlainText,
-            ElementType.SpringObjectName     
+            ElementType.SpringObjectName
         ];
         return result;
     }
 
-    getTargetPropertyTypes():ElementType[]{
-        var result : ElementType[] = [
+    getTargetPropertyTypes(): ElementType[] {
+        var result: ElementType[] = [
             ElementType.PlainText,
-            ElementType.SpringObjectName     
+            ElementType.SpringObjectName
         ];
-        return result;        
+        return result;
     }
 
     getValueForNaming(ruleModel: RuleModel): string {

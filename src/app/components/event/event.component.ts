@@ -72,4 +72,10 @@ export class EventComponent extends ResourceTextService implements OnInit{
     onDataChanged($event) {
         this.generate();
     }
+
+    onEventTypeChanged($event){
+        if (this.eventModel.EventType === EventType.CustomEvent)
+            this.eventModel.UIField = "productPages";
+        this.onDataChanged($event);
+    }
 }

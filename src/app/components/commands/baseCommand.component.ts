@@ -3,7 +3,7 @@ import { RuleModel } from '../../models/rule';
 import { ResourceTextService } from '../../infrastructure/resourceText.service';
 import { AppContext } from '../../infrastructure/app.context';
 
-import { CommandEventType, ElementType } from '../../models/command';
+import { CommandCopyMode, CommandEventType, ElementType } from '../../models/command';
 
 
 export class BaseCommandComponent extends ResourceTextService implements OnInit {
@@ -20,6 +20,7 @@ export class BaseCommandComponent extends ResourceTextService implements OnInit 
     errorTextValuePlaceholder: string;
     eventTypes: CommandEventType[] = [];
     sourceElementTypes: ElementType[] = [];
+    copyModes : CommandCopyMode[] =[];
 
     constructor(
         protected appContext : AppContext
@@ -32,11 +33,13 @@ export class BaseCommandComponent extends ResourceTextService implements OnInit 
         var commandTemplates = this.appContext.Command.getCommandTemplates();
         for (let commandTemplate of commandTemplates) {
             if (commandTemplate.canHandle(this.ruleModel)) {
+                this.copyModes = commandTemplate.getCopyModes();
                 this.destinationElementTypes = commandTemplate.getDestinationElementTypes();
                 this.displayNameTypes = commandTemplate.getDisplayNameTypes();
                 this.errorTextTypes = commandTemplate.getErrorTextTypes();
                 this.eventTypes = commandTemplate.getEventTypes();
                 this.sourceElementTypes = commandTemplate.getSourceElementTypes();
+                
             }
         }
 

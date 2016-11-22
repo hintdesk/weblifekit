@@ -26,7 +26,7 @@ export class SetErrorInErrorProviderCommandTemplate extends BaseCommandTemplate 
         var cipUIField = new CommandInitializeParameter();
         cipUIField.Name = CommandInitializeParameterName.UIField;
         cipUIField.PlainText = ruleModel.UIField;
-        cipUIField.ValueTypeArt = ElementType.PlainText;
+        // cipUIField.ValueTypeArt = ElementType.PlainText;
         rule.Command.CommandInitializeParameters.push(cipUIField);
 
         //ErrorText
@@ -45,7 +45,7 @@ export class SetErrorInErrorProviderCommandTemplate extends BaseCommandTemplate 
             var cipId = new CommandInitializeParameter();
             cipId.Name = CommandInitializeParameterName.Id;
             cipId.PlainText = ruleModel.UIField + "_REQ";
-            cipId.ValueTypeArt = ElementType.PlainText;
+            // cipId.ValueTypeArt = ElementType.PlainText;
             rule.Command.CommandInitializeParameters.push(cipId);
 
             rule.BadCommand = new Command();
@@ -54,7 +54,7 @@ export class SetErrorInErrorProviderCommandTemplate extends BaseCommandTemplate 
             cipUIField = new CommandInitializeParameter();
             cipUIField.Name = CommandInitializeParameterName.UIField;
             cipUIField.PlainText = ruleModel.UIField;
-            cipUIField.ValueTypeArt = ElementType.PlainText;
+            // cipUIField.ValueTypeArt = ElementType.PlainText;
             rule.BadCommand.CommandInitializeParameters.push(cipUIField);
 
             cepErrorText = new CommandExecuteParameter();

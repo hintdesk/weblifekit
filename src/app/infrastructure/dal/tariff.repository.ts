@@ -10,7 +10,7 @@ import { Tariff } from '../../models/tariff';
 
 @Injectable()
 export class TariffRepository {
-    allTariffs: Tariff[] = [];
+    allTariffs: Tariff[] = undefined;
 
     constructor(private http: Http) {
 
@@ -28,6 +28,10 @@ export class TariffRepository {
     }
 
     init() {
+        if (this.allTariffs)        
+            return;        
+        else 
+            this.allTariffs = [];
         var url = "";
         if (window.location.href.indexOf("github") > 0)
             url = "/weblifekit/assets/products.json";

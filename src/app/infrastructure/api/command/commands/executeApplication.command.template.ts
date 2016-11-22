@@ -61,7 +61,7 @@ export class ExecuteApplicationCommandTemplate extends BaseCommandTemplate {
             var cipEventName = new CommandInitializeParameter();
             cipEventName.Name = CommandInitializeParameterName.EventName;
             cipEventName.PlainText = ruleModel.EventName;
-            cipEventName.ValueTypeArt = ElementType.PlainText;
+            // cipEventName.ValueTypeArt = ElementType.PlainText;
             rule.Command.CommandInitializeParameters.push(cipEventName);
         }
 
@@ -69,7 +69,7 @@ export class ExecuteApplicationCommandTemplate extends BaseCommandTemplate {
         if (ruleModel.ErrorEventName){
             var cipErrorEventName = new CommandInitializeParameter();
             cipErrorEventName.Name = CommandInitializeParameterName.ErrorEventName;
-            cipErrorEventName.PlainText = ruleModel.EventName;
+            cipErrorEventName.PlainText = ruleModel.ErrorEventName;
             cipErrorEventName.ValueTypeArt = ElementType.PlainText;
             rule.Command.CommandInitializeParameters.push(cipErrorEventName);        
 
@@ -80,9 +80,18 @@ export class ExecuteApplicationCommandTemplate extends BaseCommandTemplate {
         {
             var cipCopyMode = new CommandInitializeParameter();
             cipCopyMode.Name = CommandInitializeParameterName.CopyMode;
-            cipCopyMode.PlainText = PlainTextType.Properties;
+            cipCopyMode.PlainText = String(ruleModel.CopyMode);
             // cipCopyMode.ValueTypeArt = ElementType.PlainText;
             rule.Command.CommandInitializeParameters.push(cipCopyMode);
+        }
+
+        //IgnoreNullsForCopy
+        if (ruleModel.IgnoreNullsForCopy){
+            var cipIgnoreNullsForCopy = new CommandInitializeParameter();
+            cipIgnoreNullsForCopy.Name = CommandInitializeParameterName.IgnoreNullsForCopy;
+            cipIgnoreNullsForCopy.PlainText = "true";
+            // cipCopyMode.ValueTypeArt = ElementType.PlainText;
+            rule.Command.CommandInitializeParameters.push(cipIgnoreNullsForCopy);
         }
 
         //Synchronous 
