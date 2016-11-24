@@ -9,23 +9,9 @@
 		</div>
 	</div>
 
-	<!--EventName-->
-	<div class="row top-buffer" *ngIf="eventModel.EventType === 'customEvent'">
-		<label class="col-md-2" for="">EventName</label>
-		<div class="col-md-8">
-			<input class="form-control" [(ngModel)]="eventModel.EventName" (ngModelChange)="onDataChanged($event)" type="text"
-				placeholder="{{TextPlaceholderEventName}}">
-		</div>
-	</div>
+	<changeevent *ngIf="eventModel.EventType ==='change'" [(eventModel)]="eventModel" (onDataChanged)="onDataChanged($event)"></changeevent>
 
-	<!--UIField-->
-	<div class="row top-buffer">
-		<label class="col-md-2" for="">UIField</label>
-		<div class="col-md-8">
-			<input class="form-control" [(ngModel)]="eventModel.UIField" (ngModelChange)="onDataChanged($event)" type="text"
-				placeholder="{{TextPlaceholderUIField}}">
-		</div>
-	</div>
+	<defaultevent *ngIf="eventModel.EventType !=='change'" [(eventModel)]="eventModel" (onDataChanged)="onDataChanged($event)"></defaultevent>
 
 	<!--Result-->
 	<div class="row top-buffer">
@@ -40,7 +26,7 @@
 
 		</div>
 	</div>
-	<div class="row" >
+	<div class="row">
 		<p class="col-md-8 col-xs-offset-2 text-muted text-warning"><small>*Please check if the same event exists before creating a new one.</small></p>
 	</div>
 </div>

@@ -45,7 +45,8 @@ export class ConditionsComponent {
                 condition.LeftCondition = this.conditionModel.LeftParameter;
                 break;
             case ConditionType.LeftPath:
-                condition.LeftPath = this.conditionModel.LeftParameter;
+                if (this.conditionModel.LeftParameter)                
+                    condition.LeftPath = this.conditionModel.LeftParameter.replace(new RegExp("\\\"", "g"), "'");
                 break;
             case ConditionType.LeftValue:
                 condition.LeftValue = this.conditionModel.LeftParameter;
@@ -100,7 +101,10 @@ export class ConditionsComponent {
     getNameIfLeftPath(): string {
         switch (this.conditionModel.RightConditionType) {
             case ConditionType.RightValue:
-                return "Is_" + this.namingProvider.getLastElement(this.conditionModel.LeftParameter) + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingProvider.renameIfBlank(this.conditionModel.RightParameter);
+                var left = this.namingProvider.getLastElement(this.conditionModel.LeftParameter);
+                if (left)
+                    left = left.replace(new RegExp("\\\"|\\\[|\\\]", "g"), "");
+                return "Is_" + left + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingProvider.renameIfBlank(this.conditionModel.RightParameter);
             case ConditionType.RightRegExp:
                 return "Is_" + this.namingProvider.getLastElement(this.conditionModel.LeftParameter) + "_Matches_RegEx";
             default:

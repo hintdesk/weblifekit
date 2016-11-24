@@ -1,25 +1,27 @@
 export class EventWL {
-    Events:EventElement[] = [];
-    Rules:EventRule[]=[];
-    constructor(){
-        var dummyEventRule : EventRule = new EventRule();
-        dummyEventRule.Name= "";
-        this.Rules.push(dummyEventRule);
-    }
+    Context: string;
+    Events: EventElement[];
+    ListProperty: string;
+    Rules: EventRule[];
+
 }
 export class EventRule {
-    Name:string;
+    Name: string;
 }
-export class EventElement 
-{
-    EventName:string;
-    UiFieldId:string;
-    ViewModelFieldPath:string;
+export class EventElement {
+    EventName: string;
+    UiFieldId: string;
+    ViewModelFieldPath: string;
+    ViewModelPath: string;
 }
 export class EventModel {
     EventName: string;
     EventType: EventType;
-    UIField:string="";
+    IsList: boolean;
+    ListProperty: string;
+    UIField: string = "";
+    ViewModelFieldPath: string;
+    ViewModelPath: string;
 }
 
 export class EventType {

@@ -18,19 +18,20 @@ import { AddArrayElementCommandTemplate } from './commands/addArrayElement.comma
 import { GoToPageCommandTemplate } from './commands/goToPage.command.template';
 import { SetErrorInErrorProviderAndNotifyCommandTemplate } from './commands/setErrorInErrorProviderAndNotify.command.template';
 import { CopyValueInCurrentItemCommandTemplate } from './commands/copyValueInCurrentItem.command.template';
-import {HideDetailsCommandTemplate} from './commands/hideDetails.command.template';
+import { HideDetailsCommandTemplate } from './commands/hideDetails.command.template';
 import { RemoveAllArrayElementsCommandTemplate } from './commands/removeAllArrayElements.command.template';
-import { FireEventCommandTemplate} from './commands/fireEvent.command.template';
-import { EnableGuiElementsCommandTemplate} from './commands/enableGuiElements.command.template';
-import { RenameNavigationElementCommandTemplate} from './commands/renameNavigationElement.command.template';
-import { SetWarningInWarningProviderAndNotifyCommandTemplate} from './commands/setWarningInWarningProviderAndNotify.command.template';
-import { AddItemAndShowGridDetailsCommandTemplate} from './commands/addItemAndShowGridDetails.command.template';
-import { CopyObjectCommandTemplate} from './commands/copyObject.command.template';
+import { FireEventCommandTemplate } from './commands/fireEvent.command.template';
+import { EnableGuiElementsCommandTemplate } from './commands/enableGuiElements.command.template';
+import { RenameNavigationElementCommandTemplate } from './commands/renameNavigationElement.command.template';
+import { SetWarningInWarningProviderAndNotifyCommandTemplate } from './commands/setWarningInWarningProviderAndNotify.command.template';
+import { AddItemAndShowGridDetailsCommandTemplate } from './commands/addItemAndShowGridDetails.command.template';
+import { CopyObjectCommandTemplate } from './commands/copyObject.command.template';
 import { ShowGridDetailsCommandTemplate } from './commands/showGridDetails.command.template';
-import { ConfirmCommandAndChangeSwitchValueCommandTemplate} from './commands/confirmCommandAndChangeSwitchValue.command.template';
-import { CalculateCommandTemplate} from './commands/calculate.command.template';
-import { CustomCommandTemplate} from './commands/custom.command.template';
-import { SetOfRulesCommandTemplate} from './commands/setOfRules.command.template';
+import { ConfirmCommandAndChangeSwitchValueCommandTemplate } from './commands/confirmCommandAndChangeSwitchValue.command.template';
+import { CalculateCommandTemplate } from './commands/calculate.command.template';
+import { CustomCommandTemplate } from './commands/custom.command.template';
+import { SetOfRulesCommandTemplate } from './commands/setOfRules.command.template';
+import { AddAddArrayElementAndBindRulesCommand } from './commands/addAddArrayElementAndBindRules.command.template';
 
 
 @Injectable()
@@ -54,17 +55,18 @@ export class CommandApi {
         private copyValueInCurrentItemCommandTemplate: CopyValueInCurrentItemCommandTemplate,
         private hideDetailsCommandTemplate: HideDetailsCommandTemplate,
         private removeAllArrayElementsCommandTemplate: RemoveAllArrayElementsCommandTemplate,
-        private fireEventCommandTemplate:FireEventCommandTemplate,
-        private enableGuiElementsCommandTemplate:EnableGuiElementsCommandTemplate,
-        private renameNavigationElementCommandTemplate:RenameNavigationElementCommandTemplate,
+        private fireEventCommandTemplate: FireEventCommandTemplate,
+        private enableGuiElementsCommandTemplate: EnableGuiElementsCommandTemplate,
+        private renameNavigationElementCommandTemplate: RenameNavigationElementCommandTemplate,
         private setWarningInWarningProviderAndNotifyCommandTemplate: SetWarningInWarningProviderAndNotifyCommandTemplate,
-        private addItemAndShowGridDetailsCommandTemplate:AddItemAndShowGridDetailsCommandTemplate,
-        private copyObjectCommandTemplate:CopyObjectCommandTemplate,
-        private showGridDetailsCommandTemplate:ShowGridDetailsCommandTemplate,
+        private addItemAndShowGridDetailsCommandTemplate: AddItemAndShowGridDetailsCommandTemplate,
+        private copyObjectCommandTemplate: CopyObjectCommandTemplate,
+        private showGridDetailsCommandTemplate: ShowGridDetailsCommandTemplate,
         private confirmCommandAndChangeSwitchValueCommandTemplate: ConfirmCommandAndChangeSwitchValueCommandTemplate,
-        private calculateCommandTemplate:CalculateCommandTemplate,
+        private calculateCommandTemplate: CalculateCommandTemplate,
         private customCommandTemplate: CustomCommandTemplate,
-        private setOfRulesCommandTemplate:SetOfRulesCommandTemplate) {
+        private setOfRulesCommandTemplate: SetOfRulesCommandTemplate,
+        private addAddArrayElementAndBindRulesCommand: AddAddArrayElementAndBindRulesCommand) {
 
     }
 
@@ -97,7 +99,8 @@ export class CommandApi {
             CommandType.ConfirmCommandAndChangeSwitchValueCommand,
             CommandType.CalculateCommand,
             CommandType.CustomCommand,
-            CommandType.SetOfRules
+            CommandType.SetOfRules,
+            CommandType.AddAddArrayElementAndBindRulesCommand
         ];
         return ruleCommands.sort();
 
@@ -133,7 +136,8 @@ export class CommandApi {
                 this.confirmCommandAndChangeSwitchValueCommandTemplate,
                 this.calculateCommandTemplate,
                 this.customCommandTemplate,
-                this.setOfRulesCommandTemplate
+                this.setOfRulesCommandTemplate,
+                this.addAddArrayElementAndBindRulesCommand
             ];
         return commandTemplates;
     }

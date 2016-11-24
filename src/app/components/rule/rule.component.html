@@ -6,6 +6,7 @@
 			<select class="form-control" [(ngModel)]="ruleModel.CommandType" (ngModelChange)="onCommandTypeChanged($event)" name="">
             	<option *ngFor="let ruleCommand of commandTypes" [ngValue]="ruleCommand">{{ruleCommand}}</option>
 			</select>
+			<div *ngIf="info" class="alert alert-info">{{info}}</div>
 		</div>
 		<div class="col-md-2" *ngIf="description">
 			<span class="glyphicon glyphicon-info-sign" [tooltip]="description" tooltipPlacement="bottom"></span>
@@ -26,6 +27,8 @@
 	<actionCommand *ngIf="this.ruleModel.CommandType ==='actionCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></actionCommand>
 
 	<addArrayElement *ngIf="this.ruleModel.CommandType ==='addArrayElementCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></addArrayElement>
+
+	<addAddArrayElementAndBindRules *ngIf="this.ruleModel.CommandType ==='addAddArrayElementAndBindRulesCommand'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></addAddArrayElementAndBindRules>
 
 	<addItemAndShowGridDetails *ngIf="this.ruleModel.CommandType ==='addItemAndShowGridDetailsCommand'" [(ruleModel)]="ruleModel"
 		(onDataChanged)="onDataChanged($event)"></addItemAndShowGridDetails>

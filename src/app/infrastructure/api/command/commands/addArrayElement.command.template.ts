@@ -11,8 +11,9 @@ import { Condition } from '../../../../models/condition';
 @Injectable()
 export class AddArrayElementCommandTemplate extends BaseCommandTemplate {
 
-    constructor(private namingProvider: NamingProvider) {
+    constructor(protected namingProvider: NamingProvider) {
         super();
+        this.Info = this.ResourceText7;
     }
     canHandle(ruleModel: RuleModel): boolean {
         return ruleModel.CommandType === CommandType.AddArrayElementCommand;

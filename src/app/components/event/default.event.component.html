@@ -1,0 +1,15 @@
+<!--EventName-->
+<div class="row top-buffer" *ngIf="eventModel.EventType === 'customEvent'">
+    <label class="col-md-2" for="">EventName</label>
+    <div class="col-md-8">
+        <input class="form-control" [(ngModel)]="eventModel.EventName" (ngModelChange)="onModelDataChanged($event)" type="text" placeholder="{{TextPlaceholderEventName}}">
+    </div>
+</div>
+
+<!--UIField-->
+<div class="row top-buffer">
+    <label class="col-md-2" for="">UIField</label>
+    <div class="col-md-8">
+        <input class="form-control" [(ngModel)]="eventModel.UIField" (ngModelChange)="onModelDataChanged($event)" type="text" placeholder="{{TextPlaceholderUIField}}">
+    </div>
+</div>

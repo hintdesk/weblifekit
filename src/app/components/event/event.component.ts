@@ -8,7 +8,7 @@ import { ResourceTextService } from '../../infrastructure/resourceText.service';
     templateUrl: 'event.component.html'
 })
 
-export class EventComponent extends ResourceTextService implements OnInit{
+export class EventComponent extends ResourceTextService implements OnInit {
 
     eventModel: EventModel = new EventModel();
     result: string;
@@ -45,26 +45,42 @@ export class EventComponent extends ResourceTextService implements OnInit{
         super();
     }
 
-    
+
 
     generate() {
-        var eventWL: EventWL = new EventWL();
-    
-        var eventElement = new EventElement();
-        if (this.eventModel.EventType === EventType.Change)
-            eventElement.ViewModelFieldPath = this.eventModel.UIField;
-        else
-            eventElement.UiFieldId = this.eventModel.UIField;
-        if (this.eventModel.EventType === EventType.CustomEvent)
-            eventElement.EventName = this.eventModel.EventName;
-        else 
-            eventElement.EventName = String(this.eventModel.EventType);
-        eventWL.Events.push(eventElement);        
 
+        var eventWL: EventWL = new EventWL();
+        if (this.eventModel.EventType === EventType.Change) {
+            var eventElement = new EventElement();
+            if (this.eventModel.IsList) {
+                eventWL.Context = "ArrayItemContext";
+                eventWL.ListProperty = this.eventModel.ListProperty;
+                eventElement.ViewModelFieldPath = this.eventModel.ViewModelFieldPath;
+            }
+            else {
+                eventElement.ViewModelPath = this.eventModel.ViewModelPath;
+            }
+            eventElement.EventName = String(this.eventModel.EventType);
+            eventWL.Events =[];
+            eventWL.Events.push(eventElement);
+        }
+        else {
+            var eventElement = new EventElement();
+            eventElement.UiFieldId = this.eventModel.UIField;
+            if (this.eventModel.EventType === EventType.CustomEvent)
+                eventElement.EventName = this.eventModel.EventName;
+            else
+                eventElement.EventName = String(this.eventModel.EventType);
+                        
+            eventWL.Events =[];
+            eventWL.Events.push(eventElement);
+        }
+
+        eventWL.Rules=[{"Name":""}];        
         this.result = JSON.stringify(eventWL, undefined, 4);
     }
 
-    ngOnInit(){
+    ngOnInit() {
         this.eventModel.EventType = this.eventTypes[0];
         this.onDataChanged(undefined);
     }
@@ -73,7 +89,7 @@ export class EventComponent extends ResourceTextService implements OnInit{
         this.generate();
     }
 
-    onEventTypeChanged($event){
+    onEventTypeChanged($event) {
         if (this.eventModel.EventType === EventType.CustomEvent)
             this.eventModel.UIField = "productPages";
         this.onDataChanged($event);

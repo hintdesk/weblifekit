@@ -1,0 +1,31 @@
+<!--List-->
+<div class="row top-buffer">
+	<label class="col-md-2" for="">OnList</label>
+	<div class="col-md-8 checkbox hd-checkbox">
+		<input [(ngModel)]="eventModel.IsList" (ngModelChange)="onModelDataChanged($event)" type="checkbox">
+	</div>
+</div>
+
+<!--ViewModelPath-->
+<div *ngIf="!eventModel.IsList" class="row top-buffer">
+    <label class="col-md-2" for="">ViewModelPath</label>
+    <div class="col-md-8">
+        <input class="form-control" [(ngModel)]="eventModel.ViewModelPath" (ngModelChange)="onModelDataChanged($event)" type="text" placeholder="{{TextPlaceholderUIField}}">
+    </div>
+</div>
+
+<!--ListProperty-->
+<div *ngIf="eventModel.IsList" class="row top-buffer">
+    <label class="col-md-2" for="">ListProperty</label>
+    <div class="col-md-8">
+        <input class="form-control" [(ngModel)]="eventModel.ListProperty" (ngModelChange)="onModelDataChanged($event)" type="text" placeholder="{{TextPlaceholderUIField}}">
+    </div>
+</div>
+
+<!--ViewModelFieldPath-->
+<div *ngIf="eventModel.IsList" class="row top-buffer">
+    <label class="col-md-2" for="">ViewModelFieldPath</label>
+    <div class="col-md-8">
+        <input class="form-control" [(ngModel)]="eventModel.ViewModelFieldPath" (ngModelChange)="onModelDataChanged($event)" type="text" placeholder="{{TextPlaceholderUIField}}">
+    </div>
+</div>

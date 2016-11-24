@@ -66,6 +66,7 @@ export class CommandInitializeParameterName {
 export class CommandType {
     static ActionCommand: string = "actionCommand";
     static AddArrayElementCommand: string = "addArrayElementCommand";
+    static AddAddArrayElementAndBindRulesCommand : string = "addAddArrayElementAndBindRulesCommand";
     static AddItemAndShowGridDetailsCommand: string = "addItemAndShowGridDetailsCommand";
     static CalculateCommand: string = "calculateCommand";
     static ClearErrorInErrorProviderCommand = "clearErrorInErrorProviderCommand";

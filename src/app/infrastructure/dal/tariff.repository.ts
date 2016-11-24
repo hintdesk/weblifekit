@@ -89,6 +89,7 @@ export class TariffRepository {
                                 this.allTariffs.push(new Tariff(paths));
                             }
                         }
+                        this.allTariffs.sort();
                     }
                 }
 

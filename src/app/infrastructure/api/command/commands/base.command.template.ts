@@ -7,6 +7,7 @@ import { ResourceTextService } from '../../../../infrastructure/resourceText.ser
 export class BaseCommandTemplate extends ResourceTextService implements CommandTemplate {
     ConditionDescription: string;
     Description: string;
+    Info: string;
 
     canHandle(ruleModel: RuleModel): boolean {
         return false;

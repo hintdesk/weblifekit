@@ -4,9 +4,10 @@ import { CommandCopyMode, CommandEventType, ElementType } from '../../../../mode
 export interface CommandTemplate {
     ConditionDescription: string;
     Description: string;
+    Info: string;
     canHandle(ruleModel: RuleModel): boolean;
     execute(ruleModel: RuleModel): Rule;
-    getCopyModes():CommandCopyMode[];
+    getCopyModes(): CommandCopyMode[];
     getDestinationElementTypes(): ElementType[];
     getDisplayNameTypes(): ElementType[];
     getErrorTextTypes(): ElementType[];

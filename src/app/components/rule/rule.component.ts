@@ -19,6 +19,7 @@ export class RuleComponent implements OnInit {
     commandTypes: CommandType[] = [];
     conditionDescription:string;
     description:string;
+    info:string;
     ruleModel: RuleModel = new RuleModel();
 
 
@@ -33,8 +34,10 @@ export class RuleComponent implements OnInit {
         var rule: Rule;
         for (let commandTemplate of this.commandTemplates) {
             if (commandTemplate.canHandle(this.ruleModel)) {
-                this.description = commandTemplate.Description;
-                this.conditionDescription = commandTemplate.ConditionDescription;
+                this.conditionDescription = commandTemplate.ConditionDescription;                
+                this.description = commandTemplate.Description;                
+                this.info = commandTemplate.Info;
+
                 rule = commandTemplate.execute(this.ruleModel);
                 break;
             }

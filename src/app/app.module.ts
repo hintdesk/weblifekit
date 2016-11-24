@@ -8,13 +8,13 @@ import { routing } from './app.routing';
 
 import { ClipboardModule } from 'angular2-clipboard';
 import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { CustomFormsModule} from 'ng2-validation';
+import { CustomFormsModule } from 'ng2-validation';
 
 import { AppContext } from './infrastructure/app.context';
 
 import { BindingPathRepository } from './infrastructure/dal/bindingPath.repository';
-import { TariffRepository} from './infrastructure/dal/tariff.repository';
-import { Repository} from './infrastructure/dal/repository';
+import { TariffRepository } from './infrastructure/dal/tariff.repository';
+import { Repository } from './infrastructure/dal/repository';
 
 import { CommandApi } from './infrastructure/api/command/command.api';
 import { JsonService } from './infrastructure/json.service';
@@ -45,27 +45,31 @@ import { EnableGuiElementsCommandTemplate } from './infrastructure/api/command/c
 import { RenameNavigationElementCommandTemplate } from './infrastructure/api/command/commands/renameNavigationElement.command.template';
 import { SetWarningInWarningProviderAndNotifyCommandTemplate } from './infrastructure/api/command/commands/setWarningInWarningProviderAndNotify.command.template';
 import { AddItemAndShowGridDetailsCommandTemplate } from './infrastructure/api/command/commands/addItemAndShowGridDetails.command.template';
-import { CopyObjectCommandTemplate} from './infrastructure/api/command/commands/copyObject.command.template';
+import { CopyObjectCommandTemplate } from './infrastructure/api/command/commands/copyObject.command.template';
 import { ShowGridDetailsCommandTemplate } from './infrastructure/api/command/commands/showGridDetails.command.template';
-import { ConfirmCommandAndChangeSwitchValueCommandTemplate} from './infrastructure/api/command/commands/confirmCommandAndChangeSwitchValue.command.template';
+import { ConfirmCommandAndChangeSwitchValueCommandTemplate } from './infrastructure/api/command/commands/confirmCommandAndChangeSwitchValue.command.template';
 import { CalculateCommandTemplate } from './infrastructure/api/command/commands/calculate.command.template';
-import { CustomCommandTemplate} from './infrastructure/api/command/commands/custom.command.template';
-import { SetOfRulesCommandTemplate} from './infrastructure/api/command/commands/setOfRules.command.template';
+import { CustomCommandTemplate } from './infrastructure/api/command/commands/custom.command.template';
+import { SetOfRulesCommandTemplate } from './infrastructure/api/command/commands/setOfRules.command.template';
+import { AddAddArrayElementAndBindRulesCommand } from './infrastructure/api/command/commands/addAddArrayElementAndBindRules.command.template';
 
 import { AppComponent } from './app.component';
 import { ConditionsComponent } from './components/condition/conditions.component';
-import { EventComponent} from './components/event/event.component';
+import { ConditionComponent } from './components/condition/condition.component';
+
+import { SnippetsComponent } from './components/snippets/snippets.component';
+
+import { EventComponent } from './components/event/event.component';
+import { DefaultEventComponent} from './components/event/default.event.component';
+import { ChangeEventComponent} from './components/event/change.event.component';
+
 import { RuleComponent } from './components/rule/rule.component';
-import { SnippetsComponent} from './components/snippets/snippets.component';
-
-import { ConditionComponent} from './components/condition/condition.component';
-
-import { ActionCommandComponent} from './components/commands/actionCommand.component';
-import { CalculateComponent} from './components/commands/calculate.component';
-import { CopyValueComponent} from './components/commands/copyValue.component';
-import { ConfirmCommandAndChangeSwitchValueComponent} from './components/commands/confirmCommandAndChangeSwitchValue.component';
-import { CustomCommandComponent} from './components/commands/custom.component';
-import { ExecuteApplicationComponent} from './components/commands/executeApplication.component';
+import { ActionCommandComponent } from './components/commands/actionCommand.component';
+import { CalculateComponent } from './components/commands/calculate.component';
+import { CopyValueComponent } from './components/commands/copyValue.component';
+import { ConfirmCommandAndChangeSwitchValueComponent } from './components/commands/confirmCommandAndChangeSwitchValue.component';
+import { CustomCommandComponent } from './components/commands/custom.component';
+import { ExecuteApplicationComponent } from './components/commands/executeApplication.component';
 import { ShowDetailsComponent } from './components/commands/showDetails.component'
 import { SetTextForAutoCompleteComponent } from './components/commands/setTextForAutoComplete.component';
 import { SetErrorInErrorProviderComponent } from './components/commands/setErrorInErrorProvider.component';
@@ -85,8 +89,9 @@ import { EnableGuiElementsComponent } from './components/commands/enableGuiEleme
 import { RenameNavigationElementComponent } from './components/commands/renameNavigationElement.component';
 import { SetWarningInWarningProviderAndNotifyComponent } from './components/commands/setWarningInWarningProviderAndNotify.component';
 import { AddItemAndShowGridDetailsComponent } from './components/commands/addItemAndShowGridDetails.component';
-import { CopyObjectComponent} from './components/commands/copyObject.component';
-import { ShowGridDetailsComponent} from './components/commands/showGridDetails.component';
+import { CopyObjectComponent } from './components/commands/copyObject.component';
+import { ShowGridDetailsComponent } from './components/commands/showGridDetails.component';
+import { AddAddArrayElementAndBindRulesComponent } from './components/commands/addAddArrayElementAndBindRules.component';
 
 
 @NgModule({
@@ -102,7 +107,7 @@ import { ShowGridDetailsComponent} from './components/commands/showGridDetails.c
   ],
 
   declarations: [
-    AppComponent,    
+    AppComponent,
     ConditionsComponent,
     EventComponent,
     RuleComponent,
@@ -110,8 +115,8 @@ import { ShowGridDetailsComponent} from './components/commands/showGridDetails.c
 
     ConditionComponent,
 
-    ActionCommandComponent,   
-    CopyValueComponent,    
+    ActionCommandComponent,
+    CopyValueComponent,
     ExecuteApplicationComponent,
     ShowDetailsComponent,
     SetTextForAutoCompleteComponent,
@@ -137,11 +142,14 @@ import { ShowGridDetailsComponent} from './components/commands/showGridDetails.c
     ConfirmCommandAndChangeSwitchValueComponent,
     CalculateComponent,
     CustomCommandComponent,
-    
+    AddAddArrayElementAndBindRulesComponent,
+
+    DefaultEventComponent,
+    ChangeEventComponent
   ],
 
   providers: [
-  
+
     NamingProvider,
 
     BindingPathRepository,
@@ -181,7 +189,8 @@ import { ShowGridDetailsComponent} from './components/commands/showGridDetails.c
     CopyObjectCommandTemplate,
     ShowGridDetailsCommandTemplate,
     CustomCommandTemplate,
-    SetOfRulesCommandTemplate
+    SetOfRulesCommandTemplate,
+    AddAddArrayElementAndBindRulesCommand
   ],
 
   bootstrap: [
