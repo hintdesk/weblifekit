@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NamingProvider } from '../../infrastructure/naming.provider';
-import { EventElement, EventModel, EventType, EventWL } from '../../models/event';
+import { ChangeEventType, EventElement, EventModel, EventType, EventWL } from '../../models/event';
 import { ResourceTextService } from '../../infrastructure/resourceText.service';
 
 @Component({
@@ -52,7 +52,7 @@ export class EventComponent extends ResourceTextService implements OnInit {
         var eventWL: EventWL = new EventWL();
         if (this.eventModel.EventType === EventType.Change) {
             var eventElement = new EventElement();
-            if (this.eventModel.IsList) {
+            if (this.eventModel.ChangeEventType === ChangeEventType.List) {
                 eventWL.Context = "ArrayItemContext";
                 eventWL.ListProperty = this.eventModel.ListProperty;
                 eventElement.ViewModelFieldPath = this.eventModel.ViewModelFieldPath;

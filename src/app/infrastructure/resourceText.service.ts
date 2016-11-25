@@ -6,6 +6,7 @@ export class ResourceTextService {
     ResourceText5: string = "Warning: The condition must be built on the context of ListProperty. Don't use path of viewModel.";
     ResourceText6: string = "Warning: Don't use eventName with synchronous mode. The rules of event will be executed before the rest rules on the stack";
     ResourceText7: string = "Info: If you're trying to add a new row to a grid. Please use addAddArrayElementAndBindRulesCommand instead.";
+    ResourceText8: string = "Property of item in given list: Person.Name1, Person.Geburtsdatum, RiesterfoerderungBisAlter, etc. ";
 
     TextCommandDescriptionDeleteArrayElements: string = "Delete element with flag Deleted = true from given array";
     TextJsonDeserializationError: string = "JsonSerializerSettings settings = new JsonSerializerSettings() { Error = delegate(object sender, ErrorEventArgs args) {} };";

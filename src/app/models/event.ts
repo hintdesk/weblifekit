@@ -17,13 +17,16 @@ export class EventElement {
 export class EventModel {
     EventName: string;
     EventType: EventType;
-    IsList: boolean;
+    ChangeEventType: ChangeEventType;
     ListProperty: string;
     UIField: string = "";
     ViewModelFieldPath: string;
     ViewModelPath: string;
 }
-
+export class ChangeEventType {
+    static List: string = "List";
+    static ViewModelPath: string = "ViewModelPath";
+}
 export class EventType {
     static Change: string = "change";
     static Changing: string = "changing";
