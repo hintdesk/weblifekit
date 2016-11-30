@@ -107,6 +107,8 @@ export class ConditionsComponent {
                 return "Is_" + left + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingProvider.renameIfBlank(this.conditionModel.RightParameter);
             case ConditionType.RightRegExp:
                 return "Is_" + this.namingProvider.getLastElement(this.conditionModel.LeftParameter) + "_Matches_RegEx";
+            case ConditionType.RightPath:
+                return "Is_" + this.namingProvider.getLastElement(this.conditionModel.LeftParameter) + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" +this.namingProvider.getLastElement(this.conditionModel.RightParameter);
             default:
                 return "";
         }
