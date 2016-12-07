@@ -14,10 +14,10 @@ export class ChangeEventComponent extends ResourceTextService implements OnInit 
     @Output()
     onDataChanged = new EventEmitter();
 
-    changeEventTypes: string[] = [ChangeEventType.List, ChangeEventType.ViewModelPath];
+    changeEventTypes: string[] = [ChangeEventType.List, ChangeEventType.ViewModelFieldPath];
 
     ngOnInit() {
-        this.eventModel.ChangeEventType = ChangeEventType.ViewModelPath;
+        this.eventModel.ChangeEventType = ChangeEventType.ViewModelFieldPath;
     }
 
     onModelDataChanged($event): void {

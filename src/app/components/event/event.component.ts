@@ -55,11 +55,9 @@ export class EventComponent extends ResourceTextService implements OnInit {
             if (this.eventModel.ChangeEventType === ChangeEventType.List) {
                 eventWL.Context = "ArrayItemContext";
                 eventWL.ListProperty = this.eventModel.ListProperty;
-                eventElement.ViewModelFieldPath = this.eventModel.ViewModelFieldPath;
+                
             }
-            else {
-                eventElement.ViewModelPath = this.eventModel.ViewModelPath;
-            }
+            eventElement.ViewModelFieldPath = this.eventModel.ViewModelFieldPath;
             eventElement.EventName = String(this.eventModel.EventType);
             eventWL.Events =[];
             eventWL.Events.push(eventElement);

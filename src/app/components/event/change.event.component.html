@@ -10,14 +10,6 @@
 	</div>
 </div>
 
-<!--ViewModelPath-->
-<div *ngIf="eventModel.ChangeEventType === 'ViewModelPath'" class="row top-buffer">
-    <label class="col-md-2" for="">ViewModelPath</label>
-    <div class="col-md-8">
-        <input class="form-control" [(ngModel)]="eventModel.ViewModelPath" (ngModelChange)="onModelDataChanged($event)" type="text" placeholder="{{TextPlaceholderSpringObjectName}}">
-    </div>
-</div>
-
 <!--ListProperty-->
 <div *ngIf="eventModel.ChangeEventType === 'List'" class="row top-buffer">
     <label class="col-md-2" for="">ListProperty</label>
@@ -27,7 +19,7 @@
 </div>
 
 <!--ViewModelFieldPath-->
-<div *ngIf="eventModel.ChangeEventType === 'List'" class="row top-buffer">
+<div class="row top-buffer">
     <label class="col-md-2" for="">ViewModelFieldPath</label>
     <div class="col-md-8">
         <input class="form-control" [(ngModel)]="eventModel.ViewModelFieldPath" (ngModelChange)="onModelDataChanged($event)" type="text" placeholder="{{ResourceText8}}">

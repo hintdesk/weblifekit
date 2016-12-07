@@ -21,11 +21,10 @@ export class EventModel {
     ListProperty: string;
     UIField: string = "";
     ViewModelFieldPath: string;
-    ViewModelPath: string;
 }
 export class ChangeEventType {
     static List: string = "List";
-    static ViewModelPath: string = "ViewModelPath";
+    static ViewModelFieldPath: string = "ViewModelFieldPath";
 }
 export class EventType {
     static Change: string = "change";
