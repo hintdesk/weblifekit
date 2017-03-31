@@ -66,7 +66,7 @@
 		<div class="col-md-8">
 			<input class="form-control" type="text" placeholder="{{TextPlaceholderSearchForTariff}}" #searchTariffBox (keyup)="searchTariff(searchTariffBox.value)">
 		</div>
-		<small *ngIf="foundTariffs && foundTariffs.length ===0" class="col-md-8 col-xs-offset-2 text-danger">{{TextNoTariffFound}}</small>
+		<!--<small *ngIf="foundTariffs && foundTariffs.length ===0" class="col-md-8 col-xs-offset-2 text-danger">{{TextNoTariffFound}}</small>-->
 		<div *ngIf="foundTariffs" class="col-md-8 col-xs-offset-2 top-buffer">
 			<ul>
 				<li *ngFor="let tariff of foundTariffs | async">

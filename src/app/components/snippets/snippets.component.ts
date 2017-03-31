@@ -42,11 +42,11 @@ export class SnippetsComponent extends ResourceTextService implements OnInit {
             this.indexInHistory = -1;
 
         this.bindingPaths = this.appContext.Repository.BindingPath.getAll();
-
+    
         this.foundTariffs = this.searchTerms
             .debounceTime(200)
             .distinctUntilChanged()
-            .switchMap(term => (term && term !== "") ? this.appContext.Repository.Tariff.search(term) : Observable.of<Tariff[]>([]))
+            .switchMap(term => (term && term !== "") ? this.appContext.Repository.Tariff.search(term) : Observable.of<Tariff[]>([]))            
             .catch(error => {
                 console.log(error);
                 return Observable.of<Tariff[]>([])
