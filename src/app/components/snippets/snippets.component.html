@@ -10,7 +10,7 @@
 		</div>
 		<div class="col-md-2">
 			<div>
-				<button class="btn btn-primary" [ngIIclipboard]="pFullPath" (click)="updateHistorie()">Copy to clipboard</button>
+				<button class="btn btn-primary" [ngxClipboard]="pFullPath" (click)="updateHistorie()">Copy to clipboard</button>
 			</div>
 		</div>
 		<small #pFullPath class="col-md-8 col-xs-offset-2 text-muted">{{fullPathForDebugging}}</small>
@@ -26,7 +26,7 @@
 		</div>
 		<div class="col-md-2">
 			<div>
-				<button class="btn btn-primary" [ngIIclipboard]="pJSCode">Copy to clipboard</button>
+				<button class="btn btn-primary" [ngxClipboard]="pJSCode">Copy to clipboard</button>
 			</div>
 		</div>
 		<small #pJSCode class="col-md-8 col-xs-offset-2 text-muted">{{jsCodeForPausingOnSet}}</small>
@@ -39,7 +39,7 @@
 		<div #divST class="col-md-8">$("#productPages").trigger("process.debugger")</div>
 		<div class="col-md-2">
 			<div>
-				<button class="btn btn-primary" [ngIIclipboard]="divST">Copy to clipboard</button>
+				<button class="btn btn-primary" [ngxClipboard]="divST">Copy to clipboard</button>
 			</div>
 
 		</div>

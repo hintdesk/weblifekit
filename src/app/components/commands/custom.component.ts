@@ -29,7 +29,7 @@ export class CustomCommandComponent extends BaseCommandComponent {
     }
 
     onNameChanged($event): void {
-        var name = this.appContext.Naming.removeUnderscore(this.ruleModel.Name);
+        var name = this.appContext.Naming.cleanUpText(this.ruleModel.Name);
         var nameOfFunction = this.appContext.Naming.lowerCaseFirstLetter(name) + "Command";
         var nameOfClass = this.appContext.Naming.upperCaseFirstLetter(name)+ "Command";
 

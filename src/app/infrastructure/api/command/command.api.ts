@@ -32,6 +32,7 @@ import { CalculateCommandTemplate } from './commands/calculate.command.template'
 import { CustomCommandTemplate } from './commands/custom.command.template';
 import { SetOfRulesCommandTemplate } from './commands/setOfRules.command.template';
 import { AddAddArrayElementAndBindRulesCommand } from './commands/addAddArrayElementAndBindRules.command.template';
+import { HideGuiElementsCommandTemplate } from "app/infrastructure/api/command/commands/hideGuiElements.command.template";
 
 
 @Injectable()
@@ -48,6 +49,7 @@ export class CommandApi {
         private validateCommandTemplate: ValidateCommandTemplate,
         private setToDefaultCommandTemplate: SetToDefaultCommandTemplate,
         private deleteArrayElementsCommandTemplate: DeleteArrayElementsCommandTemplate,
+        private hideGuiElementsCommandTemplate: HideGuiElementsCommandTemplate,
         private showGuiElementsCommandTemplate: ShowGuiElementsCommandTemplate,
         private addArrayElementCommandTemplate: AddArrayElementCommandTemplate,
         private goToPageCommandTemplate: GoToPageCommandTemplate,
@@ -83,6 +85,7 @@ export class CommandApi {
             CommandType.SetToDefaultCommand,
             CommandType.DeleteArrayElementsCommand,
             CommandType.ShowGuiElementsCommand,
+            CommandType.HideGuiElementsCommand,
             CommandType.AddArrayElementCommand,
             CommandType.GoToPageCommand,
             CommandType.SetErrorInErrorProviderAndNotifyCommand,
@@ -119,6 +122,7 @@ export class CommandApi {
                 this.validateCommandTemplate,
                 this.setToDefaultCommandTemplate,
                 this.deleteArrayElementsCommandTemplate,
+                this.hideGuiElementsCommandTemplate,
                 this.showGuiElementsCommandTemplate,
                 this.addArrayElementCommandTemplate,
                 this.goToPageCommandTemplate,

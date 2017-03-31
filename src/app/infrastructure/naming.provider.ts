@@ -104,6 +104,13 @@ export class NamingProvider {
             return "Show_" + uiElement;
     }
 
+    getForHideGuiElements(uiElement: string): string {
+        if (uiElement.indexOf(",") >= 0)
+            return "Hide_Multiple_UI_Elements";
+        else
+            return "Hide_" + uiElement;
+    }
+
 
 
     getForActionCommand(uiField: string, stateTableName: string): string {
@@ -174,6 +181,9 @@ export class NamingProvider {
             if (paths.length > 1)
                 result = paths[paths.length - 1];
         }
+
+        result = this.upperCaseFirstLetter(result);
+
         return result;
     }
 
@@ -190,8 +200,11 @@ export class NamingProvider {
         return name.charAt(0).toLowerCase() + name.slice(1);
     }
 
-    removeUnderscore(text: string): string {
-        return text.replace(new RegExp("_", "g"), "");
+    cleanUpText(text: string): string {
+        text = text.replace(new RegExp("_", "g"), "");
+        text = text.replace(new RegExp("'", "g"), "");
+        text = text.replace(new RegExp(".", "g"), "");
+        return text;
     }
 
     renameIfBlank(text: string): string {
@@ -199,8 +212,9 @@ export class NamingProvider {
             text = "Blank";
         return text;
     }
-
+    
     upperCaseFirstLetter(name: string): string {
-        return name.charAt(0).toUpperCase() + name.slice(1);
+        if (name && name.length > 0)
+            return name.charAt(0).toUpperCase() + name.slice(1);
     }
 }

@@ -1,3 +1,8 @@
+import {
+    HideGuiElementsCommandTemplate
+} from './infrastructure/api/command/commands/hideGuiElements.command.template';
+import { HideGuiElementsComponent } from './components/commands/hideGuiElements.component';
+import { ClipboardModule } from 'ngx-clipboard/dist';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -6,8 +11,7 @@ import { HttpModule } from '@angular/http';
 import './rxjs-extensions';
 import { routing } from './app.routing';
 
-import { ClipboardModule } from 'angular2-clipboard';
-import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { Ng2BootstrapModule } from 'ng2-bootstrap';
 import { CustomFormsModule } from 'ng2-validation';
 
 import { AppContext } from './infrastructure/app.context';
@@ -126,6 +130,7 @@ import { AddAddArrayElementAndBindRulesComponent } from './components/commands/a
     SetToDefaultComponent,
     DeleteArrayElementsComponent,
     ShowGuiElementsComponent,
+    HideGuiElementsComponent,
     AddArrayElementsComponent,
     GoToPageComponent,
     SetErrorInErrorProviderAndNotifyComponent,
@@ -175,6 +180,7 @@ import { AddAddArrayElementAndBindRulesComponent } from './components/commands/a
     SetToDefaultCommandTemplate,
     DeleteArrayElementsCommandTemplate,
     ShowGuiElementsCommandTemplate,
+    HideGuiElementsCommandTemplate,
     AddArrayElementCommandTemplate,
     GoToPageCommandTemplate,
     SetErrorInErrorProviderAndNotifyCommandTemplate,

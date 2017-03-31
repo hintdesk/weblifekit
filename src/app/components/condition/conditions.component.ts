@@ -15,9 +15,11 @@ export class ConditionsComponent {
     }
 
     generate() {
+        this.conditionModel.LeftParameter = this.conditionModel.LeftParameter.trim();
+        this.conditionModel.RightParameter = this.conditionModel.RightParameter.trim();
+
         var condition = new Condition();
         condition.Name = "";
-
 
         //Name
         switch (this.conditionModel.LeftConditionType) {
@@ -83,7 +85,7 @@ export class ConditionsComponent {
     getNameIfLeftCalculator(): string {
         switch (this.conditionModel.RightConditionType) {
             case ConditionType.RightValue:
-                return "Is_" + this.namingProvider.removeUnderscore(this.conditionModel.LeftParameter) + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingProvider.renameIfBlank(this.conditionModel.RightParameter);
+                return "Is_" + this.namingProvider.cleanUpText(this.conditionModel.LeftParameter) + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingProvider.renameIfBlank(this.conditionModel.RightParameter);
             default:
                 return "";
         }
@@ -92,7 +94,7 @@ export class ConditionsComponent {
     getNameIfLeftCondition(): string {
         switch (this.conditionModel.RightConditionType) {
             case ConditionType.RightCondition:
-                return "Is_" + this.namingProvider.removeUnderscore(this.conditionModel.LeftParameter.replace("Is_", "")) + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingProvider.removeUnderscore(this.conditionModel.RightParameter.replace("Is_", ""));
+                return "Is_" + this.namingProvider.cleanUpText(this.conditionModel.LeftParameter.replace("Is_", "")) + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingProvider.cleanUpText(this.conditionModel.RightParameter.replace("Is_", ""));
             default:
                 return "";
         }
@@ -117,9 +119,9 @@ export class ConditionsComponent {
     getNameIfLeftValue(): string {
         switch (this.conditionModel.RightConditionType) {
             case ConditionType.RightCalculator:
-                return "Is_" + this.namingProvider.removeUnderscore(this.conditionModel.RightParameter) + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingProvider.renameIfBlank(this.conditionModel.LeftParameter);
+                return "Is_" + this.namingProvider.cleanUpText(this.conditionModel.RightParameter) + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingProvider.renameIfBlank(this.conditionModel.LeftParameter);
             case ConditionType.RightPath:
-                return "Is_" + this.namingProvider.removeUnderscore(this.conditionModel.RightParameter) + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingProvider.renameIfBlank(this.conditionModel.LeftParameter);
+                return "Is_" + this.namingProvider.cleanUpText(this.conditionModel.RightParameter) + "_" + this.namingProvider.getOperatorName(this.conditionModel.OperatorType) + "_" + this.namingProvider.renameIfBlank(this.conditionModel.LeftParameter);
             default:
                 return "";
         }

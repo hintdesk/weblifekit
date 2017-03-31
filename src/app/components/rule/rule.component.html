@@ -68,6 +68,8 @@
 
 	<showGuiElements *ngIf="this.ruleModel.CommandType ==='showGuiElements'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></showGuiElements>
 
+	<hideGuiElements *ngIf="this.ruleModel.CommandType ==='hideGuiElements'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></hideGuiElements>
+
 	<showNavigationElement *ngIf="this.ruleModel.CommandType ==='showNavigationElement'" [(ruleModel)]="ruleModel" (onDataChanged)="onDataChanged($event)"></showNavigationElement>
 
 	<setErrorInErrorProvider *ngIf="this.ruleModel.CommandType ==='setErrorInErrorProviderCommand'" [(ruleModel)]="ruleModel"
@@ -95,7 +97,7 @@
 				<button class="btn btn-primary" (click)="generate()">Generate</button>
 			</div>-->
 			<div>
-				<button class="btn btn-primary" [ngIIclipboard]="taResult">Copy to clipboard</button>
+				<button class="btn btn-primary" [ngxClipboard]="taResult">Copy to clipboard</button>
 			</div>
 		</div>
 	</div>

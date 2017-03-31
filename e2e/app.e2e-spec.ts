@@ -1,6 +1,6 @@
 import { WeblifekitPage } from './app.po';
 
-describe('weblifekit App', function() {
+describe('weblifekit App', () => {
   let page: WeblifekitPage;
 
   beforeEach(() => {
