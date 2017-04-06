@@ -203,7 +203,7 @@ export class NamingProvider {
     cleanUpText(text: string): string {
         text = text.replace(new RegExp("_", "g"), "");
         text = text.replace(new RegExp("'", "g"), "");
-        text = text.replace(new RegExp(".", "g"), "");
+        text = text.replace(new RegExp("\\.", "g"), "");
         return text;
     }
 

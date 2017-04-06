@@ -1,0 +1,2 @@
+ng build --prod --base-href "https://hintdesk.github.io/weblifekit/"
+angular-cli-ghpages
