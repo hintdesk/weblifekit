@@ -23,9 +23,9 @@ export class HideDetailsCommandTemplate extends BaseCommandTemplate {
         var rule = new Rule(ruleModel);
 
         //Dialog
-        var cipDialog = new CommandInitializeParameter();
-        cipDialog.PlainText = ruleModel.Dialog;
-        rule.Command.CommandInitializeParameters.push(cipDialog);
+        // var cipDialog = new CommandInitializeParameter();
+        // cipDialog.PlainText = ruleModel.Dialog;
+        // rule.Command.CommandInitializeParameters.push(cipDialog);
 
         //Dialog
         var cepDialog = new CommandExecuteParameter();

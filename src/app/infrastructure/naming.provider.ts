@@ -32,7 +32,7 @@ export class NamingProvider {
         return "Delete_Selected_Item_From_Array_" + array;
     }
     getForGoToPage(page: string): string {
-        return "Go_To_Page_" + page;
+        return "GoToPage_" + page;
     }
 
     getForEnableGuiElements(uiElement: string): string {
@@ -83,7 +83,7 @@ export class NamingProvider {
     }
 
     getForShowDialog(dialog: string): string {
-        return "Show_Dialog_" + dialog;
+        return "ShowDialog_" + dialog;
     }
 
     getForShowGridDetails(grid: string): string {
@@ -204,6 +204,7 @@ export class NamingProvider {
         text = text.replace(new RegExp("_", "g"), "");
         text = text.replace(new RegExp("'", "g"), "");
         text = text.replace(new RegExp("\\.", "g"), "");
+        text = text.replace(new RegExp("-", "g"), "");
         return text;
     }
 
